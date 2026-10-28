@@ -130,10 +130,8 @@ export default function CekOngkirPage() {
             alignItems: 'center',
             flexWrap: 'wrap',
             gap: 12,
-            padding: '16px 0',
-            borderTop: '1px solid var(--border-medium)',
-            borderBottom: '1px solid var(--border-medium)',
-            marginBottom: 24
+            padding: '12px 0',
+            marginBottom: 20
           }}>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {(['all', 'Reguler', 'Express', 'Cargo', 'Travel Kaltim'] as const).map((filter) => (

@@ -269,7 +269,6 @@ h1, h2, h3, h4, h5, h6 {
 .page-hero {
   padding: 48px 0 40px;
   background-color: var(--bg-subtle);
-  border-bottom: 1px solid var(--border-medium);
   margin-bottom: 48px;
 }
 
@@ -394,7 +393,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Header & Navigation */
 .top-bar {
   background-color: var(--bg-subtle);
-  border-bottom: 1px solid var(--border-medium);
   font-size: 0.78rem;
   color: var(--text-muted);
   padding: 7px 0;
@@ -545,7 +543,6 @@ h1, h2, h3, h4, h5, h6 {
 .site-footer {
   margin-top: auto;
   background-color: var(--bg-subtle);
-  border-top: 1px solid var(--border-medium);
   padding: 64px 0 32px;
 }
 

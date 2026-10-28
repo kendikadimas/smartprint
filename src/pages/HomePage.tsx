@@ -38,7 +38,7 @@ export default function HomePage() {
   return (
     <main>
       {/* 1. Hero Section */}
-      <section style={{ padding: '64px 0 56px', borderBottom: '1px solid var(--border-medium)', backgroundColor: 'var(--bg-page)' }}>
+      <section style={{ padding: '64px 0 56px', backgroundColor: 'var(--bg-page)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
             <div>
@@ -121,7 +121,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. Interactive Print Estimator Section */}
-      <section style={{ padding: '64px 0', backgroundColor: 'var(--bg-subtle)', borderBottom: '1px solid var(--border-medium)' }}>
+      <section style={{ padding: '64px 0', backgroundColor: 'var(--bg-subtle)' }}>
         <div className="container">
           <div style={{ maxWidth: 840, margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: 32 }}>
@@ -242,7 +242,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. Asymmetric Producer Strengths Section */}
-      <section style={{ padding: '72px 0', borderBottom: '1px solid var(--border-medium)' }}>
+      <section style={{ padding: '72px 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 40 }}>
             <h2 style={{ fontSize: '2rem', marginBottom: 10 }}>
@@ -349,7 +349,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. Products Magazine Showcase Matrix */}
-      <section style={{ padding: '72px 0', backgroundColor: 'var(--bg-subtle)', borderBottom: '1px solid var(--border-medium)' }}>
+      <section style={{ padding: '72px 0', backgroundColor: 'var(--bg-subtle)' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 36, flexWrap: 'wrap', gap: 16 }}>
             <div>
@@ -453,7 +453,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. Workshop Satu Atap Section (Clean & Scannable) */}
-      <section style={{ padding: '72px 0', borderBottom: '1px solid var(--border-medium)' }}>
+      <section style={{ padding: '72px 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 40 }}>
             <h2 style={{ fontSize: '2rem', marginBottom: 10 }}>
@@ -502,7 +502,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. Technical Guides & Articles Preview */}
-      <section style={{ padding: '72px 0', backgroundColor: 'var(--bg-subtle)', borderBottom: '1px solid var(--border-medium)' }}>
+      <section style={{ padding: '72px 0', backgroundColor: 'var(--bg-subtle)' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 36, flexWrap: 'wrap', gap: 16 }}>
             <div>
