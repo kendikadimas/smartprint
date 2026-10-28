@@ -13,7 +13,6 @@ export default function TentangKamiPage() {
             <span>/</span>
             <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>Tentang Kami</span>
           </nav>
-          <div className="section-index">PROFIL WORKSHOP &amp; FASILITAS PRODUKSI</div>
           <h1 className="page-title">Pabrikasi Cetak Langsung di Balikpapan Barat</h1>
           <p className="page-subtitle">
             SmartprintID beroperasi sebagai produsen tangan pertama dengan fasilitas mesin cetak offset lembaran, sablon silinder, dan lini finishing die-cut terpusat di Jl. Gunung Empat RT.25 No. 68, Balikpapan.
@@ -26,7 +25,6 @@ export default function TentangKamiPage() {
         {/* 1. Identitas Operasional Split */}
         <section style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 40, marginBottom: 64 }}>
           <div>
-            <div className="section-index">01 / IDENTITAS OPERASIONAL</div>
             <h2 style={{ fontSize: '1.85rem', marginBottom: 16 }}>
               Menghubungkan Desain Brand dengan Kemasan Fisik yang Presisi
             </h2>
@@ -39,7 +37,6 @@ export default function TentangKamiPage() {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
               <div className="card" style={{ padding: 22 }}>
-                <div className="section-index" style={{ fontSize: '0.72rem' }}>FOKUS REGIONAL</div>
                 <h3 style={{ fontSize: '1.05rem', marginBottom: 6 }}>Sentra Kemasan Kaltim &amp; IKN</h3>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
                   Menyuplai kebutuhan kemasan UMKM, katering, perhotelan, sekolah, dan instansi di Balikpapan, Samarinda, hingga IKN Nusantara.
@@ -47,7 +44,6 @@ export default function TentangKamiPage() {
               </div>
 
               <div className="card" style={{ padding: 22 }}>
-                <div className="section-index" style={{ fontSize: '0.72rem' }}>TRANSPARANSI BIAYA</div>
                 <h3 style={{ fontSize: '1.05rem', marginBottom: 6 }}>Harga Pabrik Tangan Pertama</h3>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
                   Pelanggan dapat menghitung estimasi biaya produksi dan berat pengiriman secara mandiri tanpa biaya tersembunyi.
@@ -58,7 +54,6 @@ export default function TentangKamiPage() {
 
           {/* Workshop Credentials Sidebar Card */}
           <aside className="card" style={{ borderTop: '4px solid var(--primary)', padding: 28, height: 'fit-content' }}>
-            <div className="section-index">DATA WORKSHOP RESMI</div>
             <h3 style={{ fontSize: '1.2rem', marginBottom: 10 }}>Kunjungan &amp; Sampel Bahan</h3>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: 20, lineHeight: 1.55 }}>
               Anda dapat mengunjungi workshop kami untuk memegang langsung sampel gramatur kertas Ivory, Kraft, Duplex, dan contoh foil emas sebelum mencetak:
@@ -92,7 +87,6 @@ export default function TentangKamiPage() {
         {/* 2. Lini Mesin Produksi */}
         <section style={{ marginBottom: 64 }}>
           <div style={{ marginBottom: 32 }}>
-            <div className="section-index">02 / LINI MESIN PRODUKSI</div>
             <h2 style={{ fontSize: '1.85rem', marginBottom: 8 }}>Peralatan Cetak &amp; Finishing di Fasilitas Kami</h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
               Dokumentasi mesin cetak offset lembaran, mesin pond die-cut otomatis, dan mesin hotprint timbul di workshop.
@@ -144,7 +138,6 @@ export default function TentangKamiPage() {
         {/* 3. Komitmen Mutu */}
         <section style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 40, alignItems: 'flex-start' }}>
           <div>
-            <div className="section-index">03 / STANDAR KERJA</div>
             <h2 style={{ fontSize: '1.75rem', marginBottom: 12 }}>Komitmen Mutu Produksi</h2>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
               Setiap pesanan melewati empat tahapan verifikasi sebelum diserahkan kepada pelanggan atau pihak ekspedisi.

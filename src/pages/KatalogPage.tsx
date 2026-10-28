@@ -52,7 +52,6 @@ export default function KatalogPage() {
             <span>/</span>
             <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>Katalog Produk</span>
           </nav>
-          <div className="section-index">DAFTAR PRODUKSI &amp; SPESIFIKASI MATERIAL</div>
           <h1 className="page-title">Katalog Produk Percetakan</h1>
           <p className="page-subtitle">
             Seluruh item diproduksi langsung di workshop Balikpapan Barat menggunakan mesin offset lembaran, digital press, sablon silinder, dan mesin pond otomatis.
@@ -126,9 +125,6 @@ export default function KatalogPage() {
 
                 <div style={{ padding: 24, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
                   <div>
-                    <div className="section-index" style={{ fontSize: '0.72rem', marginBottom: 4 }}>
-                      MIN. ORDER {p.minOrder}
-                    </div>
                     <h2 style={{ fontSize: '1.25rem', marginBottom: 10, lineHeight: 1.35 }}>
                       {p.title}
                     </h2>
@@ -182,7 +178,6 @@ export default function KatalogPage() {
           gap: 20
         }}>
           <div>
-            <div className="section-index">UKURAN KUSTOM &amp; PISAU POND KHUSUS</div>
             <h3 style={{ fontSize: '1.25rem', marginBottom: 6 }}>Butuh Dimensi Box Khusus atau Sampel Kertas?</h3>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)' }}>
               Kami memproduksi pisau pond sesuai lekukan kemasan Anda dan melayani pengiriman sampel bahan ke alamat Anda.

@@ -42,7 +42,6 @@ export default function HomePage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
             <div>
-              <div className="section-index">PRODUSEN LANGSUNG BALIKPAPAN BARAT (76131)</div>
               <h1 style={{ fontSize: 'clamp(2.3rem, 4vw, 3.4rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: 20 }}>
                 Pabrikasi <span className="serif-italic">Percetakan &amp; Kemasan</span> Berkualitas di Balikpapan
               </h1>
@@ -108,9 +107,6 @@ export default function HomePage() {
                 alignItems: 'center'
               }}>
                 <div>
-                  <div style={{ fontSize: '0.74rem', fontWeight: 700, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    WORKSHOP RESMI
-                  </div>
                   <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--text-main)' }}>
                     Balikpapan Barat (76131)
                   </div>
@@ -129,7 +125,6 @@ export default function HomePage() {
         <div className="container">
           <div style={{ maxWidth: 840, margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: 32 }}>
-              <div className="section-index">SIMULASI MANDIRI</div>
               <h2 style={{ fontSize: '1.85rem', marginBottom: 8 }}>
                 Kalkulator Estimasi Biaya Cetak
               </h2>
@@ -250,7 +245,6 @@ export default function HomePage() {
       <section style={{ padding: '72px 0', borderBottom: '1px solid var(--border-medium)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 40 }}>
-            <div className="section-index">MENGAPA MEMILIH SMARTPRINTID</div>
             <h2 style={{ fontSize: '2rem', marginBottom: 10 }}>
               Kualitas Industri, Layanan <span className="serif-italic">Tangan Pertama</span>
             </h2>
@@ -359,7 +353,6 @@ export default function HomePage() {
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 36, flexWrap: 'wrap', gap: 16 }}>
             <div>
-              <div className="section-index">KATALOG PILIHAN</div>
               <h2 style={{ fontSize: '2rem' }}>
                 Lini Produk <span className="serif-italic">Cetak &amp; Kemasan</span> Unggulan
               </h2>
@@ -439,7 +432,6 @@ export default function HomePage() {
                 </div>
                 <div style={{ padding: 20, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
                   <div>
-                    <div className="section-index" style={{ fontSize: '0.72rem', marginBottom: 4 }}>{item.categoryLabel}</div>
                     <h3 style={{ fontSize: '1.05rem', marginBottom: 8, lineHeight: 1.3 }}>{item.title}</h3>
                     <p style={{ fontSize: '0.84rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: 14 }}>
                       {item.desc.substring(0, 85)}...
@@ -464,7 +456,6 @@ export default function HomePage() {
       <section style={{ padding: '72px 0', borderBottom: '1px solid var(--border-medium)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 40 }}>
-            <div className="section-index">LOKASI &amp; FASILITAS PRODUKSI</div>
             <h2 style={{ fontSize: '2rem', marginBottom: 10 }}>
               Workshop Satu Atap Balikpapan Barat
             </h2>
@@ -515,7 +506,6 @@ export default function HomePage() {
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 36, flexWrap: 'wrap', gap: 16 }}>
             <div>
-              <div className="section-index">DOKUMENTASI TEKNIS</div>
               <h2 style={{ fontSize: '2rem' }}>
                 Panduan Material &amp; Tips Cetak
               </h2>
@@ -568,7 +558,6 @@ export default function HomePage() {
             gap: 28
           }}>
             <div style={{ maxWidth: 640 }}>
-              <div className="section-index">KONSULTASI LANGSUNG</div>
               <h2 style={{ fontSize: '1.85rem', marginBottom: 10 }}>
                 Siap Memulai Produksi Cetakan Anda?
               </h2>

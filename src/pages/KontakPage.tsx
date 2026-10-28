@@ -27,7 +27,6 @@ export default function KontakPage() {
             <span>/</span>
             <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>Kontak &amp; Lokasi</span>
           </nav>
-          <div className="section-index">KONSULTASI SPESIFIKASI &amp; KUNJUNGAN</div>
           <h1 className="page-title">Hubungi Tim Produksi &amp; Kunjungi Workshop</h1>
           <p className="page-subtitle">
             Kirimkan rincian dimensi, gramatur kertas, dan kuantitas cetak yang Anda butuhkan, atau datang langsung ke workshop kami di Balikpapan Barat.
@@ -40,7 +39,6 @@ export default function KontakPage() {
         <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 36, alignItems: 'flex-start' }}>
           {/* Contact Form Card */}
           <div className="card" style={{ padding: 36 }}>
-            <div className="section-index">FORMULIR KONSULTASI ONLINE</div>
             <h2 style={{ fontSize: '1.6rem', marginBottom: 8 }}>Kirim Rincian Pesanan Cetak</h2>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', marginBottom: 24 }}>
               Isi data di bawah ini untuk langsung terhubung dengan tim customer service workshop kami via WhatsApp.
@@ -130,7 +128,6 @@ export default function KontakPage() {
           {/* Workshop Location & Info Card */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             <div className="card" style={{ padding: 32, borderTop: '4px solid var(--primary)' }}>
-              <div className="section-index">LOKASI &amp; KONTAK UTAMA</div>
               <h3 style={{ fontSize: '1.35rem', marginBottom: 16 }}>Workshop SmartprintID</h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16, fontSize: '0.9rem' }}>
@@ -183,7 +180,6 @@ export default function KontakPage() {
 
             {/* Google Maps External Action Box */}
             <div className="card" style={{ padding: 24, backgroundColor: 'var(--bg-subtle)' }}>
-              <div className="section-index">PANDUAN NAVIGASI</div>
               <h4 style={{ fontSize: '1.05rem', marginBottom: 8 }}>Petunjuk Arah ke Workshop</h4>
               <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.55, marginBottom: 16 }}>
                 Masuk dari Jl. Letjen Suprapto, belok ke arah Jl. Gunung Empat (dekat Puskesmas Margo Mulyo / kawasan Kampung Atas Air).

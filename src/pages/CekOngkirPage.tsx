@@ -35,7 +35,6 @@ export default function CekOngkirPage() {
             <span>/</span>
             <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>Cek Ongkir</span>
           </nav>
-          <div className="section-index">SIMULASI TARIF PENGIRIMAN &amp; KARGO</div>
           <h1 className="page-title">Kalkulator Cek Ongkir dari Balikpapan</h1>
           <p className="page-subtitle">
             Perhitungan estimasi ongkos kirim paket cetakan langsung dari titik muat Workshop SmartprintID Balikpapan Barat (76131) ke Samarinda, IKN Nusantara, Kalimantan, dan seluruh Indonesia.
@@ -201,7 +200,6 @@ export default function CekOngkirPage() {
         {/* Shipping Advice Ledger */}
         <section style={{ marginTop: 56, display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 36 }}>
           <div>
-            <div className="section-index">PANDUAN EKSPEDISI CETAKAN</div>
             <h2 style={{ fontSize: '1.6rem', marginBottom: 12 }}>
               Rekomendasi Pengiriman Berdasarkan Bobot
             </h2>

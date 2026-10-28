@@ -14,7 +14,6 @@ export default function KarirPage() {
             <span>/</span>
             <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>Karir &amp; Rekrutmen</span>
           </nav>
-          <div className="section-index">REKRUTMEN TIM PRODUKSI &amp; DESAIN</div>
           <h1 className="page-title">Bergabung dengan Tim Workshop SmartprintID</h1>
           <p className="page-subtitle">
             Kami membuka kesempatan bagi praktisi desain grafis pra-cetak, operator mesin cetak offset, teknisi finishing pond, dan staf layanan pelanggan untuk berkarya di Balikpapan Barat.
@@ -27,7 +26,6 @@ export default function KarirPage() {
         {/* 1. Standar Lingkungan Kerja */}
         <section style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 40, marginBottom: 64, alignItems: 'flex-start' }}>
           <div>
-            <div className="section-index">01 / LINGKUNGAN KERJA</div>
             <h2 style={{ fontSize: '1.85rem', marginBottom: 12 }}>
               Standar Kerja di Lini Produksi Kami
             </h2>
@@ -78,7 +76,6 @@ export default function KarirPage() {
         {/* 2. Lowongan Kerja Aktif */}
         <section style={{ marginBottom: 64 }}>
           <div style={{ marginBottom: 32 }}>
-            <div className="section-index">02 / POSISI TERBUKA</div>
             <h2 style={{ fontSize: '1.85rem', marginBottom: 8 }}>Daftar Lowongan Kerja di Balikpapan</h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.94rem' }}>
               Penempatan kerja langsung di Workshop SmartprintID, Jl. Gunung Empat RT.25 No. 68, Balikpapan Barat.
@@ -91,7 +88,7 @@ export default function KarirPage() {
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
                     <span className="badge badge-neutral" style={{ fontSize: '0.72rem' }}>{job.type}</span>
-                    <span className="section-index" style={{ fontSize: '0.72rem', marginBottom: 0 }}>{job.department}</span>
+                    <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)', fontWeight: 600 }}>{job.department}</span>
                   </div>
 
                   <h3 style={{ fontSize: '1.3rem', marginBottom: 10 }}>{job.title}</h3>
@@ -132,7 +129,6 @@ export default function KarirPage() {
 
         {/* 3. Direct Application Info */}
         <section className="card" style={{ borderLeft: '5px solid var(--primary)', padding: '36px 32px' }}>
-          <div className="section-index">PENGIRIMAN BERKAS EMAIL / WHATSAPP</div>
           <h2 style={{ fontSize: '1.45rem', marginBottom: 10 }}>Kirimkan CV &amp; Portofolio Anda</h2>
           <p style={{ fontSize: '0.94rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: 24, maxWidth: 760 }}>
             Anda dapat mengirimkan Curriculum Vitae (CV) dan tautan portofolio ke alamat email{' '}

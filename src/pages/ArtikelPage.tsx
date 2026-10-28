@@ -28,7 +28,6 @@ export default function ArtikelPage() {
             <span>/</span>
             <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>Artikel &amp; Panduan Teknis</span>
           </nav>
-          <div className="section-index">DOKUMENTASI MATERIAL &amp; ARSIP WORKSHOP</div>
           <h1 className="page-title">Panduan Spesifikasi Cetak &amp; Kemasan</h1>
           <p className="page-subtitle">
             Referensi praktis mengenai karakteristik kertas kemasan makanan, daya tahan stiker label anti air, persiapan file pra-cetak CMYK, serta panduan teknis percetakan dari smartprint.co.id.
