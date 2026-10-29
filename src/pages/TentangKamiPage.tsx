@@ -53,7 +53,7 @@ export default function TentangKamiPage() {
           </div>
 
           {/* Workshop Credentials Sidebar Card */}
-          <aside className="card" style={{ borderTop: '4px solid var(--primary)', padding: 28, height: 'fit-content' }}>
+          <aside className="card" style={{ padding: 28, height: 'fit-content' }}>
             <h3 style={{ fontSize: '1.2rem', marginBottom: 10 }}>Kunjungan &amp; Sampel Bahan</h3>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: 20, lineHeight: 1.55 }}>
               Anda dapat mengunjungi workshop kami untuk memegang langsung sampel gramatur kertas Ivory, Kraft, Duplex, dan contoh foil emas sebelum mencetak:

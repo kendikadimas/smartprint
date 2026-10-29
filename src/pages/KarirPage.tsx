@@ -128,7 +128,7 @@ export default function KarirPage() {
         </section>
 
         {/* 3. Direct Application Info */}
-        <section className="card" style={{ borderLeft: '5px solid var(--primary)', padding: '36px 32px' }}>
+        <section className="card" style={{ padding: '36px 32px' }}>
           <h2 style={{ fontSize: '1.45rem', marginBottom: 10 }}>Kirimkan CV &amp; Portofolio Anda</h2>
           <p style={{ fontSize: '0.94rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: 24, maxWidth: 760 }}>
             Anda dapat mengirimkan Curriculum Vitae (CV) dan tautan portofolio ke alamat email{' '}

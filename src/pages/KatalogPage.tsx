@@ -170,7 +170,6 @@ export default function KatalogPage() {
         {/* Custom Order Box */}
         <div className="card" style={{
           marginTop: 48,
-          borderLeft: '4px solid var(--primary)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',

@@ -127,7 +127,7 @@ export default function KontakPage() {
 
           {/* Workshop Location & Info Card */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-            <div className="card" style={{ padding: 32, borderTop: '4px solid var(--primary)' }}>
+            <div className="card" style={{ padding: 32 }}>
               <h3 style={{ fontSize: '1.35rem', marginBottom: 16 }}>Workshop SmartprintID</h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16, fontSize: '0.9rem' }}>

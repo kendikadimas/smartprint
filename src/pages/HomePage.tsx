@@ -550,7 +550,6 @@ export default function HomePage() {
         <div className="container">
           <div className="card" style={{
             padding: '48px 40px',
-            borderLeft: '5px solid var(--primary)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
