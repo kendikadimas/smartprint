@@ -111,7 +111,7 @@ export default function KatalogPage() {
             </button>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: 28 }}>
+          <div className="katalog-grid">
             {filteredProducts.map((p) => (
               <article key={p.id} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ height: 210, overflow: 'hidden' }}>
@@ -240,7 +240,7 @@ export default function KatalogPage() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: 12, justifyContent: 'flex-end' }}>
+            <div style={{ display: 'flex', gap: 12, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
               <button type="button" className="btn btn-secondary" onClick={() => setSelectedProduct(null)}>
                 Tutup
               </button>

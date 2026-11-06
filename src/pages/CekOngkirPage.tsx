@@ -44,9 +44,9 @@ export default function CekOngkirPage() {
 
       {/* Main Content */}
       <div className="container" style={{ marginBottom: 72 }}>
-        <div className="card" style={{ padding: 36 }}>
+        <div className="card responsive-card-pad">
           {/* Controls Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1.2fr', gap: 24, marginBottom: 28 }}>
+          <div className="form-grid-3">
             {/* Origin */}
             <div className="form-group" style={{ marginBottom: 0 }}>
               <label className="form-label" htmlFor="origin-input">
@@ -152,7 +152,7 @@ export default function CekOngkirPage() {
           </div>
 
           {/* Rates Result Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
+          <div className="rates-grid">
             {rates.map((rate, idx) => (
               <div
                 key={idx}
@@ -196,7 +196,7 @@ export default function CekOngkirPage() {
         </div>
 
         {/* Shipping Advice Ledger */}
-        <section style={{ marginTop: 56, display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 36 }}>
+        <section className="split-feature" style={{ marginTop: 56 }}>
           <div>
             <h2 style={{ fontSize: '1.5rem', marginBottom: 8 }}>
               Kebijakan Pengiriman Toko

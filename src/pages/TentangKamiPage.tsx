@@ -24,7 +24,7 @@ export default function TentangKamiPage() {
       {/* Main Content */}
       <div className="container" style={{ marginBottom: 72 }}>
         {/* 1. Identitas Operasional Split */}
-        <section style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 40, marginBottom: 64 }}>
+        <section className="split-sidebar" style={{ marginBottom: 64 }}>
           <div>
             <h2 style={{ fontSize: '1.85rem', marginBottom: 16 }}>
               Dedikasi Percetakan &amp; Spesialis Kemasan Sejak 1994
@@ -36,7 +36,7 @@ export default function TentangKamiPage() {
               Setiap produk dikerjakan dengan bahan berkualitas, teknologi mesin terbaik, pelayanan ramah, cepat tanggap, harga kompetitif, serta garansi cetak ulang jika terjadi kesalahan produksi.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+            <div className="form-grid-2">
               <div className="card" style={{ padding: 22 }}>
                 <h3 style={{ fontSize: '1.05rem', marginBottom: 6 }}>Konsultasi &amp; Cepat Tanggap</h3>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
@@ -101,7 +101,7 @@ export default function TentangKamiPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          <div className="grid-3">
             <article className="card" style={{ padding: 0, overflow: 'hidden' }}>
               <div style={{ height: 200, overflow: 'hidden' }}>
                 <img src="/images/bhm2.jpg" alt="Lini Cetak Offset Lembaran" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -141,7 +141,7 @@ export default function TentangKamiPage() {
         </section>
 
         {/* 3. Komitmen Mutu */}
-        <section style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 40, alignItems: 'flex-start' }}>
+        <section className="split-feature">
           <div>
             <h2 style={{ fontSize: '1.75rem', marginBottom: 12 }}>Kontrol Mutu Produksi</h2>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>

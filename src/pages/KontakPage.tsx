@@ -37,16 +37,16 @@ export default function KontakPage() {
 
       {/* Main Content */}
       <div className="container" style={{ marginBottom: 72 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 36, alignItems: 'flex-start' }}>
+        <div className="split-sidebar">
           {/* Contact Form Card */}
-          <div className="card" style={{ padding: 32 }}>
+          <div className="card responsive-card-pad">
             <h2 style={{ fontSize: '1.5rem', marginBottom: 6 }}>Formulir Konsultasi Cetak</h2>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: 20 }}>
               Kirim rincian kebutuhan Anda untuk terhubung langsung dengan tim kami via WhatsApp.
             </p>
 
             <form onSubmit={handleSubmit}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+              <div className="form-grid-2">
                 <div className="form-group">
                   <label className="form-label" htmlFor="client-name">Nama Lengkap / Usaha</label>
                   <input
@@ -74,7 +74,7 @@ export default function KontakPage() {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+              <div className="form-grid-2">
                 <div className="form-group">
                   <label className="form-label" htmlFor="prod-select">Kategori Produk</label>
                   <select

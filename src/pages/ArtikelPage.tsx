@@ -71,7 +71,7 @@ export default function ArtikelPage() {
             </button>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: 28 }}>
+          <div className="article-grid">
             {filteredArticles.map((article) => (
               <article key={article.id} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ height: 200, overflow: 'hidden' }}>

@@ -25,7 +25,7 @@ export default function KarirPage() {
       {/* Main Content */}
       <div className="container" style={{ marginBottom: 72 }}>
         {/* 1. Standar Lingkungan Kerja */}
-        <section style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 40, marginBottom: 64, alignItems: 'flex-start' }}>
+        <section className="split-feature" style={{ marginBottom: 64 }}>
           <div>
             <h2 style={{ fontSize: '1.85rem', marginBottom: 12 }}>
               Budaya Kerja Workshop
@@ -89,7 +89,7 @@ export default function KarirPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: 24 }}>
+          <div className="career-grid">
             {JOBS.map((job) => (
               <article key={job.id} className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>

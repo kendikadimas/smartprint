@@ -39,9 +39,9 @@ export default function HomePage() {
   return (
     <main>
       {/* 1. Hero Section */}
-      <section style={{ padding: '60px 0 52px', backgroundColor: '#FFFFFF', borderBottom: '1px solid var(--border-medium)' }}>
+      <section style={{ padding: '48px 0 40px', backgroundColor: '#FFFFFF', borderBottom: '1px solid var(--border-medium)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
+          <div className="grid-hero">
             <div>
               <div style={{
                 display: 'inline-flex',
@@ -153,8 +153,8 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="card" style={{ padding: 28 }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, marginBottom: 20 }}>
+            <div className="card" style={{ padding: 24 }}>
+              <div className="form-grid-2" style={{ marginBottom: 20 }}>
                 <div className="form-group" style={{ marginBottom: 0 }}>
                   <label className="form-label" htmlFor="prod-type">Jenis Produk</label>
                   <select
@@ -273,7 +273,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+          <div className="grid-2">
             {/* Left Full Red Accent Card */}
             <div className="card-red" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: 32 }}>
               <div>
@@ -384,9 +384,9 @@ export default function HomePage() {
           </div>
 
           {/* Matrix Top: Spotlight Horizontal Split + Red Accent Card */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 20, marginBottom: 20 }}>
+          <div className="showcase-matrix-top">
             {/* Spotlight Card: Dus Box Kemasan */}
-            <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+            <div className="card spotlight-card">
               <div style={{ height: '100%', minHeight: 250, overflow: 'hidden' }}>
                 <img
                   src="/images/rt1.jpg"
@@ -428,7 +428,7 @@ export default function HomePage() {
           </div>
 
           {/* Matrix Bottom: 4 Supporting Category Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 18 }}>
+          <div className="grid-4">
             {PRODUCTS.slice(2, 6).map((item) => (
               <div key={item.id} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ height: 150, overflow: 'hidden' }}>
@@ -472,7 +472,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="grid-3">
             <div className="card" style={{ padding: 22 }}>
               <div style={{ height: 160, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 16 }}>
                 <img src="/images/bhm2.jpg" alt="Mesin Cetak Offset SmartprintID" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -521,7 +521,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="grid-3">
             {ARTICLES.slice(0, 3).map((item) => (
               <article key={item.id} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ height: 160, overflow: 'hidden' }}>
@@ -553,14 +553,8 @@ export default function HomePage() {
       {/* 7. Bottom Clean CTA */}
       <section style={{ padding: '60px 0' }}>
         <div className="container">
-          <div className="card-red" style={{
-            padding: '48px 40px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: 24,
-            boxShadow: '0 12px 30px rgba(229, 46, 42, 0.22)'
+          <div className="card-red cta-banner-flex" style={{
+            padding: '40px 32px'
           }}>
             <div style={{ maxWidth: 600 }}>
               <h2 style={{ fontSize: '1.85rem', marginBottom: 8, color: '#FFFFFF' }}>
