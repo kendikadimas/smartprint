@@ -49,12 +49,8 @@ export default function Header() {
       {/* Main Header */}
       <header className="site-header">
         <div className="container header-inner">
-          <Link to="/" className="brand-logo" onClick={() => setMobileOpen(false)}>
-            <img src="/images/logo.jpg" alt="SmartprintID Logo" onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }} />
-            <div>
-              <span className="brand-name">SmartprintID</span>
-              <span className="brand-sub">Great Service &amp; Quality</span>
-            </div>
+          <Link to="/" className="brand-logo" onClick={() => setMobileOpen(false)} aria-label="SmartprintID Beranda">
+            <img src="/images/logo.jpg" alt="SmartprintID" />
           </Link>
 
           {/* Desktop Navigation */}

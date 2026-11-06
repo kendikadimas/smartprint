@@ -10,12 +10,8 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Brand Info */}
           <div>
-            <Link to="/" className="brand-logo" style={{ marginBottom: 14 }}>
-              <img src="/images/logo.jpg" alt="SmartprintID Logo" onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }} />
-              <div>
-                <span className="brand-name">SmartprintID</span>
-                <span className="brand-sub">Great Service and Quality</span>
-              </div>
+            <Link to="/" className="brand-logo" style={{ marginBottom: 14 }} aria-label="SmartprintID Beranda">
+              <img src="/images/logo.jpg" alt="SmartprintID" />
             </Link>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: 18, lineHeight: 1.6 }}>
               PT OLEH KELUARGA BESAR. Jasa percetakan dan spesialis kemasan beroperasi lebih dari 30 tahun di Kota Balikpapan (sejak 1994).

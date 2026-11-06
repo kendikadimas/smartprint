@@ -21,3 +21,4 @@ export default function WhatsAppIcon({ size = 18, className, style }: WhatsAppIc
     </svg>
   );
 }
+
