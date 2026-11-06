@@ -27,9 +27,9 @@ export default function KontakPage() {
             <span>/</span>
             <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>Kontak &amp; Lokasi</span>
           </nav>
-          <h1 className="page-title">Hubungi Tim Produksi &amp; Kunjungi Workshop</h1>
+          <h1 className="page-title">Hubungi Tim &amp; Kunjungi Workshop</h1>
           <p className="page-subtitle">
-            Kirimkan rincian dimensi, gramatur kertas, dan kuantitas cetak yang Anda butuhkan, atau datang langsung ke workshop kami di Balikpapan Barat.
+            Konsultasikan ukuran, bahan, dan jumlah cetak, atau datang langsung ke workshop kami di Balikpapan Barat.
           </p>
         </div>
       </section>
@@ -38,10 +38,10 @@ export default function KontakPage() {
       <div className="container" style={{ marginBottom: 72 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 36, alignItems: 'flex-start' }}>
           {/* Contact Form Card */}
-          <div className="card" style={{ padding: 36 }}>
-            <h2 style={{ fontSize: '1.6rem', marginBottom: 8 }}>Kirim Rincian Pesanan Cetak</h2>
-            <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', marginBottom: 24 }}>
-              Isi data di bawah ini untuk langsung terhubung dengan tim customer service workshop kami via WhatsApp.
+          <div className="card" style={{ padding: 32 }}>
+            <h2 style={{ fontSize: '1.5rem', marginBottom: 6 }}>Formulir Konsultasi Cetak</h2>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: 20 }}>
+              Kirim rincian kebutuhan Anda untuk terhubung langsung dengan tim kami via WhatsApp.
             </p>
 
             <form onSubmit={handleSubmit}>
@@ -179,10 +179,10 @@ export default function KontakPage() {
             </div>
 
             {/* Google Maps External Action Box */}
-            <div className="card" style={{ padding: 24, backgroundColor: 'var(--bg-subtle)' }}>
-              <h4 style={{ fontSize: '1.05rem', marginBottom: 8 }}>Petunjuk Arah ke Workshop</h4>
-              <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.55, marginBottom: 16 }}>
-                Masuk dari Jl. Letjen Suprapto, belok ke arah Jl. Gunung Empat (dekat Puskesmas Margo Mulyo / kawasan Kampung Atas Air).
+            <div className="card" style={{ padding: 22, backgroundColor: 'var(--bg-subtle)' }}>
+              <h4 style={{ fontSize: '1rem', marginBottom: 6 }}>Petunjuk Arah</h4>
+              <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: 14 }}>
+                Masuk via Jl. Letjen Suprapto ke Jl. Gunung Empat (dekat Puskesmas Margo Mulyo).
               </p>
               <a
                 href="https://maps.google.com/?q=SmartprintID+Balikpapan"

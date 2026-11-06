@@ -30,7 +30,7 @@ export default function ArtikelPage() {
           </nav>
           <h1 className="page-title">Panduan Spesifikasi Cetak &amp; Kemasan</h1>
           <p className="page-subtitle">
-            Referensi praktis mengenai karakteristik kertas kemasan makanan, daya tahan stiker label anti air, persiapan file pra-cetak CMYK, serta panduan teknis percetakan dari smartprint.co.id.
+            Panduan praktis bahan kemasan makanan, stiker label tahan air, dan persiapan file pra-cetak CMYK.
           </p>
 
           <div style={{ marginTop: 24, display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'space-between', alignItems: 'center' }}>
@@ -80,7 +80,7 @@ export default function ArtikelPage() {
                 <div style={{ padding: 24, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
                   <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
-                      <span className="badge badge-neutral" style={{ fontSize: '0.72rem' }}>{article.category}</span>
+                      <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)' }}>{article.category}</span>
                       <span className="mono-num" style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{article.date}</span>
                     </div>
 
@@ -130,7 +130,7 @@ export default function ArtikelPage() {
             </div>
 
             <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 12 }}>
-              <span className="badge badge-red">{selectedArticle.category}</span>
+              <span style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--primary)' }}>{selectedArticle.category}</span>
               <span className="mono-num" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{selectedArticle.date}</span>
               <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>• {selectedArticle.readTime}</span>
             </div>

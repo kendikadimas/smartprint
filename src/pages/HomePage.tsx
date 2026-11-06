@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calculator, CheckCircle2, MessageSquare, ShieldCheck, Truck, Factory, Sparkles } from 'lucide-react';
+import { ArrowRight, Calculator, CheckCircle2, MessageSquare, Truck, Factory, Sparkles } from 'lucide-react';
 import { PRODUCTS } from '../data/products';
 import { ARTICLES } from '../data/articles';
 
@@ -38,18 +38,18 @@ export default function HomePage() {
   return (
     <main>
       {/* 1. Hero Section */}
-      <section style={{ padding: '64px 0 56px', backgroundColor: 'var(--bg-page)' }}>
+      <section style={{ padding: '60px 0 52px', backgroundColor: 'var(--bg-page)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
             <div>
-              <h1 style={{ fontSize: 'clamp(2.3rem, 4vw, 3.4rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: 20 }}>
-                Pabrikasi <span className="serif-italic">Percetakan &amp; Kemasan</span> Berkualitas di Balikpapan
+              <h1 style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: 18 }}>
+                Pabrikasi <span className="serif-italic">Percetakan &amp; Kemasan</span> di Balikpapan
               </h1>
-              <p style={{ fontSize: '1.08rem', color: 'var(--text-body)', lineHeight: 1.65, marginBottom: 28, maxWidth: 540 }}>
-                Pusat produksi cetak offset lembaran, dus box makanan food grade, stiker label botol, dan sablon cup langsung dari workshop Jl. Gunung Empat No. 68. Tanpa perantara, harga transparan, dan kendali mutu terjamin.
+              <p style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
+                Workshop cetak offset, dus kemasan makanan, stiker label, dan sablon cup di Balikpapan Barat. Langsung dari produsen tangan pertama.
               </p>
 
-              <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 32 }}>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 28 }}>
                 <a
                   href="https://wa.me/628115444638?text=Halo%20SmartprintID,%20saya%20ingin%20konsultasi%20pesanan%20cetak"
                   target="_blank"
@@ -66,16 +66,16 @@ export default function HomePage() {
               </div>
 
               {/* Producer Strengths Pills */}
-              <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', paddingTop: 20, borderTop: '1px solid var(--border-subtle)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.86rem', color: 'var(--text-muted)' }}>
+              <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', paddingTop: 18, borderTop: '1px solid var(--border-subtle)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                   <CheckCircle2 size={16} style={{ color: 'var(--primary)' }} />
                   <span>Mesin Offset &amp; Pond Sendiri</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.86rem', color: 'var(--text-muted)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                   <CheckCircle2 size={16} style={{ color: 'var(--primary)' }} />
                   <span>Kertas Food Grade Bersertifikat</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.86rem', color: 'var(--text-muted)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                   <CheckCircle2 size={16} style={{ color: 'var(--primary)' }} />
                   <span>Kirim Cepat Kaltim &amp; IKN</span>
                 </div>
@@ -88,18 +88,18 @@ export default function HomePage() {
                 <img
                   src="/images/bhm1.jpg"
                   alt="Workshop Produksi Cetak SmartprintID Balikpapan"
-                  style={{ width: '100%', height: '420px', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '400px', objectFit: 'cover' }}
                 />
               </div>
               <div style={{
                 position: 'absolute',
-                bottom: 20,
-                left: 20,
-                right: 20,
+                bottom: 18,
+                left: 18,
+                right: 18,
                 backgroundColor: 'rgba(255, 255, 255, 0.95)',
                 backdropFilter: 'blur(8px)',
                 borderRadius: 'var(--radius-md)',
-                padding: '16px 20px',
+                padding: '14px 18px',
                 border: '1px solid var(--border-medium)',
                 boxShadow: 'var(--shadow-dropdown)',
                 display: 'flex',
@@ -108,7 +108,7 @@ export default function HomePage() {
               }}>
                 <div>
                   <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--text-main)' }}>
-                    Balikpapan Barat (76131)
+                    Workshop Balikpapan Barat (76131)
                   </div>
                 </div>
                 <Link to="/tentang-kami" className="btn btn-outline-primary btn-sm">
@@ -121,20 +121,20 @@ export default function HomePage() {
       </section>
 
       {/* 2. Interactive Print Estimator Section */}
-      <section style={{ padding: '64px 0', backgroundColor: 'var(--bg-subtle)' }}>
+      <section style={{ padding: '60px 0', backgroundColor: 'var(--bg-subtle)' }}>
         <div className="container">
           <div style={{ maxWidth: 840, margin: '0 auto' }}>
-            <div style={{ textAlign: 'center', marginBottom: 32 }}>
-              <h2 style={{ fontSize: '1.85rem', marginBottom: 8 }}>
+            <div style={{ textAlign: 'center', marginBottom: 28 }}>
+              <h2 style={{ fontSize: '1.75rem', marginBottom: 6 }}>
                 Kalkulator Estimasi Biaya Cetak
               </h2>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-                Hitung perkiraan biaya pesanan Anda secara transparan sebelum memulai proses produksi.
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem' }}>
+                Simulasi perkiraan biaya cetak Anda secara mandiri sebelum naik produksi.
               </p>
             </div>
 
-            <div className="card" style={{ padding: 32 }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20, marginBottom: 24 }}>
+            <div className="card" style={{ padding: 28 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, marginBottom: 20 }}>
                 <div className="form-group" style={{ marginBottom: 0 }}>
                   <label className="form-label" htmlFor="prod-type">Jenis Produk</label>
                   <select
@@ -146,7 +146,7 @@ export default function HomePage() {
                     <option value="box">Dus Box Makanan</option>
                     <option value="stiker">Stiker Label Kemasan</option>
                     <option value="cup">Sablon Cup Minuman</option>
-                    <option value="paperbag">Paper Bag Kraft/Art</option>
+                    <option value="paperbag">Paper Bag</option>
                   </select>
                 </div>
 
@@ -162,7 +162,7 @@ export default function HomePage() {
                       <>
                         <option value="ivory270">Ivory 270 gsm (Standar Food Grade)</option>
                         <option value="ivory300">Ivory 300 gsm (Ekstra Tebal)</option>
-                        <option value="kraft290">Kraft Brown 290 gsm (Vintage Ramah Lingkungan)</option>
+                        <option value="kraft290">Kraft Brown 290 gsm (Vintage)</option>
                         <option value="duplex310">Duplex 310 gsm (Hemat &amp; Kokoh)</option>
                       </>
                     )}
@@ -208,20 +208,20 @@ export default function HomePage() {
               <div style={{
                 backgroundColor: 'var(--bg-subtle)',
                 borderRadius: 'var(--radius-sm)',
-                padding: '20px 24px',
+                padding: '18px 22px',
                 border: '1px solid var(--border-medium)',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 flexWrap: 'wrap',
-                gap: 16
+                gap: 14
               }}>
                 <div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Estimasi Biaya Satuan:</div>
-                  <div className="mono-num" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary)' }}>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Estimasi Biaya Satuan:</div>
+                  <div className="mono-num" style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--primary)' }}>
                     Rp {estimate.unitPrice.toLocaleString('id-ID')} / pcs
                   </div>
-                  <div style={{ fontSize: '0.84rem', color: 'var(--text-body)', marginTop: 4 }}>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text-body)', marginTop: 2 }}>
                     Total: <strong className="mono-num">Rp {estimate.total.toLocaleString('id-ID')}</strong> ({quantity.toLocaleString('id-ID')} pcs)
                   </div>
                 </div>
@@ -233,7 +233,7 @@ export default function HomePage() {
                   className="btn btn-primary"
                 >
                   <MessageSquare size={16} />
-                  <span>Pesan Sekarang via WA</span>
+                  <span>Pesan via WA</span>
                 </a>
               </div>
             </div>
@@ -242,18 +242,18 @@ export default function HomePage() {
       </section>
 
       {/* 3. Asymmetric Producer Strengths Section */}
-      <section style={{ padding: '72px 0' }}>
+      <section style={{ padding: '68px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 40 }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: 10 }}>
+          <div style={{ textAlign: 'center', marginBottom: 36 }}>
+            <h2 style={{ fontSize: '1.9rem', marginBottom: 8 }}>
               Kualitas Industri, Layanan <span className="serif-italic">Tangan Pertama</span>
             </h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.98rem' }}>
-              Keunggulan operasional percetakan berbasis workshop di Balikpapan Barat.
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.94rem' }}>
+              Keunggulan cetak langsung dari workshop Balikpapan Barat.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
             {/* Left Full Red Accent Card */}
             <div className="card-red" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
@@ -261,84 +261,84 @@ export default function HomePage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 6,
-                  padding: '4px 12px',
+                  padding: '4px 10px',
                   borderRadius: 'var(--radius-full)',
                   backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  fontSize: '0.78rem',
+                  fontSize: '0.74rem',
                   fontWeight: 700,
-                  marginBottom: 16
+                  marginBottom: 14
                 }}>
-                  <Factory size={14} />
-                  <span>KAMI ADALAH PRODUSEN</span>
+                  <Factory size={13} />
+                  <span>PRODUSEN LANGSUNG</span>
                 </div>
-                <h3 style={{ fontSize: '1.7rem', lineHeight: 1.25, marginBottom: 16 }}>
-                  Langsung dari Workshop, Tanpa Makelar &amp; Perantara
+                <h3 style={{ fontSize: '1.5rem', lineHeight: 1.25, marginBottom: 14 }}>
+                  Dari Workshop, Tanpa Perantara
                 </h3>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.65, opacity: 0.95, marginBottom: 24 }}>
-                  Kami memiliki mesin cetak offset lembaran, mesin pond otomatis, sablon silinder, dan peralatan hotprint foil di Jl. Gunung Empat RT.25 No. 68. Anda berhubungan langsung dengan operator dan tim teknis yang memproduksi cetakan Anda.
+                <p style={{ fontSize: '0.92rem', lineHeight: 1.6, opacity: 0.95, marginBottom: 20 }}>
+                  Seluruh alur pra-cetak, mesin offset, sablon cup, dan finishing dikerjakan di workshop Jl. Gunung Empat No. 68 Balikpapan.
                 </p>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.9rem' }}>
-                    <CheckCircle2 size={18} style={{ color: '#FFFFFF' }} />
-                    <span>Transparansi gramatur kertas dan profil warna CMYK</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.88rem' }}>
+                    <CheckCircle2 size={16} style={{ color: '#FFFFFF' }} />
+                    <span>Gramatur kertas &amp; warna CMYK transparan</span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.9rem' }}>
-                    <CheckCircle2 size={18} style={{ color: '#FFFFFF' }} />
-                    <span>Kemudahan revisi dan konsultasi pisau pond custom</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.88rem' }}>
+                    <CheckCircle2 size={16} style={{ color: '#FFFFFF' }} />
+                    <span>Konsultasi pisau pond &amp; ukuran kustom</span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.9rem' }}>
-                    <CheckCircle2 size={18} style={{ color: '#FFFFFF' }} />
-                    <span>Garansi mutu cetak rapi dan tepat waktu</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.88rem' }}>
+                    <CheckCircle2 size={16} style={{ color: '#FFFFFF' }} />
+                    <span>Pengerjaan rapi &amp; tepat waktu</span>
                   </div>
                 </div>
               </div>
 
-              <Link to="/tentang-kami" className="btn btn-white" style={{ alignSelf: 'flex-start' }}>
-                <span>Lihat Profil Workshop &amp; Mesin</span>
-                <ArrowRight size={16} />
+              <Link to="/tentang-kami" className="btn btn-white btn-sm" style={{ alignSelf: 'flex-start' }}>
+                <span>Profil Workshop &amp; Mesin</span>
+                <ArrowRight size={15} />
               </Link>
             </div>
 
             {/* Right Cards Stack */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-              <div className="card" style={{ padding: 24 }}>
-                <div style={{ display: 'flex', gap: 16 }}>
-                  <div style={{ width: 44, height: 44, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
-                    <Calculator size={22} />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <div className="card" style={{ padding: 22 }}>
+                <div style={{ display: 'flex', gap: 14 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
+                    <Calculator size={20} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.15rem', marginBottom: 6 }}>Hemat Waktu &amp; Biaya Terukur</h3>
-                    <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                      Cek tarif ongkos kirim dan estimasi biaya cetak langsung secara mandiri. Tanpa biaya tersembunyi, siap kirim ke seluruh Kalimantan Timur dan kawasan IKN.
+                    <h3 style={{ fontSize: '1.1rem', marginBottom: 4 }}>Biaya Terukur &amp; Transparan</h3>
+                    <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                      Cek perkiraan biaya produksi dan ongkir langsung secara mandiri tanpa biaya tersembunyi.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="card" style={{ padding: 24 }}>
-                <div style={{ display: 'flex', gap: 16 }}>
-                  <div style={{ width: 44, height: 44, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
-                    <Sparkles size={22} />
+              <div className="card" style={{ padding: 22 }}>
+                <div style={{ display: 'flex', gap: 14 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
+                    <Sparkles size={20} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.15rem', marginBottom: 6 }}>Bantuan Setting File Desain Pra-Cetak</h3>
-                    <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                      Tim desainer pre-press kami memeriksa batas potong (bleed), akurasi teks, dan separasi warna CMYK sebelum piringan cetak dibuat.
+                    <h3 style={{ fontSize: '1.1rem', marginBottom: 4 }}>Pemeriksaan File Pra-Cetak</h3>
+                    <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                      Pemeriksaan batas potong (bleed), akurasi teks, dan mode warna CMYK sebelum cetak dimulai.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="card" style={{ padding: 24 }}>
-                <div style={{ display: 'flex', gap: 16 }}>
-                  <div style={{ width: 44, height: 44, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
-                    <Truck size={22} />
+              <div className="card" style={{ padding: 22 }}>
+                <div style={{ display: 'flex', gap: 14 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
+                    <Truck size={20} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.15rem', marginBottom: 6 }}>Pengiriman Fleksibel &amp; Kargo Kaltim</h3>
-                    <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                      Mendukung kurir workshop dalam kota Balikpapan, travel antar kota (same day) Samarinda/PPU, serta JNE Trucking untuk kargo kemasan berat.
+                    <h3 style={{ fontSize: '1.1rem', marginBottom: 4 }}>Kirim Cepat Se-Kaltim &amp; IKN</h3>
+                    <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                      Dukungan kurir lokal Balikpapan, travel same-day Kaltim, dan kargo JTR untuk kemasan berat.
                     </p>
                   </div>
                 </div>
@@ -349,44 +349,43 @@ export default function HomePage() {
       </section>
 
       {/* 4. Products Magazine Showcase Matrix */}
-      <section style={{ padding: '72px 0', backgroundColor: 'var(--bg-subtle)' }}>
+      <section style={{ padding: '68px 0', backgroundColor: 'var(--bg-subtle)' }}>
         <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 36, flexWrap: 'wrap', gap: 16 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 32, flexWrap: 'wrap', gap: 14 }}>
             <div>
-              <h2 style={{ fontSize: '2rem' }}>
-                Lini Produk <span className="serif-italic">Cetak &amp; Kemasan</span> Unggulan
+              <h2 style={{ fontSize: '1.9rem' }}>
+                Lini Produk <span className="serif-italic">Cetak &amp; Kemasan</span>
               </h2>
             </div>
-            <Link to="/katalog" className="btn btn-secondary">
-              <span>Buka Semua Katalog (8 Produk)</span>
-              <ArrowRight size={16} />
+            <Link to="/katalog" className="btn btn-secondary btn-sm">
+              <span>Buka Semua Katalog</span>
+              <ArrowRight size={15} />
             </Link>
           </div>
 
           {/* Matrix Top: Spotlight Horizontal Split + Red Accent Card */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 24, marginBottom: 24 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 20, marginBottom: 20 }}>
             {/* Spotlight Card: Dus Box Kemasan */}
             <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-              <div style={{ height: '100%', minHeight: 280, overflow: 'hidden' }}>
+              <div style={{ height: '100%', minHeight: 250, overflow: 'hidden' }}>
                 <img
                   src="/images/rt1.jpg"
                   alt="Dus Box Kemasan Makanan"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
-              <div style={{ padding: 32, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div style={{ padding: 26, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
-                  <span className="badge badge-red" style={{ marginBottom: 12 }}>PRODUK UTAMA</span>
-                  <h3 style={{ fontSize: '1.4rem', marginBottom: 10 }}>Dus Box Makanan &amp; Kuliner</h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.55, marginBottom: 16 }}>
-                    Packaging cetak logo food grade untuk kue, donat, katering, dan oleh-oleh. Kertas Ivory tahan minyak dengan kuncian pisau pond presisi.
+                  <h3 style={{ fontSize: '1.25rem', marginBottom: 8 }}>Dus Box Makanan</h3>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: 14 }}>
+                    Box kue, donat, dan katering bahan food grade tahan minyak dengan kuncian pisau pond presisi.
                   </p>
-                  <div className="mono-num" style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--primary)' }}>
+                  <div className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)' }}>
                     Mulai Rp 1.650 / pcs
                   </div>
                 </div>
-                <Link to="/katalog?cat=kemasan" className="btn btn-outline-primary btn-sm" style={{ alignSelf: 'flex-start', marginTop: 16 }}>
-                  Lihat Spesifikasi Box
+                <Link to="/katalog?cat=kemasan" className="btn btn-outline-primary btn-sm" style={{ alignSelf: 'flex-start', marginTop: 14 }}>
+                  Lihat Spesifikasi
                 </Link>
               </div>
             </div>
@@ -394,54 +393,43 @@ export default function HomePage() {
             {/* Red Card: Stiker & Label Kemasan */}
             <div className="card-red" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
-                <span style={{
-                  display: 'inline-block',
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  padding: '4px 10px',
-                  borderRadius: 'var(--radius-full)',
-                  fontSize: '0.74rem',
-                  fontWeight: 700,
-                  marginBottom: 14
-                }}>
-                  BEST-SELLER BOTOL &amp; FROZEN
-                </span>
-                <h3 style={{ fontSize: '1.4rem', marginBottom: 10 }}>Stiker Label Tahan Air &amp; Kromo</h3>
-                <p style={{ fontSize: '0.92rem', opacity: 0.95, lineHeight: 1.6, marginBottom: 18 }}>
-                  Bahan vinyl anti sobek dan anti luntur saat terkena embun dingin, serta bahan chromo ekonomis untuk kemasan toples kering.
+                <h3 style={{ fontSize: '1.3rem', marginBottom: 8 }}>Stiker Label Kemasan</h3>
+                <p style={{ fontSize: '0.88rem', opacity: 0.95, lineHeight: 1.5, marginBottom: 14 }}>
+                  Vinyl anti air untuk botol minuman dan frozen food, serta kromo hemat untuk toples kering.
                 </p>
-                <div className="mono-num" style={{ fontSize: '1.2rem', fontWeight: 800 }}>
+                <div className="mono-num" style={{ fontSize: '1.15rem', fontWeight: 800 }}>
                   Mulai Rp 350 / pcs
                 </div>
               </div>
-              <Link to="/katalog?cat=stiker" className="btn btn-white btn-sm" style={{ alignSelf: 'flex-start', marginTop: 20 }}>
-                Pilihan Bahan Stiker
+              <Link to="/katalog?cat=stiker" className="btn btn-white btn-sm" style={{ alignSelf: 'flex-start', marginTop: 16 }}>
+                Pilihan Stiker
               </Link>
             </div>
           </div>
 
           {/* Matrix Bottom: 4 Supporting Category Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 18 }}>
             {PRODUCTS.slice(2, 6).map((item) => (
               <div key={item.id} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ height: 160, overflow: 'hidden' }}>
+                <div style={{ height: 150, overflow: 'hidden' }}>
                   <img
                     src={item.image}
                     alt={item.title}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </div>
-                <div style={{ padding: 20, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                <div style={{ padding: 18, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
                   <div>
-                    <h3 style={{ fontSize: '1.05rem', marginBottom: 8, lineHeight: 1.3 }}>{item.title}</h3>
-                    <p style={{ fontSize: '0.84rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: 14 }}>
-                      {item.desc.substring(0, 85)}...
+                    <h3 style={{ fontSize: '1rem', marginBottom: 6, lineHeight: 1.3 }}>{item.title}</h3>
+                    <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.45, marginBottom: 12 }}>
+                      {item.desc}
                     </p>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 12, borderTop: '1px solid var(--border-subtle)' }}>
-                    <span className="mono-num" style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--primary)' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 10, borderTop: '1px solid var(--border-subtle)' }}>
+                    <span className="mono-num" style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--primary)' }}>
                       {item.basePrice}
                     </span>
-                    <Link to={`/katalog?cat=${item.category}`} style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--text-main)' }}>
+                    <Link to={`/katalog?cat=${item.category}`} style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-main)' }}>
                       Detail &rarr;
                     </Link>
                   </div>
@@ -453,48 +441,45 @@ export default function HomePage() {
       </section>
 
       {/* 5. Workshop Satu Atap Section (Clean & Scannable) */}
-      <section style={{ padding: '72px 0' }}>
+      <section style={{ padding: '68px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 40 }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: 10 }}>
+          <div style={{ textAlign: 'center', marginBottom: 36 }}>
+            <h2 style={{ fontSize: '1.9rem', marginBottom: 8 }}>
               Workshop Satu Atap Balikpapan Barat
             </h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.98rem' }}>
-              Memusatkan seluruh tahapan pra-cetak, pencetakan, dan finishing di Jl. Gunung Empat RT.25 No. 68.
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.94rem' }}>
+              Fasilitas pra-cetak, mesin offset, dan finishing di Jl. Gunung Empat No. 68.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-            <div className="card" style={{ padding: 24 }}>
-              <div style={{ height: 180, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 18 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            <div className="card" style={{ padding: 22 }}>
+              <div style={{ height: 160, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 16 }}>
                 <img src="/images/bhm2.jpg" alt="Mesin Cetak Offset SmartprintID" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <span className="badge badge-red" style={{ marginBottom: 10 }}>DIVISI CETAK</span>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: 8 }}>Mesin Offset &amp; Digital Press</h3>
-              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                Pencetakan lembaran berkecepatan tinggi dengan kestabilan densitas tinta CMYK pada kertas Ivory, Kraft, Duplex, dan Art Paper.
+              <h3 style={{ fontSize: '1.15rem', marginBottom: 6 }}>Mesin Offset &amp; Digital</h3>
+              <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                Cetak lembaran berkecepatan tinggi dengan kestabilan warna CMYK untuk dus, paper bag, dan brosur.
               </p>
             </div>
 
-            <div className="card" style={{ padding: 24 }}>
-              <div style={{ height: 180, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 18 }}>
+            <div className="card" style={{ padding: 22 }}>
+              <div style={{ height: 160, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 16 }}>
                 <img src="/images/rt1.jpg" alt="Mesin Pond Die Cut Kemasan" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <span className="badge badge-emerald" style={{ marginBottom: 10 }}>DIVISI FINISHING</span>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: 8 }}>Pond Die-Cut &amp; Creasing</h3>
-              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                Pemotongan pola box presisi, garis tekuk lipatan rapi, dan pembuatan kuncian tanpa lem untuk kemasan kuliner siap rakit.
+              <h3 style={{ fontSize: '1.15rem', marginBottom: 6 }}>Pond Die-Cut &amp; Creasing</h3>
+              <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                Potongan pisau pond presisi, garis tekuk lipatan rapi, dan pembuatan kuncian dus siap rakit.
               </p>
             </div>
 
-            <div className="card" style={{ padding: 24 }}>
-              <div style={{ height: 180, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 18 }}>
+            <div className="card" style={{ padding: 22 }}>
+              <div style={{ height: 160, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 16 }}>
                 <img src="/images/rt6.jpg" alt="Foil Emas dan Map Rapot" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <span className="badge badge-amber" style={{ marginBottom: 10 }}>DIVISI KHUSUS</span>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: 8 }}>Hotprint Foil Emas &amp; Emboss</h3>
-              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                Aksen emas/perak metalik dan cetak timbul untuk map rapot sekolah, ijazah universitas, piagam, dan kemasan kosmetik premium.
+              <h3 style={{ fontSize: '1.15rem', marginBottom: 6 }}>Hotprint Foil Emas &amp; Emboss</h3>
+              <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                Aksen metalik emas/perak dan cetak timbul untuk map rapot, ijazah, dan kemasan premium.
               </p>
             </div>
           </div>
@@ -502,39 +487,39 @@ export default function HomePage() {
       </section>
 
       {/* 6. Technical Guides & Articles Preview */}
-      <section style={{ padding: '72px 0', backgroundColor: 'var(--bg-subtle)' }}>
+      <section style={{ padding: '68px 0', backgroundColor: 'var(--bg-subtle)' }}>
         <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 36, flexWrap: 'wrap', gap: 16 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 32, flexWrap: 'wrap', gap: 14 }}>
             <div>
-              <h2 style={{ fontSize: '2rem' }}>
+              <h2 style={{ fontSize: '1.9rem' }}>
                 Panduan Material &amp; Tips Cetak
               </h2>
             </div>
-            <Link to="/artikel" className="btn btn-secondary">
-              <span>Buka Semua Artikel</span>
-              <ArrowRight size={16} />
+            <Link to="/artikel" className="btn btn-secondary btn-sm">
+              <span>Buka Semua Panduan</span>
+              <ArrowRight size={15} />
             </Link>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {ARTICLES.slice(0, 3).map((item) => (
               <article key={item.id} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ height: 180, overflow: 'hidden' }}>
+                <div style={{ height: 160, overflow: 'hidden' }}>
                   <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
-                <div style={{ padding: 24, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                <div style={{ padding: 20, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
                   <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                      <span className="badge badge-neutral">{item.category}</span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6, fontSize: '0.74rem', color: 'var(--text-muted)' }}>
+                      <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)' }}>{item.category}</span>
                       <span>{item.readTime}</span>
                     </div>
-                    <h3 style={{ fontSize: '1.15rem', marginBottom: 10, lineHeight: 1.35 }}>{item.title}</h3>
-                    <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
+                    <h3 style={{ fontSize: '1.08rem', marginBottom: 6, lineHeight: 1.35 }}>{item.title}</h3>
+                    <p style={{ fontSize: '0.84rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
                       {item.excerpt}
                     </p>
                   </div>
-                  <div style={{ paddingTop: 16, marginTop: 16, borderTop: '1px solid var(--border-subtle)' }}>
-                    <Link to="/artikel" style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--primary)' }}>
+                  <div style={{ paddingTop: 12, marginTop: 12, borderTop: '1px solid var(--border-subtle)' }}>
+                    <Link to="/artikel" style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--primary)' }}>
                       Baca Panduan &rarr;
                     </Link>
                   </div>
@@ -545,27 +530,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. Bottom Clean CTA (Non-glaring, High Contrast) */}
-      <section style={{ padding: '64px 0' }}>
+      {/* 7. Bottom Clean CTA */}
+      <section style={{ padding: '60px 0' }}>
         <div className="container">
           <div className="card" style={{
-            padding: '48px 40px',
+            padding: '40px 36px',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
             flexWrap: 'wrap',
-            gap: 28
+            gap: 24
           }}>
-            <div style={{ maxWidth: 640 }}>
-              <h2 style={{ fontSize: '1.85rem', marginBottom: 10 }}>
+            <div style={{ maxWidth: 600 }}>
+              <h2 style={{ fontSize: '1.75rem', marginBottom: 8 }}>
                 Siap Memulai Produksi Cetakan Anda?
               </h2>
-              <p style={{ fontSize: '0.98rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                Kirimkan file desain atau diskusikan kebutuhan ukuran dan gramatur kemasan Anda langsung dengan tim workshop SmartprintID Balikpapan Barat.
+              <p style={{ fontSize: '0.94rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
+                Konsultasikan ukuran, bahan, dan jumlah pesanan Anda langsung dengan tim workshop SmartprintID Balikpapan Barat.
               </p>
             </div>
 
-            <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <a
                 href="https://wa.me/628115444638?text=Halo%20SmartprintID,%20saya%20ingin%20konsultasi%20pesanan%20cetak"
                 target="_blank"
@@ -573,7 +558,7 @@ export default function HomePage() {
                 className="btn btn-primary btn-lg"
               >
                 <MessageSquare size={18} />
-                <span>Chat WhatsApp (0811-5444-638)</span>
+                <span>Chat WA (0811-5444-638)</span>
               </a>
               <Link to="/cek-ongkir" className="btn btn-secondary btn-lg">
                 <span>Cek Ongkir Ekspedisi</span>

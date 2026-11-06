@@ -35,9 +35,9 @@ export default function CekOngkirPage() {
             <span>/</span>
             <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>Cek Ongkir</span>
           </nav>
-          <h1 className="page-title">Kalkulator Cek Ongkir dari Balikpapan</h1>
+          <h1 className="page-title">Cek Ongkir dari Balikpapan</h1>
           <p className="page-subtitle">
-            Perhitungan estimasi ongkos kirim paket cetakan langsung dari titik muat Workshop SmartprintID Balikpapan Barat (76131) ke Samarinda, IKN Nusantara, Kalimantan, dan seluruh Indonesia.
+            Estimasi ongkir paket cetakan dari Workshop Balikpapan Barat (76131) ke seluruh Indonesia.
           </p>
         </div>
       </section>
@@ -169,7 +169,7 @@ export default function CekOngkirPage() {
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
                     <span style={{ fontWeight: 800, fontSize: '1rem', color: 'var(--text-main)' }}>{rate.courier}</span>
-                    <span className={`badge ${rate.type === 'Cargo' ? 'badge-amber' : rate.type === 'Express' ? 'badge-red' : 'badge-neutral'}`}>
+                    <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)' }}>
                       {rate.type}
                     </span>
                   </div>
@@ -198,46 +198,46 @@ export default function CekOngkirPage() {
         {/* Shipping Advice Ledger */}
         <section style={{ marginTop: 56, display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 36 }}>
           <div>
-            <h2 style={{ fontSize: '1.6rem', marginBottom: 12 }}>
-              Rekomendasi Pengiriman Berdasarkan Bobot
+            <h2 style={{ fontSize: '1.5rem', marginBottom: 8 }}>
+              Rekomendasi Jalur Pengiriman
             </h2>
-            <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-              Kertas kemasan makanan dan map ijazah memiliki bobot gramatur yang padat. Pilih moda pengiriman yang paling efisien untuk volume order Anda.
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>
+              Pilih opsi ekspedisi sesuai bobot dan kebutuhan waktu pesanan Anda.
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <div className="card" style={{ padding: 20 }}>
-              <div style={{ display: 'flex', gap: 14 }}>
-                <span className="mono-num" style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--primary)' }}>01</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            <div className="card" style={{ padding: 18 }}>
+              <div style={{ display: 'flex', gap: 12 }}>
+                <span className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)' }}>01</span>
                 <div>
-                  <h3 style={{ fontSize: '1.05rem', marginBottom: 4 }}>Dalam Kota Balikpapan (Ambil / Kurir Internal)</h3>
-                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                    Pesanan dapat diambil langsung di workshop Jl. Gunung Empat No. 68 atau dikirim hari yang sama menggunakan armada kurir workshop kami.
+                  <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Lokal Balikpapan</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                    Ambil langsung di workshop Jl. Gunung Empat No. 68 atau via kurir instan internal.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="card" style={{ padding: 20 }}>
-              <div style={{ display: 'flex', gap: 14 }}>
-                <span className="mono-num" style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--primary)' }}>02</span>
+            <div className="card" style={{ padding: 18 }}>
+              <div style={{ display: 'flex', gap: 12 }}>
+                <span className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)' }}>02</span>
                 <div>
-                  <h3 style={{ fontSize: '1.05rem', marginBottom: 4 }}>Samarinda, Penajam IKN, Bontang &amp; Tenggarong</h3>
-                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                    Untuk pesanan mendesak atau berbobot 10-30 Kg ke kota sekitarnya, moda Travel Antar Kota (Same-Day) atau JTR Kargo adalah opsi tercepat dan paling ekonomis.
+                  <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Samarinda, Penajam IKN &amp; Bontang</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                    Pengiriman travel same-day antar kota atau JNE Trucking untuk bobot di atas 10 Kg.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="card" style={{ padding: 20 }}>
-              <div style={{ display: 'flex', gap: 14 }}>
-                <span className="mono-num" style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--primary)' }}>03</span>
+            <div className="card" style={{ padding: 18 }}>
+              <div style={{ display: 'flex', gap: 12 }}>
+                <span className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)' }}>03</span>
                 <div>
-                  <h3 style={{ fontSize: '1.05rem', marginBottom: 4 }}>Luar Pulau &amp; Seluruh Indonesia (Kargo Berat)</h3>
-                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                    Untuk pengiriman di atas 10 Kg ke Jakarta, Surabaya, Makassar, dan Banjarmasin, gunakan opsi JNE Trucking (JTR) untuk tarif per kilogram terendah.
+                  <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Kargo Luar Pulau</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                    Tarif kargo darat/laut hemat via JTR untuk kiriman partai besar ke seluruh Indonesia.
                   </p>
                 </div>
               </div>

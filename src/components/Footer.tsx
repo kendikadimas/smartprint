@@ -17,22 +17,23 @@ export default function Footer() {
               </div>
             </Link>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: 18, lineHeight: 1.6 }}>
-              Pabrikasi dan workshop percetakan komersial langsung dari Balikpapan Barat. Melayani pengadaan kemasan UMKM, korporasi, dan instansi di Kalimantan Timur serta kawasan IKN.
+              Workshop cetak kemasan dan produk komersial di Balikpapan Barat untuk UMKM, korporasi, dan instansi se-Kaltim &amp; IKN.
             </p>
-            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', fontSize: '0.84rem' }}>
               <a
                 href="https://www.instagram.com/smartprintid/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="badge badge-neutral"
+                style={{ color: 'var(--text-muted)' }}
               >
                 Instagram @smartprintid
               </a>
+              <span style={{ color: 'var(--border-strong)' }}>•</span>
               <a
                 href="https://www.facebook.com/SmartprintID"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="badge badge-neutral"
+                style={{ color: 'var(--text-muted)' }}
               >
                 Facebook SmartprintID
               </a>

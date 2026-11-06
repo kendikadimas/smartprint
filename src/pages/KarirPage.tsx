@@ -16,7 +16,7 @@ export default function KarirPage() {
           </nav>
           <h1 className="page-title">Bergabung dengan Tim Workshop SmartprintID</h1>
           <p className="page-subtitle">
-            Kami membuka kesempatan bagi praktisi desain grafis pra-cetak, operator mesin cetak offset, teknisi finishing pond, dan staf layanan pelanggan untuk berkarya di Balikpapan Barat.
+            Peluang karir divisi pra-cetak, operator cetak offset, finishing pond, dan layanan pelanggan di Balikpapan Barat.
           </p>
         </div>
       </section>
@@ -27,10 +27,10 @@ export default function KarirPage() {
         <section style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 40, marginBottom: 64, alignItems: 'flex-start' }}>
           <div>
             <h2 style={{ fontSize: '1.85rem', marginBottom: 12 }}>
-              Standar Kerja di Lini Produksi Kami
+              Budaya Kerja Workshop
             </h2>
             <p style={{ fontSize: '0.94rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-              Setiap divisi bekerja saling terhubung mulai dari pemeriksaan file desain hingga barang siap dikirim ke pelanggan.
+              Kolaborasi terukur dari pemeriksaan file pra-cetak hingga pengiriman produk.
             </p>
           </div>
 
@@ -39,9 +39,9 @@ export default function KarirPage() {
               <div style={{ display: 'flex', gap: 14 }}>
                 <span className="mono-num" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary)' }}>01</span>
                 <div>
-                  <h3 style={{ fontSize: '1.1rem', marginBottom: 6 }}>Praktik Langsung di Mesin Industri</h3>
+                  <h3 style={{ fontSize: '1.1rem', marginBottom: 6 }}>Praktik Mesin Industri</h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                    Anggota tim mengoperasikan peralatan cetak offset, digital press, sablon silinder, dan mesin pond dengan pendampingan teknis langsung dari supervisor berpengalaman.
+                    Pengoperasian mesin offset lembaran, digital press, sablon cup, dan pond dengan supervisi berpengalaman.
                   </p>
                 </div>
               </div>
@@ -51,9 +51,9 @@ export default function KarirPage() {
               <div style={{ display: 'flex', gap: 14 }}>
                 <span className="mono-num" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary)' }}>02</span>
                 <div>
-                  <h3 style={{ fontSize: '1.1rem', marginBottom: 6 }}>Alur Kerja Terukur &amp; Kolaboratif</h3>
+                  <h3 style={{ fontSize: '1.1rem', marginBottom: 6 }}>Alur Kerja Terkoordinasi</h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                    Koordinasi harian yang jelas antara bagian admin CS, desainer pre-press, dan operator produksi untuk menjaga ketepatan jadwal pemenuhan pesanan.
+                    Sinkronisasi harian antara desainer, CS, dan operator produksi demi ketepatan jadwal pesanan.
                   </p>
                 </div>
               </div>
@@ -63,9 +63,9 @@ export default function KarirPage() {
               <div style={{ display: 'flex', gap: 14 }}>
                 <span className="mono-num" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary)' }}>03</span>
                 <div>
-                  <h3 style={{ fontSize: '1.1rem', marginBottom: 6 }}>Apresiasi Kinerja Produksi</h3>
+                  <h3 style={{ fontSize: '1.1rem', marginBottom: 6 }}>Apresiasi &amp; Insentif</h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                    Kompensasi bulanan tepat waktu disertai insentif berdasarkan ketelitian pengerjaan dan pencapaian target produksi tim workshop.
+                    Kompensasi bulanan tepat waktu didukung bonus ketelitian dan pencapaian target produksi.
                   </p>
                 </div>
               </div>
@@ -76,9 +76,9 @@ export default function KarirPage() {
         {/* 2. Lowongan Kerja Aktif */}
         <section style={{ marginBottom: 64 }}>
           <div style={{ marginBottom: 32 }}>
-            <h2 style={{ fontSize: '1.85rem', marginBottom: 8 }}>Daftar Lowongan Kerja di Balikpapan</h2>
+            <h2 style={{ fontSize: '1.85rem', marginBottom: 8 }}>Lowongan Kerja Tersedia</h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.94rem' }}>
-              Penempatan kerja langsung di Workshop SmartprintID, Jl. Gunung Empat RT.25 No. 68, Balikpapan Barat.
+              Penempatan di Workshop SmartprintID, Balikpapan Barat.
             </p>
           </div>
 
@@ -87,20 +87,20 @@ export default function KarirPage() {
               <article key={job.id} className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-                    <span className="badge badge-neutral" style={{ fontSize: '0.72rem' }}>{job.type}</span>
+                    <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)' }}>{job.type}</span>
                     <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)', fontWeight: 600 }}>{job.department}</span>
                   </div>
 
-                  <h3 style={{ fontSize: '1.3rem', marginBottom: 10 }}>{job.title}</h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.55, marginBottom: 18 }}>
+                  <h3 style={{ fontSize: '1.25rem', marginBottom: 8 }}>{job.title}</h3>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: 16 }}>
                     {job.description}
                   </p>
 
-                  <div style={{ backgroundColor: 'var(--bg-subtle)', padding: 16, borderRadius: 'var(--radius-sm)', marginBottom: 20, border: '1px solid var(--border-medium)' }}>
-                    <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-main)', textTransform: 'uppercase', marginBottom: 8 }}>
-                      Kualifikasi yang Dicari:
+                  <div style={{ backgroundColor: 'var(--bg-subtle)', padding: 14, borderRadius: 'var(--radius-sm)', marginBottom: 20, border: '1px solid var(--border-medium)' }}>
+                    <div style={{ fontSize: '0.76rem', fontWeight: 700, color: 'var(--text-main)', textTransform: 'uppercase', marginBottom: 6 }}>
+                      Kualifikasi:
                     </div>
-                    <ul style={{ paddingLeft: 18, fontSize: '0.86rem', color: 'var(--text-body)', display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    <ul style={{ paddingLeft: 18, fontSize: '0.84rem', color: 'var(--text-body)', display: 'flex', flexDirection: 'column', gap: 5 }}>
                       {job.requirements.map((req, i) => (
                         <li key={i}>{req}</li>
                       ))}
@@ -119,7 +119,7 @@ export default function KarirPage() {
                     rel="noopener noreferrer"
                     className="btn btn-primary btn-sm"
                   >
-                    Kirim Lamaran Posisi Ini
+                    Kirim Lamaran
                   </a>
                 </div>
               </article>
@@ -128,12 +128,10 @@ export default function KarirPage() {
         </section>
 
         {/* 3. Direct Application Info */}
-        <section className="card" style={{ padding: '36px 32px' }}>
-          <h2 style={{ fontSize: '1.45rem', marginBottom: 10 }}>Kirimkan CV &amp; Portofolio Anda</h2>
-          <p style={{ fontSize: '0.94rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: 24, maxWidth: 760 }}>
-            Anda dapat mengirimkan Curriculum Vitae (CV) dan tautan portofolio ke alamat email{' '}
-            <strong style={{ color: 'var(--text-main)' }}>order@smartprint.co.id</strong> atau{' '}
-            <strong style={{ color: 'var(--text-main)' }}>smartprint.id@gmail.com</strong> dengan subjek format <em>[Posisi yang Dilamar] - Nama Anda</em>.
+        <section className="card" style={{ padding: '32px 28px' }}>
+          <h2 style={{ fontSize: '1.35rem', marginBottom: 8 }}>Kirim CV &amp; Portofolio</h2>
+          <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.55, marginBottom: 20, maxWidth: 680 }}>
+            Kirimkan berkas ke <strong style={{ color: 'var(--text-main)' }}>order@smartprint.co.id</strong> dengan subjek <em>[Posisi] - Nama Anda</em>, atau konfirmasi via WhatsApp.
           </p>
 
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
@@ -141,14 +139,14 @@ export default function KarirPage() {
               href="https://wa.me/628115444638?text=Halo%20HRD%20SmartprintID,%20saya%20ingin%20mengonfirmasi%20pengiriman%20lamaran%20kerja"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary"
+              className="btn btn-primary btn-sm"
             >
               <MessageSquare size={16} />
-              <span>Konfirmasi Lamaran via WA</span>
+              <span>Konfirmasi via WhatsApp</span>
             </a>
-            <a href="mailto:order@smartprint.co.id" className="btn btn-secondary">
+            <a href="mailto:order@smartprint.co.id" className="btn btn-secondary btn-sm">
               <Mail size={16} />
-              <span>Kirim Berkas via Email</span>
+              <span>Kirim via Email</span>
             </a>
           </div>
         </section>

@@ -54,7 +54,7 @@ export default function KatalogPage() {
           </nav>
           <h1 className="page-title">Katalog Produk Percetakan</h1>
           <p className="page-subtitle">
-            Seluruh item diproduksi langsung di workshop Balikpapan Barat menggunakan mesin offset lembaran, digital press, sablon silinder, dan mesin pond otomatis.
+            Produksi langsung di workshop Balikpapan Barat: cetak offset, sablon cup, dan finishing pond kemasan.
           </p>
 
           {/* Search Bar & Counter */}
@@ -112,19 +112,19 @@ export default function KatalogPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: 28 }}>
             {filteredProducts.map((p) => (
               <article key={p.id} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ position: 'relative', height: 210, overflow: 'hidden' }}>
+                <div style={{ height: 210, overflow: 'hidden' }}>
                   <img
                     src={p.image}
                     alt={p.title}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
-                  <div style={{ position: 'absolute', top: 12, left: 12 }}>
-                    <span className="badge badge-red">{p.categoryLabel}</span>
-                  </div>
                 </div>
 
                 <div style={{ padding: 24, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
                   <div>
+                    <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--primary)', marginBottom: 6 }}>
+                      {p.categoryLabel}
+                    </div>
                     <h2 style={{ fontSize: '1.25rem', marginBottom: 10, lineHeight: 1.35 }}>
                       {p.title}
                     </h2>
@@ -134,11 +134,11 @@ export default function KatalogPage() {
 
                     <div style={{ marginBottom: 18 }}>
                       <div style={{ fontSize: '0.76rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: 6 }}>
-                        Opsi Material Pilihan:
+                        Opsi Material:
                       </div>
                       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
                         {p.materials.map((m, idx) => (
-                          <span key={idx} className="badge badge-neutral" style={{ fontSize: '0.72rem', textTransform: 'none' }}>
+                          <span key={idx} style={{ fontSize: '0.76rem', color: 'var(--text-body)', backgroundColor: 'var(--bg-subtle)', padding: '2px 8px', borderRadius: 'var(--radius-sm)' }}>
                             {m}
                           </span>
                         ))}
@@ -177,9 +177,9 @@ export default function KatalogPage() {
           gap: 20
         }}>
           <div>
-            <h3 style={{ fontSize: '1.25rem', marginBottom: 6 }}>Butuh Dimensi Box Khusus atau Sampel Kertas?</h3>
-            <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)' }}>
-              Kami memproduksi pisau pond sesuai lekukan kemasan Anda dan melayani pengiriman sampel bahan ke alamat Anda.
+            <h3 style={{ fontSize: '1.2rem', marginBottom: 4 }}>Ukuran Kustom atau Sampel Bahan?</h3>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>
+              Kami melayani pembuatan pisau pond custom dan pengiriman sampel bahan ke lokasi Anda.
             </p>
           </div>
           <a
@@ -211,7 +211,9 @@ export default function KatalogPage() {
               <img src={selectedProduct.image} alt={selectedProduct.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
 
-            <span className="badge badge-red" style={{ marginBottom: 10 }}>{selectedProduct.categoryLabel}</span>
+            <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--primary)', marginBottom: 8 }}>
+              {selectedProduct.categoryLabel}
+            </div>
             <h2 style={{ fontSize: '1.5rem', marginBottom: 12 }}>{selectedProduct.title}</h2>
             <p style={{ fontSize: '0.95rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: 20 }}>
               {selectedProduct.desc}

@@ -12,57 +12,53 @@ export const JOBS: JobPosition[] = [
   {
     id: 'designer_prepress',
     title: 'Graphic Designer & Pre-Press',
-    department: 'Divisi Pre-Press & Setting',
-    type: 'Penuh Waktu (Full-Time)',
-    location: 'Jl. Gunung Empat RT.25 No. 68, Balikpapan Barat',
-    description: 'Menyusun tata letak cetak (imposisi), menggambar pola pisau pond dus kemasan, separasi warna CMYK, dan menyiapkan pratinjau persetujuan pelanggan.',
+    department: 'Divisi Setting Pra-Cetak',
+    type: 'Penuh Waktu',
+    location: 'Balikpapan Barat',
+    description: 'Menyusun imposisi cetak, pola pisau pond packaging, dan separasi warna CMYK sebelum piringan cetak dibuat.',
     requirements: [
-      'Menguasai CorelDraw, Adobe Illustrator, dan Photoshop',
-      'Memahami batas potong (bleed), margin, dan profil warna cetak',
-      'Teliti memeriksa ukuran dan ejaan sebelum naik cetak',
-      'Pendidikan minimal SMK Multimedia / Desain Grafis / D3'
+      'Terampil CorelDraw, Illustrator, dan Photoshop',
+      'Memahami margin potong (bleed) dan profil warna cetak',
+      'Pendidikan SMK Grafika/Multimedia atau D3 Desain'
     ]
   },
   {
     id: 'operator_offset',
     title: 'Operator Mesin Cetak Offset',
     department: 'Divisi Cetak',
-    type: 'Penuh Waktu (Full-Time)',
-    location: 'Jl. Gunung Empat RT.25 No. 68, Balikpapan Barat',
-    description: 'Mengoperasikan mesin cetak offset lembaran, mengatur presisi register warna, pencampuran tinta, serta perawatan berkala mesin produksi.',
+    type: 'Penuh Waktu',
+    location: 'Balikpapan Barat',
+    description: 'Mengoperasikan mesin cetak offset lembaran, mengatur register warna, dan menjaga densitas tinta cetak.',
     requirements: [
-      'Memiliki pengalaman mengoperasikan mesin cetak offset',
-      'Memahami takaran pencampuran tinta dan ketepatan register',
-      'Disiplin, sehat jasmani, dan tidak buta warna',
-      'Pendidikan minimal SMA / SMK sederajat'
+      'Pengalaman kerja pada mesin cetak offset',
+      'Paham takaran tinta dan ketepatan register warna',
+      'Sehat jasmani dan tidak buta warna'
     ]
   },
   {
     id: 'staf_finishing',
     title: 'Staf Finishing & Mesin Pond',
     department: 'Divisi Finishing',
-    type: 'Penuh Waktu (Full-Time)',
-    location: 'Jl. Gunung Empat RT.25 No. 68, Balikpapan Barat',
-    description: 'Menjalankan mesin pond die-cut, hotprint foil emas, mesin laminasi, pelipatan box makanan, serta pemeriksaan mutu akhir sebelum pengemasan.',
+    type: 'Penuh Waktu',
+    location: 'Balikpapan Barat',
+    description: 'Menjalankan mesin pond die-cut, hotprint timbul, laminasi, dan sortir mutu sebelum pengemasan.',
     requirements: [
-      'Rapi, cekatan, dan teliti dalam pekerjaan tangan maupun mesin',
-      'Diutamakan yang pernah bekerja di percetakan atau pengemasan',
-      'Mampu bekerja sama dalam target tim produksi',
-      'Pendidikan minimal SMA / SMK sederajat'
+      'Rapi, teliti, dan terbiasa dengan target produksi',
+      'Diutamakan berpengalaman di percetakan atau packaging',
+      'Pendidikan minimal SMA/SMK sederajat'
     ]
   },
   {
     id: 'admin_cs',
-    title: 'Customer Service & Admin Pesanan',
-    department: 'Divisi Layanan Pelanggan',
-    type: 'Penuh Waktu (Full-Time)',
-    location: 'Jl. Gunung Empat RT.25 No. 68, Balikpapan Barat',
-    description: 'Melayani konsultasi spesifikasi cetak via WhatsApp dan di workshop, menghitung estimasi harga dan ongkir, serta mencatat jadwal SPK produksi.',
+    title: 'Admin CS & Layanan Pelanggan',
+    department: 'Divisi Layanan',
+    type: 'Penuh Waktu',
+    location: 'Balikpapan Barat',
+    description: 'Melayani konsultasi spesifikasi bahan, menghitung estimasi biaya/ongkir, dan mencatat jadwal pengerjaan.',
     requirements: [
-      'Komunikatif dan terbiasa melayani pelanggan dengan sopan',
-      'Terampil menggunakan aplikasi spreadsheet dan WhatsApp Web',
-      'Teliti menghitung ukuran, gramatur, dan kuantitas pesanan',
-      'Pendidikan minimal SMA / SMK / D3'
+      'Komunikatif, ramah, dan teliti menghitung rincian order',
+      'Terbiasa menggunakan WhatsApp dan spreadsheet',
+      'Pendidikan minimal SMA/SMK sederajat'
     ]
   }
 ];
