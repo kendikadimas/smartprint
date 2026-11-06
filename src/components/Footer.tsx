@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Footer() {
   return (
@@ -90,7 +91,7 @@ export default function Footer() {
               </div>
 
               <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
-                <Phone size={18} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
+                <WhatsAppIcon size={18} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
                 <div>
                   <strong>WhatsApp Resmi:</strong>{' '}
                   <a href="https://wa.me/628115420700" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>

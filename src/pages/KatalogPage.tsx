@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Search, MessageSquare, ArrowRight, X, CheckCircle2 } from 'lucide-react';
+import { Search, ArrowRight, X, CheckCircle2 } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 import { PRODUCTS, Product } from '../data/products';
 
 export default function KatalogPage() {
@@ -189,7 +190,7 @@ export default function KatalogPage() {
             rel="noopener noreferrer"
             className="btn btn-primary"
           >
-            <MessageSquare size={16} />
+            <WhatsAppIcon size={16} />
             <span>Konsultasi Ukuran Kustom</span>
           </a>
         </div>
@@ -245,7 +246,7 @@ export default function KatalogPage() {
                 rel="noopener noreferrer"
                 className="btn btn-primary"
               >
-                <MessageSquare size={16} />
+                <WhatsAppIcon size={16} />
                 <span>Pesan Produk Ini via WA</span>
               </a>
             </div>

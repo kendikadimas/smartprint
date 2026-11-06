@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Briefcase, CheckCircle2, MessageSquare, Mail, MapPin } from 'lucide-react';
+import { Briefcase, CheckCircle2, Mail, MapPin } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 import { JOBS } from '../data/jobs';
 
 export default function KarirPage() {
@@ -114,12 +115,13 @@ export default function KarirPage() {
                     <span>Balikpapan Barat</span>
                   </div>
                   <a
-                    href={`https://wa.me/628115444638?text=Halo%20HRD%20SmartprintID,%20saya%20ingin%20melamar%20posisi%20${encodeURIComponent(job.title)}`}
+                    href={`https://wa.me/628115420700?text=Halo%20HRD%20SmartprintID,%20saya%20ingin%20melamar%20posisi%20${encodeURIComponent(job.title)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary btn-sm"
                   >
-                    Kirim Lamaran
+                    <WhatsAppIcon size={14} style={{ marginRight: 6 }} />
+                    <span>Kirim Lamaran</span>
                   </a>
                 </div>
               </article>
@@ -136,12 +138,12 @@ export default function KarirPage() {
 
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
             <a
-              href="https://wa.me/628115444638?text=Halo%20HRD%20SmartprintID,%20saya%20ingin%20mengonfirmasi%20pengiriman%20lamaran%20kerja"
+              href="https://wa.me/628115420700?text=Halo%20HRD%20SmartprintID,%20saya%20ingin%20mengonfirmasi%20pengiriman%20lamaran%20kerja"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary btn-sm"
             >
-              <MessageSquare size={16} />
+              <WhatsAppIcon size={16} />
               <span>Konfirmasi via WhatsApp</span>
             </a>
             <a href="mailto:order@smartprint.co.id" className="btn btn-secondary btn-sm">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle2 } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 
 export default function KontakPage() {
   const [formData, setFormData] = useState({
@@ -119,7 +120,7 @@ export default function KontakPage() {
               </div>
 
               <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%' }}>
-                <Send size={18} />
+                <WhatsAppIcon size={18} />
                 <span>Kirim Konsultasi ke WhatsApp Workshop</span>
               </button>
             </form>
@@ -141,7 +142,7 @@ export default function KontakPage() {
                 </div>
 
                 <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <MessageSquare size={20} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
+                  <WhatsAppIcon size={20} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
                   <div>
                     <strong>WhatsApp Resmi:</strong><br />
                     <a href="https://wa.me/628115420700" target="_blank" rel="noopener noreferrer" className="mono-num" style={{ color: 'var(--primary)', fontWeight: 700 }}>

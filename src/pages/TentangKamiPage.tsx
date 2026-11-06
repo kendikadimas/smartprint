@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, CheckCircle2, Factory, ArrowRight, MessageSquare } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, CheckCircle2, Factory, ArrowRight } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 
 export default function TentangKamiPage() {
   return (
@@ -70,8 +71,9 @@ export default function TentangKamiPage() {
               </div>
               <div>
                 <strong>WhatsApp Resmi:</strong><br />
-                <a href="https://wa.me/628115420700" target="_blank" rel="noopener noreferrer" className="mono-num" style={{ color: 'var(--primary)', fontWeight: 700 }}>
-                  0811-5420-700
+                <a href="https://wa.me/628115420700" target="_blank" rel="noopener noreferrer" className="mono-num" style={{ color: 'var(--primary)', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  <WhatsAppIcon size={15} />
+                  <span>0811-5420-700</span>
                 </a>
               </div>
               <div>

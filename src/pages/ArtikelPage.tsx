@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, X, Clock, BookOpen, MessageSquare } from 'lucide-react';
+import { Search, X, Clock, BookOpen } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 import { ARTICLES, Article } from '../data/articles';
 
 export default function ArtikelPage() {
@@ -149,12 +150,12 @@ export default function ArtikelPage() {
                 Tutup Panduan
               </button>
               <a
-                href={`https://wa.me/628115444638?text=Halo%20SmartprintID,%20saya%20tertarik%20dengan%20panduan%20${encodeURIComponent(selectedArticle.title)}`}
+                href={`https://wa.me/628115420700?text=Halo%20SmartprintID,%20saya%20tertarik%20dengan%20panduan%20${encodeURIComponent(selectedArticle.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary btn-sm"
               >
-                <MessageSquare size={15} />
+                <WhatsAppIcon size={15} />
                 <span>Konsultasi Terkait Topik Ini</span>
               </a>
             </div>

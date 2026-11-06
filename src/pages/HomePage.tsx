@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calculator, CheckCircle2, MessageSquare, Truck, Factory, Sparkles } from 'lucide-react';
+import { ArrowRight, Calculator, CheckCircle2, Truck, Factory, Sparkles } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 import { PRODUCTS } from '../data/products';
 import { ARTICLES } from '../data/articles';
 
@@ -59,7 +60,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="btn btn-primary btn-lg"
                 >
-                  <MessageSquare size={18} />
+                  <WhatsAppIcon size={18} />
                   <span>Konsultasi Cetak WA</span>
                 </a>
                 <Link to="/katalog" className="btn btn-secondary btn-lg">
@@ -233,12 +234,12 @@ export default function HomePage() {
                 </div>
 
                 <a
-                  href={`https://wa.me/628115444638?text=Halo%20SmartprintID,%20saya%20ingin%20pesan%20${productType}%20sebanyak%20${quantity}%20pcs`}
+                  href={`https://wa.me/628115420700?text=Halo%20SmartprintID,%20saya%20ingin%20pesan%20${productType}%20sebanyak%20${quantity}%20pcs`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
                 >
-                  <MessageSquare size={16} />
+                  <WhatsAppIcon size={16} />
                   <span>Pesan via WA</span>
                 </a>
               </div>
@@ -563,7 +564,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="btn btn-primary btn-lg"
               >
-                <MessageSquare size={18} />
+                <WhatsAppIcon size={18} />
                 <span>Chat WA (0811-5420-700)</span>
               </a>
               <Link to="/cek-ongkir" className="btn btn-secondary btn-lg">

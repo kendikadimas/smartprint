@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, MessageSquare } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,12 +33,14 @@ export default function Header() {
             <a href="mailto:order@smartprint.co.id">order@smartprint.co.id</a>
             <span>•</span>
             <a
-              href="https://wa.me/628115444638?text=Halo%20SmartprintID,%20saya%20ingin%20konsultasi%20cetak"
+              href="https://wa.me/628115420700?text=Halo%20SmartprintID,%20saya%20ingin%20konsultasi%20cetak"
               target="_blank"
               rel="noopener noreferrer"
               className="top-bar-wa mono-num"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}
             >
-              WA: 0811-5444-638
+              <WhatsAppIcon size={13} />
+              <span>WA: 0811-5420-700</span>
             </a>
           </div>
         </div>
@@ -75,7 +78,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="btn btn-primary btn-sm"
             >
-              <MessageSquare size={16} />
+              <WhatsAppIcon size={16} />
               <span>Konsultasi WA</span>
             </a>
             <button
