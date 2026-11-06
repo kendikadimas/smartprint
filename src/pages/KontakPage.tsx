@@ -13,8 +13,8 @@ export default function KontakPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Halo SmartprintID Balikpapan, saya ingin konsultasi cetak:%0A- Nama: ${encodeURIComponent(formData.name)}%0A- No WhatsApp: ${encodeURIComponent(formData.whatsapp)}%0A- Jenis Produk: ${encodeURIComponent(formData.product)}%0A- Kuantitas: ${encodeURIComponent(formData.quantity)}%0A- Catatan: ${encodeURIComponent(formData.notes || '-')}`;
-    window.open(`https://wa.me/628115444638?text=${text}`, '_blank');
+    const text = `Halo SmartprintID Balikpapan, saya ingin konsultasi cetak:%0A- Nama: ${encodeURIComponent(formData.name)}%0A- No WhatsApp: ${encodeURIComponent(formData.whatsapp)}%0A- Kategori Produk: ${encodeURIComponent(formData.product)}%0A- Kuantitas: ${encodeURIComponent(formData.quantity)}%0A- Catatan: ${encodeURIComponent(formData.notes || '-')}`;
+    window.open(`https://wa.me/628115420700?text=${text}`, '_blank');
   };
 
   return (
@@ -75,20 +75,20 @@ export default function KontakPage() {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
                 <div className="form-group">
-                  <label className="form-label" htmlFor="prod-select">Jenis Cetakan</label>
+                  <label className="form-label" htmlFor="prod-select">Kategori Produk</label>
                   <select
                     id="prod-select"
                     className="form-control"
                     value={formData.product}
                     onChange={(e) => setFormData({ ...formData, product: e.target.value })}
                   >
-                    <option value="Dus Box Makanan">Dus Box Makanan (Food Packaging)</option>
-                    <option value="Stiker Label Kemasan">Stiker Label Botol / Toples</option>
-                    <option value="Sablon Cup Minuman">Sablon Cup Minuman Plastik</option>
-                    <option value="Paper Bag Butik">Paper Bag Kraft / Art Carton</option>
-                    <option value="Map Rapot & Ijazah">Map Rapot &amp; Ijazah Emboss Emas</option>
-                    <option value="Kalender & Souvenir">Kalender Spiral / Mug SNI</option>
-                    <option value="Lainnya">Lainnya / Ukuran Kustom</option>
+                    <option value="Kemasan (Kotak Kue/Nasi, Kardus, Paper Bag)">Kemasan (Kotak Kue, Nasi, Kardus, Paper Bag)</option>
+                    <option value="Stiker & Label (Vinyl, Chromo, Cutting)">Stiker &amp; Label (Vinyl Anti Air, Chromo, Cutting)</option>
+                    <option value="Produk Promosi (Spanduk, Banner, Poster)">Produk Promosi (Spanduk, X-Banner, Roll Banner)</option>
+                    <option value="Produk Cetak (Buku, Kalender, Map, Brosur)">Produk Cetak (Buku, Brosur, Kalender, Map Rapot)</option>
+                    <option value="Reklame (Neon Box, Huruf Timbul, Papan Nama)">Reklame (Neon Box, Huruf Timbul, Papan Nama)</option>
+                    <option value="Souvenir (Mug Custom, Tumbler, Plakat)">Souvenir (Mug SNI, Tumbler, Plakat)</option>
+                    <option value="Jasa Percetakan (Print, Jilid, Laminasi)">Jasa Percetakan (Print Dokumen, Jilid, Laminasi)</option>
                   </select>
                 </div>
 
@@ -128,40 +128,32 @@ export default function KontakPage() {
           {/* Workshop Location & Info Card */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             <div className="card" style={{ padding: 32 }}>
-              <h3 style={{ fontSize: '1.35rem', marginBottom: 16 }}>Workshop SmartprintID</h3>
+              <h3 style={{ fontSize: '1.35rem', marginBottom: 16 }}>SmartprintID (PT OLEH KELUARGA BESAR)</h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16, fontSize: '0.9rem' }}>
                 <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   <MapPin size={20} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
                   <div>
-                    <strong>Alamat Workshop:</strong><br />
-                    Jl. Gunung Empat (Gg. Sumber) RT.25 No. 68, Kel. Margo Mulyo, Kec. Balikpapan Barat, Kota Balikpapan 76131.
-                  </div>
-                </div>
-
-                <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <Phone size={20} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
-                  <div>
-                    <strong>Telepon Kantor &amp; Workshop:</strong><br />
-                    <span className="mono-num">(0542) 415737</span> | Fax: <span className="mono-num">(0542) 741492</span>
+                    <strong>Alamat Workshop &amp; Gudang:</strong><br />
+                    Jl. Gunung Empat No 68 RT 25 Margo Mulyo, Balikpapan (76131).<br />
+                    <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>Alamat Kantor: Jl. Telindung X No 73 RT 88 Balikpapan</span>
                   </div>
                 </div>
 
                 <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   <MessageSquare size={20} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
                   <div>
-                    <strong>WhatsApp Konsultasi Cepat:</strong><br />
-                    <a href="https://wa.me/628115444638" target="_blank" rel="noopener noreferrer" className="mono-num" style={{ color: 'var(--primary)', fontWeight: 700 }}>
-                      0811-5444-638
-                    </a>{' '}
-                    / <span className="mono-num">0822-5012-1212</span>
+                    <strong>WhatsApp Resmi:</strong><br />
+                    <a href="https://wa.me/628115420700" target="_blank" rel="noopener noreferrer" className="mono-num" style={{ color: 'var(--primary)', fontWeight: 700 }}>
+                      0811-5420-700
+                    </a>
                   </div>
                 </div>
 
                 <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   <Mail size={20} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
                   <div>
-                    <strong>Email Penawaran &amp; Pengiriman File:</strong><br />
+                    <strong>Email Bisnis:</strong><br />
                     <a href="mailto:order@smartprint.co.id" style={{ textDecoration: 'underline' }}>
                       order@smartprint.co.id
                     </a>
@@ -171,28 +163,21 @@ export default function KontakPage() {
                 <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   <Clock size={20} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
                   <div>
-                    <strong>Jam Operasional Workshop:</strong><br />
-                    Senin s/d Minggu: <span className="mono-num">08:00 - 22:00 WITA</span>
+                    <strong>Jam Operasional:</strong><br />
+                    08.00 - 22.00 WITA (Buka Setiap Hari)
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Google Maps External Action Box */}
+            {/* Kebijakan Layanan Card */}
             <div className="card" style={{ padding: 22, backgroundColor: 'var(--bg-subtle)' }}>
-              <h4 style={{ fontSize: '1rem', marginBottom: 6 }}>Petunjuk Arah</h4>
-              <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: 14 }}>
-                Masuk via Jl. Letjen Suprapto ke Jl. Gunung Empat (dekat Puskesmas Margo Mulyo).
-              </p>
-              <a
-                href="https://maps.google.com/?q=SmartprintID+Balikpapan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary btn-sm"
-                style={{ width: '100%' }}
-              >
-                Buka di Google Maps
-              </a>
+              <h4 style={{ fontSize: '1rem', marginBottom: 8 }}>Kebijakan &amp; Garansi Toko</h4>
+              <ul style={{ paddingLeft: 18, fontSize: '0.84rem', color: 'var(--text-body)', display: 'flex', flexDirection: 'column', gap: 6 }}>
+                <li><strong>Free Ongkir:</strong> Min. order Rp 500.000 (wilayah Balikpapan).</li>
+                <li><strong>Garansi Cetak Ulang:</strong> Jika salah produksi (retur 1-2 hari).</li>
+                <li><strong>Persetujuan ACC:</strong> Produksi dimulai setelah ACC tertulis.</li>
+              </ul>
             </div>
           </div>
         </div>

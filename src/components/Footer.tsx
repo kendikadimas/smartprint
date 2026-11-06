@@ -13,20 +13,29 @@ export default function Footer() {
               <img src="/images/logo.jpg" alt="SmartprintID Logo" onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }} />
               <div>
                 <span className="brand-name">SmartprintID</span>
-                <span className="brand-sub">Great Service &amp; Quality</span>
+                <span className="brand-sub">Great Service and Quality</span>
               </div>
             </Link>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: 18, lineHeight: 1.6 }}>
-              Workshop cetak kemasan dan produk komersial di Balikpapan Barat untuk UMKM, korporasi, dan instansi se-Kaltim &amp; IKN.
+              PT OLEH KELUARGA BESAR. Jasa percetakan dan spesialis kemasan beroperasi lebih dari 30 tahun di Kota Balikpapan (sejak 1994).
             </p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', fontSize: '0.84rem' }}>
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', fontSize: '0.82rem' }}>
               <a
-                href="https://www.instagram.com/smartprintid/"
+                href="https://www.instagram.com/smartprintID/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: 'var(--text-muted)' }}
               >
-                Instagram @smartprintid
+                Instagram: @smartprintID
+              </a>
+              <span style={{ color: 'var(--border-strong)' }}>•</span>
+              <a
+                href="https://www.tiktok.com/@Smartprint_id"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'var(--text-muted)' }}
+              >
+                TikTok: @Smartprint_id
               </a>
               <span style={{ color: 'var(--border-strong)' }}>•</span>
               <a
@@ -35,7 +44,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 style={{ color: 'var(--text-muted)' }}
               >
-                Facebook SmartprintID
+                Facebook: Smartprint ID
               </a>
             </div>
           </div>
@@ -69,25 +78,24 @@ export default function Footer() {
 
           {/* Alamat Workshop */}
           <div className="footer-col">
-            <h4>Alamat Workshop</h4>
+            <h4>Alamat &amp; Kontak</h4>
             <div style={{ fontSize: '0.86rem', color: 'var(--text-body)', display: 'flex', flexDirection: 'column', gap: 12 }}>
               <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                 <MapPin size={18} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
                 <div>
-                  <strong>Workshop Balikpapan Barat (76131)</strong><br />
-                  Jl. Gunung Empat (Gg. Sumber) RT.25 No. 68, Kel. Margo Mulyo, Kota Balikpapan.
+                  <strong>Workshop &amp; Gudang (Pengiriman):</strong><br />
+                  Jl. Gunung Empat No 68 RT 25 Margo Mulyo, Balikpapan.<br />
+                  <span style={{ color: 'var(--text-muted)' }}>Alamat Kantor: Jl. Telindung X No 73 RT 88</span>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                 <Phone size={18} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
                 <div>
-                  <strong>WhatsApp:</strong>{' '}
-                  <a href="https://wa.me/628115444638" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>
-                    0811-5444-638
-                  </a>{' '}
-                  / 0822-5012-1212<br />
-                  <strong>Telepon:</strong> (0542) 415737
+                  <strong>WhatsApp Resmi:</strong>{' '}
+                  <a href="https://wa.me/628115420700" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>
+                    0811-5420-700
+                  </a>
                 </div>
               </div>
 
@@ -102,7 +110,7 @@ export default function Footer() {
                 <Clock size={18} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
                 <div>
                   <strong>Jam Operasional:</strong><br />
-                  Senin s/d Minggu: 08:00 - 22:00 WITA
+                  08.00 - 22.00 WITA (Buka Setiap Hari)
                 </div>
               </div>
             </div>
@@ -111,8 +119,8 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
-          <div>&copy; 2026 SmartprintID Balikpapan (smartprint.co.id). Hak cipta dilindungi.</div>
-          <div>Pabrikasi Cetak Kemasan &amp; Komersial Kalimantan Timur</div>
+          <div>&copy; 2019 PT OLEH KELUARGA BESAR. SmartprintID.</div>
+          <div>Spesialis Kemasan &amp; Percetakan Balikpapan</div>
         </div>
       </div>
     </footer>

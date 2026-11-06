@@ -42,16 +42,19 @@ export default function HomePage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
             <div>
+              <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 10 }}>
+                SmartprintID by PT OLEH KELUARGA BESAR
+              </div>
               <h1 style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: 18 }}>
-                Pabrikasi <span className="serif-italic">Percetakan &amp; Kemasan</span> di Balikpapan
+                Spesialis <span className="serif-italic">Kemasan &amp; Percetakan</span> di Balikpapan
               </h1>
-              <p style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: 24, maxWidth: 520 }}>
-                Workshop cetak offset, dus kemasan makanan, stiker label, dan sablon cup di Balikpapan Barat. Langsung dari produsen tangan pertama.
+              <p style={{ fontSize: '1.02rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: 24, maxWidth: 540 }}>
+                Menawarkan berbagai produk kemasan, produk cetak, promosi, stiker &amp; label, reklame, jasa percetakan, dan souvenir. Berpengalaman lebih dari 30 tahun di Balikpapan sejak 1994.
               </p>
 
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 28 }}>
                 <a
-                  href="https://wa.me/628115444638?text=Halo%20SmartprintID,%20saya%20ingin%20konsultasi%20pesanan%20cetak"
+                  href="https://wa.me/628115420700?text=Halo%20SmartprintID,%20saya%20ingin%20konsultasi%20pesanan%20cetak"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary btn-lg"
@@ -69,15 +72,15 @@ export default function HomePage() {
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', paddingTop: 18, borderTop: '1px solid var(--border-subtle)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                   <CheckCircle2 size={16} style={{ color: 'var(--primary)' }} />
-                  <span>Mesin Offset &amp; Pond Sendiri</span>
+                  <span>Lebih 30 Tahun di Balikpapan</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                   <CheckCircle2 size={16} style={{ color: 'var(--primary)' }} />
-                  <span>Kertas Food Grade Bersertifikat</span>
+                  <span>Garansi Cetak Ulang Salah Produksi</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                   <CheckCircle2 size={16} style={{ color: 'var(--primary)' }} />
-                  <span>Kirim Cepat Kaltim &amp; IKN</span>
+                  <span>Free Ongkir Balikpapan (Min. 500rb)</span>
                 </div>
               </div>
             </div>
@@ -109,6 +112,9 @@ export default function HomePage() {
                 <div>
                   <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--text-main)' }}>
                     Workshop Balikpapan Barat (76131)
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                    Jl. Gunung Empat No 68 RT 25 Margo Mulyo
                   </div>
                 </div>
                 <Link to="/tentang-kami" className="btn btn-outline-primary btn-sm">
@@ -255,7 +261,7 @@ export default function HomePage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
             {/* Left Full Red Accent Card */}
-            <div className="card-red" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div className="card-red" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: 32 }}>
               <div>
                 <div style={{
                   display: 'inline-flex',
@@ -269,33 +275,33 @@ export default function HomePage() {
                   marginBottom: 14
                 }}>
                   <Factory size={13} />
-                  <span>PRODUSEN LANGSUNG</span>
+                  <span>BERPENGALAMAN SEJAK 1994</span>
                 </div>
                 <h3 style={{ fontSize: '1.5rem', lineHeight: 1.25, marginBottom: 14 }}>
-                  Dari Workshop, Tanpa Perantara
+                  Lebih dari 30 Tahun di Balikpapan
                 </h3>
                 <p style={{ fontSize: '0.92rem', lineHeight: 1.6, opacity: 0.95, marginBottom: 20 }}>
-                  Seluruh alur pra-cetak, mesin offset, sablon cup, dan finishing dikerjakan di workshop Jl. Gunung Empat No. 68 Balikpapan.
+                  PT OLEH KELUARGA BESAR (SmartprintID) menyediakan produk cetak berkualitas, mesin teknologi terbaik, pelayanan ramah dan profesional, serta harga yang kompetitif.
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.88rem' }}>
                     <CheckCircle2 size={16} style={{ color: '#FFFFFF' }} />
-                    <span>Gramatur kertas &amp; warna CMYK transparan</span>
+                    <span>Konsultasi gratis &amp; cepat tanggap</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.88rem' }}>
                     <CheckCircle2 size={16} style={{ color: '#FFFFFF' }} />
-                    <span>Konsultasi pisau pond &amp; ukuran kustom</span>
+                    <span>Garansi cetak ulang jika salah produksi</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.88rem' }}>
                     <CheckCircle2 size={16} style={{ color: '#FFFFFF' }} />
-                    <span>Pengerjaan rapi &amp; tepat waktu</span>
+                    <span>Persetujuan tertulis (ACC) sebelum cetak</span>
                   </div>
                 </div>
               </div>
 
               <Link to="/tentang-kami" className="btn btn-white btn-sm" style={{ alignSelf: 'flex-start' }}>
-                <span>Profil Workshop &amp; Mesin</span>
+                <span>Profil &amp; Workshop Kami</span>
                 <ArrowRight size={15} />
               </Link>
             </div>
@@ -305,26 +311,12 @@ export default function HomePage() {
               <div className="card" style={{ padding: 22 }}>
                 <div style={{ display: 'flex', gap: 14 }}>
                   <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
-                    <Calculator size={20} />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: '1.1rem', marginBottom: 4 }}>Biaya Terukur &amp; Transparan</h3>
-                    <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                      Cek perkiraan biaya produksi dan ongkir langsung secara mandiri tanpa biaya tersembunyi.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card" style={{ padding: 22 }}>
-                <div style={{ display: 'flex', gap: 14 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
                     <Sparkles size={20} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.1rem', marginBottom: 4 }}>Pemeriksaan File Pra-Cetak</h3>
+                    <h3 style={{ fontSize: '1.1rem', marginBottom: 4 }}>Spesialis Kemasan &amp; 7 Kategori Produk</h3>
                     <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                      Pemeriksaan batas potong (bleed), akurasi teks, dan mode warna CMYK sebelum cetak dimulai.
+                      Kotak makanan, kotak kue/nasi, stiker &amp; label, media promosi, reklame, jasa percetakan, dan souvenir.
                     </p>
                   </div>
                 </div>
@@ -336,9 +328,23 @@ export default function HomePage() {
                     <Truck size={20} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.1rem', marginBottom: 4 }}>Kirim Cepat Se-Kaltim &amp; IKN</h3>
+                    <h3 style={{ fontSize: '1.1rem', marginBottom: 4 }}>Free Ongkir &amp; COD Balikpapan</h3>
                     <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                      Dukungan kurir lokal Balikpapan, travel same-day Kaltim, dan kargo JTR untuk kemasan berat.
+                      Gratis ongkir untuk pesanan minimal Rp 500.000 di area Balikpapan, serta opsi kurir GoSend same-day.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card" style={{ padding: 22 }}>
+                <div style={{ display: 'flex', gap: 14 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
+                    <CheckCircle2 size={20} />
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: '1.1rem', marginBottom: 4 }}>Garansi Retur 1-2 Hari</h3>
+                    <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                      Garansi cetak ulang jika terjadi salah produksi, dengan retur 1-2 hari setelah barang diterima sesuai kondisi.
                     </p>
                   </div>
                 </div>
@@ -552,13 +558,13 @@ export default function HomePage() {
 
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <a
-                href="https://wa.me/628115444638?text=Halo%20SmartprintID,%20saya%20ingin%20konsultasi%20pesanan%20cetak"
+                href="https://wa.me/628115420700?text=Halo%20SmartprintID,%20saya%20ingin%20konsultasi%20pesanan%20cetak"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary btn-lg"
               >
                 <MessageSquare size={18} />
-                <span>Chat WA (0811-5444-638)</span>
+                <span>Chat WA (0811-5420-700)</span>
               </a>
               <Link to="/cek-ongkir" className="btn btn-secondary btn-lg">
                 <span>Cek Ongkir Ekspedisi</span>

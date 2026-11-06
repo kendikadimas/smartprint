@@ -13,12 +13,13 @@ export default function KatalogPage() {
 
   const categories = [
     { id: 'all', label: 'Semua Kategori' },
-    { id: 'kemasan', label: 'Dus & Box Kemasan' },
+    { id: 'kemasan', label: 'Kemasan (Spesialis Utama)' },
     { id: 'stiker', label: 'Stiker & Label' },
-    { id: 'cup', label: 'Sablon Cup' },
-    { id: 'paperbag', label: 'Paper Bag' },
-    { id: 'map', label: 'Map Rapot & Ijazah' },
-    { id: 'souvenir', label: 'Souvenir & Reklame' }
+    { id: 'promosi', label: 'Produk Promosi' },
+    { id: 'cetak', label: 'Produk Cetak' },
+    { id: 'reklame', label: 'Reklame' },
+    { id: 'souvenir', label: 'Souvenir' },
+    { id: 'jasa', label: 'Jasa Percetakan' }
   ];
 
   const filteredProducts = useMemo(() => {
@@ -54,7 +55,7 @@ export default function KatalogPage() {
           </nav>
           <h1 className="page-title">Katalog Produk Percetakan</h1>
           <p className="page-subtitle">
-            Produksi langsung di workshop Balikpapan Barat: cetak offset, sablon cup, dan finishing pond kemasan.
+            7 kategori produk cetak dan spesialis kemasan langsung dari workshop Balikpapan (beroperasi sejak 1994).
           </p>
 
           {/* Search Bar & Counter */}
@@ -183,7 +184,7 @@ export default function KatalogPage() {
             </p>
           </div>
           <a
-            href="https://wa.me/628115444638?text=Halo%20SmartprintID,%20saya%20butuh%20cetak%20ukuran%20kustom"
+            href="https://wa.me/628115420700?text=Halo%20SmartprintID,%20saya%20butuh%20cetak%20ukuran%20kustom"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
@@ -239,7 +240,7 @@ export default function KatalogPage() {
                 Tutup
               </button>
               <a
-                href={`https://wa.me/628115444638?text=Halo%20SmartprintID,%20saya%20ingin%20tanya%20spesifikasi%20${selectedProduct.title}`}
+                href={`https://wa.me/628115420700?text=Halo%20SmartprintID,%20saya%20ingin%20tanya%20spesifikasi%20${selectedProduct.title}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"

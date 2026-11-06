@@ -199,10 +199,10 @@ export default function CekOngkirPage() {
         <section style={{ marginTop: 56, display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 36 }}>
           <div>
             <h2 style={{ fontSize: '1.5rem', marginBottom: 8 }}>
-              Rekomendasi Jalur Pengiriman
+              Kebijakan Pengiriman Toko
             </h2>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>
-              Pilih opsi ekspedisi sesuai bobot dan kebutuhan waktu pesanan Anda.
+              Ketentuan kurir resmi, bebas ongkir, dan proses pengemasan pesanan.
             </p>
           </div>
 
@@ -211,9 +211,9 @@ export default function CekOngkirPage() {
               <div style={{ display: 'flex', gap: 12 }}>
                 <span className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)' }}>01</span>
                 <div>
-                  <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Lokal Balikpapan</h3>
+                  <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Free Ongkir &amp; COD Balikpapan</h3>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                    Ambil langsung di workshop Jl. Gunung Empat No. 68 atau via kurir instan internal.
+                    Gratis ongkir untuk pemesanan minimal Rp 500.000 di area Balikpapan. Tersedia opsi COD langsung.
                   </p>
                 </div>
               </div>
@@ -223,9 +223,9 @@ export default function CekOngkirPage() {
               <div style={{ display: 'flex', gap: 12 }}>
                 <span className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)' }}>02</span>
                 <div>
-                  <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Samarinda, Penajam IKN &amp; Bontang</h3>
+                  <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Kurir Resmi yang Didukung</h3>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                    Pengiriman travel same-day antar kota atau JNE Trucking untuk bobot di atas 10 Kg.
+                    Pengiriman reguler via JNE, J&amp;T Express, dan TIKI, serta GoSend (Instant/Same Day Balikpapan).
                   </p>
                 </div>
               </div>
@@ -235,9 +235,9 @@ export default function CekOngkirPage() {
               <div style={{ display: 'flex', gap: 12 }}>
                 <span className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)' }}>03</span>
                 <div>
-                  <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Kargo Luar Pulau</h3>
+                  <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Estimasi Packing &amp; Same-Day</h3>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                    Tarif kargo darat/laut hemat via JTR untuk kiriman partai besar ke seluruh Indonesia.
+                    Estimasi proses packing 1 hari kerja. Khusus stiker dan spanduk, pesanan masuk jam 8 pagi bisa selesai di hari yang sama.
                   </p>
                 </div>
               </div>

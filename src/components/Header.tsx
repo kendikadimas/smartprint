@@ -70,7 +70,7 @@ export default function Header() {
           {/* Actions */}
           <div className="header-actions">
             <a
-              href="https://wa.me/628115444638?text=Halo%20SmartprintID,%20saya%20ingin%20konsultasi%20pesanan%20cetak"
+              href="https://wa.me/628115420700?text=Halo%20SmartprintID,%20saya%20ingin%20konsultasi%20pesanan%20cetak"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary btn-sm"
@@ -102,9 +102,9 @@ export default function Header() {
             </Link>
           ))}
           <div style={{ paddingTop: 12, borderTop: '1px solid var(--border-medium)', display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <a href="tel:08115444638" className="btn btn-secondary btn-sm" style={{ width: '100%' }}>
+            <a href="tel:08115420700" className="btn btn-secondary btn-sm" style={{ width: '100%' }}>
               <Phone size={15} />
-              <span>Hubungi Workshop (0811-5444-638)</span>
+              <span>Hubungi Workshop (0811-5420-700)</span>
             </a>
           </div>
         </div>

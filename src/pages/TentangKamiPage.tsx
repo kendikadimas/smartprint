@@ -13,9 +13,9 @@ export default function TentangKamiPage() {
             <span>/</span>
             <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>Tentang Kami</span>
           </nav>
-          <h1 className="page-title">Pabrikasi Cetak Langsung di Balikpapan Barat</h1>
+          <h1 className="page-title">PT OLEH KELUARGA BESAR (SmartprintID)</h1>
           <p className="page-subtitle">
-            Produsen cetak langsung dengan fasilitas offset lembaran, sablon silinder, dan lini finishing die-cut di Balikpapan.
+            Perusahaan jasa percetakan lokal yang beroperasi lebih dari 30 tahun di Balikpapan, Kalimantan Timur (sejak 1994).
           </p>
         </div>
       </section>
@@ -26,24 +26,27 @@ export default function TentangKamiPage() {
         <section style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 40, marginBottom: 64 }}>
           <div>
             <h2 style={{ fontSize: '1.85rem', marginBottom: 16 }}>
-              Kemasan Fisik Presisi dari Workshop Sendiri
+              Dedikasi Percetakan &amp; Spesialis Kemasan Sejak 1994
             </h2>
+            <p style={{ fontSize: '0.96rem', color: 'var(--text-body)', lineHeight: 1.65, marginBottom: 18 }}>
+              PT OLEH KELUARGA BESAR atau dikenal dengan <strong>SmartprintID</strong> adalah perusahaan percetakan lokal yang melayani kebutuhan korporat &amp; instansi pemerintahan, UMKM &amp; pelaku usaha lokal, event organizer (EO) &amp; komunitas, mahasiswa &amp; pelajar, hingga pesanan personal.
+            </p>
             <p style={{ fontSize: '0.96rem', color: 'var(--text-body)', lineHeight: 1.65, marginBottom: 24 }}>
-              Kami memusatkan pra-cetak, cetak offset, sablon cup, dan finishing di bawah satu atap di Balikpapan Barat. Tanpa perantara, biaya produksi lebih terukur dan jadwal pengerjaan terkontrol langsung.
+              Setiap produk dikerjakan dengan bahan berkualitas, teknologi mesin terbaik, pelayanan ramah, cepat tanggap, harga kompetitif, serta garansi cetak ulang jika terjadi kesalahan produksi.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
               <div className="card" style={{ padding: 22 }}>
-                <h3 style={{ fontSize: '1.05rem', marginBottom: 6 }}>Sentra Kaltim &amp; IKN</h3>
+                <h3 style={{ fontSize: '1.05rem', marginBottom: 6 }}>Konsultasi &amp; Cepat Tanggap</h3>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                  Menyuplai kebutuhan kemasan UMKM dan instansi di Balikpapan, Samarinda, hingga IKN.
+                  Konsultasi gratis untuk spesifikasi kertas kemasan, stiker, dan materi promosi.
                 </p>
               </div>
 
               <div className="card" style={{ padding: 22 }}>
-                <h3 style={{ fontSize: '1.05rem', marginBottom: 6 }}>Harga Pabrik Langsung</h3>
+                <h3 style={{ fontSize: '1.05rem', marginBottom: 6 }}>Garansi Cetak Ulang</h3>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                  Biaya cetak tangan pertama tanpa perantara dengan kalkulator estimasi transparan.
+                  Jaminan cetak ulang jika terjadi salah produksi, dengan sistem ACC proofing yang aman.
                 </p>
               </div>
             </div>
@@ -51,32 +54,38 @@ export default function TentangKamiPage() {
 
           {/* Workshop Credentials Sidebar Card */}
           <aside className="card" style={{ padding: 28, height: 'fit-content' }}>
-            <h3 style={{ fontSize: '1.2rem', marginBottom: 8 }}>Kunjungan &amp; Sampel Bahan</h3>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: 8 }}>Informasi Workshop &amp; Kontak</h3>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: 20, lineHeight: 1.5 }}>
-              Kunjungi workshop kami untuk melihat sampel kertas Ivory, Kraft, Duplex, dan contoh foil emas:
+              Kunjungi workshop kami untuk melihat sampel kemasan makanan, stiker, dan contoh bahan:
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14, fontSize: '0.86rem', borderTop: '1px solid var(--border-medium)', paddingTop: 18 }}>
               <div>
-                <strong>Alamat:</strong><br />
-                Jl. Gunung Empat RT.25 No. 68, Balikpapan Barat (76131).
+                <strong>Alamat Workshop &amp; Pengiriman:</strong><br />
+                Jl. Gunung Empat No 68 RT 25 Margo Mulyo, Balikpapan (76131).
               </div>
               <div>
-                <strong>Telepon / Fax:</strong><br />
-                <span className="mono-num">(0542) 415737</span> | <span className="mono-num">(0542) 741492</span>
+                <strong>Alamat Kantor:</strong><br />
+                Jl. Telindung X No 73 RT 88, Balikpapan.
               </div>
               <div>
-                <strong>WhatsApp CS:</strong><br />
-                <span className="mono-num">0811-5444-638</span> / <span className="mono-num">0822-5012-1212</span>
+                <strong>WhatsApp Resmi:</strong><br />
+                <a href="https://wa.me/628115420700" target="_blank" rel="noopener noreferrer" className="mono-num" style={{ color: 'var(--primary)', fontWeight: 700 }}>
+                  0811-5420-700
+                </a>
+              </div>
+              <div>
+                <strong>Email Bisnis:</strong><br />
+                order@smartprint.co.id
               </div>
               <div>
                 <strong>Jam Operasional:</strong><br />
-                Senin - Minggu: <span className="mono-num">08:00 - 22:00 WITA</span>
+                08.00 - 22.00 WITA <span style={{ color: 'var(--text-muted)' }}>(Buka Setiap Hari)</span>
               </div>
             </div>
 
             <Link to="/kontak" className="btn btn-secondary btn-sm" style={{ width: '100%', marginTop: 22 }}>
-              Lihat Peta &amp; Kontak Lengkap
+              Lihat Kontak &amp; Peta Lengkap
             </Link>
           </aside>
         </section>
