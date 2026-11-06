@@ -172,8 +172,8 @@ export default function KontakPage() {
             </div>
 
             {/* Kebijakan Layanan Card */}
-            <div className="card" style={{ padding: 22, backgroundColor: 'var(--bg-subtle)' }}>
-              <h4 style={{ fontSize: '1rem', marginBottom: 8 }}>Kebijakan &amp; Garansi Toko</h4>
+            <div className="card" style={{ padding: 22, backgroundColor: 'var(--primary-subtle)', border: '1px solid var(--primary-border)' }}>
+              <h4 style={{ fontSize: '1rem', marginBottom: 8, color: 'var(--primary)' }}>Kebijakan &amp; Garansi Toko</h4>
               <ul style={{ paddingLeft: 18, fontSize: '0.84rem', color: 'var(--text-body)', display: 'flex', flexDirection: 'column', gap: 6 }}>
                 <li><strong>Free Ongkir:</strong> Min. order Rp 500.000 (wilayah Balikpapan).</li>
                 <li><strong>Garansi Cetak Ulang:</strong> Jika salah produksi (retur 1-2 hari).</li>

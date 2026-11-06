@@ -208,8 +208,10 @@ export default function CekOngkirPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div className="card" style={{ padding: 18 }}>
-              <div style={{ display: 'flex', gap: 12 }}>
-                <span className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)' }}>01</span>
+              <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+                <div style={{ width: 34, height: 34, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.88rem', flexShrink: 0 }}>
+                  01
+                </div>
                 <div>
                   <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Free Ongkir &amp; COD Balikpapan</h3>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
@@ -220,8 +222,10 @@ export default function CekOngkirPage() {
             </div>
 
             <div className="card" style={{ padding: 18 }}>
-              <div style={{ display: 'flex', gap: 12 }}>
-                <span className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)' }}>02</span>
+              <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+                <div style={{ width: 34, height: 34, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.88rem', flexShrink: 0 }}>
+                  02
+                </div>
                 <div>
                   <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Kurir Resmi yang Didukung</h3>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
@@ -232,8 +236,10 @@ export default function CekOngkirPage() {
             </div>
 
             <div className="card" style={{ padding: 18 }}>
-              <div style={{ display: 'flex', gap: 12 }}>
-                <span className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)' }}>03</span>
+              <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+                <div style={{ width: 34, height: 34, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.88rem', flexShrink: 0 }}>
+                  03
+                </div>
                 <div>
                   <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Estimasi Packing &amp; Same-Day</h3>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>

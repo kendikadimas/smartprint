@@ -37,8 +37,10 @@ export default function KarirPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <div className="card" style={{ padding: 22 }}>
-              <div style={{ display: 'flex', gap: 14 }}>
-                <span className="mono-num" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary)' }}>01</span>
+              <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+                <div style={{ width: 36, height: 36, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.92rem', flexShrink: 0 }}>
+                  01
+                </div>
                 <div>
                   <h3 style={{ fontSize: '1.1rem', marginBottom: 6 }}>Praktik Mesin Industri</h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
@@ -49,8 +51,10 @@ export default function KarirPage() {
             </div>
 
             <div className="card" style={{ padding: 22 }}>
-              <div style={{ display: 'flex', gap: 14 }}>
-                <span className="mono-num" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary)' }}>02</span>
+              <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+                <div style={{ width: 36, height: 36, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.92rem', flexShrink: 0 }}>
+                  02
+                </div>
                 <div>
                   <h3 style={{ fontSize: '1.1rem', marginBottom: 6 }}>Alur Kerja Terkoordinasi</h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
@@ -61,8 +65,10 @@ export default function KarirPage() {
             </div>
 
             <div className="card" style={{ padding: 22 }}>
-              <div style={{ display: 'flex', gap: 14 }}>
-                <span className="mono-num" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary)' }}>03</span>
+              <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+                <div style={{ width: 36, height: 36, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.92rem', flexShrink: 0 }}>
+                  03
+                </div>
                 <div>
                   <h3 style={{ fontSize: '1.1rem', marginBottom: 6 }}>Apresiasi &amp; Insentif</h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>

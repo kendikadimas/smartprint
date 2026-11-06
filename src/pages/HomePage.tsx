@@ -39,11 +39,24 @@ export default function HomePage() {
   return (
     <main>
       {/* 1. Hero Section */}
-      <section style={{ padding: '60px 0 52px', backgroundColor: 'var(--bg-page)' }}>
+      <section style={{ padding: '64px 0 56px', background: 'linear-gradient(180deg, var(--primary-subtle) 0%, #FFFFFF 100%)', borderBottom: '1px solid var(--primary-border)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
             <div>
-              <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 10 }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 6,
+                backgroundColor: 'var(--primary)',
+                color: '#FFFFFF',
+                padding: '4px 12px',
+                borderRadius: 'var(--radius-full)',
+                fontSize: '0.76rem',
+                fontWeight: 700,
+                letterSpacing: '0.04em',
+                textTransform: 'uppercase',
+                marginBottom: 16
+              }}>
                 SmartprintID by PT OLEH KELUARGA BESAR
               </div>
               <h1 style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: 18 }}>
@@ -213,10 +226,10 @@ export default function HomePage() {
 
               {/* Result Banner */}
               <div style={{
-                backgroundColor: 'var(--bg-subtle)',
+                backgroundColor: 'var(--primary-subtle)',
                 borderRadius: 'var(--radius-sm)',
                 padding: '18px 22px',
-                border: '1px solid var(--border-medium)',
+                border: '1px solid var(--primary-border)',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
@@ -229,7 +242,7 @@ export default function HomePage() {
                     Rp {estimate.unitPrice.toLocaleString('id-ID')} / pcs
                   </div>
                   <div style={{ fontSize: '0.82rem', color: 'var(--text-body)', marginTop: 2 }}>
-                    Total: <strong className="mono-num">Rp {estimate.total.toLocaleString('id-ID')}</strong> ({quantity.toLocaleString('id-ID')} pcs)
+                    Total: <strong className="mono-num" style={{ color: 'var(--primary)', fontSize: '1.05rem' }}>Rp {estimate.total.toLocaleString('id-ID')}</strong> ({quantity.toLocaleString('id-ID')} pcs)
                   </div>
                 </div>
 
@@ -540,34 +553,35 @@ export default function HomePage() {
       {/* 7. Bottom Clean CTA */}
       <section style={{ padding: '60px 0' }}>
         <div className="container">
-          <div className="card" style={{
-            padding: '40px 36px',
+          <div className="card-red" style={{
+            padding: '48px 40px',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
             flexWrap: 'wrap',
-            gap: 24
+            gap: 24,
+            boxShadow: '0 12px 30px rgba(229, 46, 42, 0.22)'
           }}>
             <div style={{ maxWidth: 600 }}>
-              <h2 style={{ fontSize: '1.75rem', marginBottom: 8 }}>
+              <h2 style={{ fontSize: '1.85rem', marginBottom: 8, color: '#FFFFFF' }}>
                 Siap Memulai Produksi Cetakan Anda?
               </h2>
-              <p style={{ fontSize: '0.94rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
+              <p style={{ fontSize: '0.96rem', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.6 }}>
                 Konsultasikan ukuran, bahan, dan jumlah pesanan Anda langsung dengan tim workshop SmartprintID Balikpapan Barat.
               </p>
             </div>
 
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
               <a
                 href="https://wa.me/628115420700?text=Halo%20SmartprintID,%20saya%20ingin%20konsultasi%20pesanan%20cetak"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary btn-lg"
+                className="btn btn-white btn-lg"
               >
                 <WhatsAppIcon size={18} />
                 <span>Chat WA (0811-5420-700)</span>
               </a>
-              <Link to="/cek-ongkir" className="btn btn-secondary btn-lg">
+              <Link to="/cek-ongkir" className="btn btn-outline-white btn-lg">
                 <span>Cek Ongkir Ekspedisi</span>
               </Link>
             </div>

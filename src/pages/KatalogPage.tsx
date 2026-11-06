@@ -172,6 +172,8 @@ export default function KatalogPage() {
         {/* Custom Order Box */}
         <div className="card" style={{
           marginTop: 48,
+          backgroundColor: 'var(--primary-subtle)',
+          border: '1px solid var(--primary-border)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -179,8 +181,10 @@ export default function KatalogPage() {
           gap: 20
         }}>
           <div>
-            <h3 style={{ fontSize: '1.2rem', marginBottom: 4 }}>Ukuran Kustom atau Sampel Bahan?</h3>
-            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: 4, color: 'var(--text-main)' }}>
+              Butuh Ukuran Kustom atau Sampel Bahan?
+            </h3>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-body)' }}>
               Kami melayani pembuatan pisau pond custom dan pengiriman sampel bahan ke lokasi Anda.
             </p>
           </div>
