@@ -16,12 +16,10 @@
   --text-muted: #6B7280;    /* Slate Subtle */
   --text-inverse: #FFFFFF;
 
-  /* Smartprint Brand Red */
-  --primary: #E52E2A;
-  --primary-hover: #C5221F;
-  --primary-active: #9B1A18;
-  --primary-subtle: #FEF2F2;
-  --primary-border: #FECACA;
+  /* Smartprint Brand Red (Tone-down rich crimson, non-glaring) */
+  --primary: #B91C1C;
+  --primary-hover: #991B1B;
+  --primary-active: #7F1D1D;
 
   /* Status Colors */
   --success: #059669;
@@ -178,11 +176,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn-outline-primary {
   background-color: transparent;
   color: var(--primary);
-  border-color: var(--primary-border);
+  border-color: var(--border-medium);
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--primary-subtle);
+  background-color: var(--primary);
+  color: #FFFFFF;
   border-color: var(--primary);
 }
 
@@ -231,9 +230,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .badge-red {
-  background-color: var(--primary-subtle);
-  color: var(--primary);
-  border: 1px solid var(--primary-border);
+  background-color: var(--primary);
+  color: #FFFFFF;
 }
 
 .badge-neutral {
@@ -267,9 +265,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Page Hero */
 .page-hero {
-  padding: 52px 0 44px;
-  background: linear-gradient(180deg, var(--primary-subtle) 0%, #FFFFFF 100%);
-  border-bottom: 1px solid var(--primary-border);
+  padding: 48px 0 36px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-medium);
   margin-bottom: 48px;
 }
 
@@ -337,7 +335,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-control:focus, .search-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--primary-subtle);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.15);
 }
 
 /* Search Bar Component */
@@ -557,7 +555,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav-drawer .nav-link.active {
-  background-color: var(--primary-subtle);
+  background-color: var(--bg-subtle);
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .mobile-nav-drawer .nav-link.active::after {
@@ -568,7 +568,7 @@ h1, h2, h3, h4, h5, h6 {
 .site-footer {
   margin-top: auto;
   background-color: var(--bg-subtle);
-  border-top: 4px solid var(--primary);
+  border-top: 1px solid var(--border-medium);
   padding: 64px 0 32px;
 }
 

@@ -172,8 +172,8 @@ export default function KatalogPage() {
         {/* Custom Order Box */}
         <div className="card" style={{
           marginTop: 48,
-          backgroundColor: 'var(--primary-subtle)',
-          border: '1px solid var(--primary-border)',
+          backgroundColor: 'var(--bg-subtle)',
+          border: '1px solid var(--border-medium)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',

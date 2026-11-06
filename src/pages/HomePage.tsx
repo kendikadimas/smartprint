@@ -39,7 +39,7 @@ export default function HomePage() {
   return (
     <main>
       {/* 1. Hero Section */}
-      <section style={{ padding: '64px 0 56px', background: 'linear-gradient(180deg, var(--primary-subtle) 0%, #FFFFFF 100%)', borderBottom: '1px solid var(--primary-border)' }}>
+      <section style={{ padding: '60px 0 52px', backgroundColor: '#FFFFFF', borderBottom: '1px solid var(--border-medium)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
             <div>
@@ -226,10 +226,10 @@ export default function HomePage() {
 
               {/* Result Banner */}
               <div style={{
-                backgroundColor: 'var(--primary-subtle)',
+                backgroundColor: 'var(--bg-subtle)',
                 borderRadius: 'var(--radius-sm)',
                 padding: '18px 22px',
-                border: '1px solid var(--primary-border)',
+                border: '1px solid var(--border-medium)',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
@@ -324,7 +324,7 @@ export default function HomePage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div className="card" style={{ padding: 22 }}>
                 <div style={{ display: 'flex', gap: 14 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', flexShrink: 0 }}>
                     <Sparkles size={20} />
                   </div>
                   <div>
@@ -338,7 +338,7 @@ export default function HomePage() {
 
               <div className="card" style={{ padding: 22 }}>
                 <div style={{ display: 'flex', gap: 14 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', flexShrink: 0 }}>
                     <Truck size={20} />
                   </div>
                   <div>
@@ -352,7 +352,7 @@ export default function HomePage() {
 
               <div className="card" style={{ padding: 22 }}>
                 <div style={{ display: 'flex', gap: 14 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', flexShrink: 0 }}>
                     <CheckCircle2 size={20} />
                   </div>
                   <div>
