@@ -4,7 +4,7 @@ import { ArrowRight, Calculator, CheckCircle2, Truck, Factory, Sparkles } from '
 import WhatsAppIcon from '../components/WhatsAppIcon';
 import { PRODUCTS } from '../data/products';
 import { ARTICLES } from '../data/articles';
-import { CLIENT_PARTNERS, FEATURED_MACHINES } from '../data/company';
+import { CLIENT_LOGOS, FEATURED_MACHINES } from '../data/company';
 
 export default function HomePage() {
   // Quick Print Estimator State
@@ -142,41 +142,47 @@ export default function HomePage() {
       </section>
 
       {/* 1.5 Client Logos Bar (Social Proof) */}
-      <section style={{ padding: '28px 0', borderBottom: '1px solid var(--border-medium)', backgroundColor: 'var(--bg-subtle)' }}>
+      <section style={{ padding: '36px 0', borderBottom: '1px solid var(--border-medium)', backgroundColor: 'var(--bg-subtle)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 16 }}>
-            <span style={{ fontSize: '0.76rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
-              Dipercaya Lebih dari 20+ Lembaga, BUMN &amp; Brand Terkemuka
+          <div style={{ textAlign: 'center', marginBottom: 20 }}>
+            <span style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+              Dipercaya Lebih dari 20+ Lembaga Negara, BUMN &amp; Brand Terkemuka
             </span>
           </div>
           <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            gap: 12
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
+            gap: 12,
+            alignItems: 'center'
           }}>
-            {CLIENT_PARTNERS.slice(0, 8).map((c, idx) => (
-              <div key={idx} style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-                backgroundColor: '#FFFFFF',
-                padding: '6px 12px',
-                borderRadius: 'var(--radius-sm)',
-                border: '1px solid var(--border-medium)'
-              }}>
-                {c.logo && (
-                  <img
-                    src={c.logo}
-                    alt={c.name}
-                    style={{ width: 24, height: 24, objectFit: 'contain' }}
-                    onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }}
-                  />
-                )}
-                <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-main)' }}>{c.name}</span>
+            {CLIENT_LOGOS.slice(0, 12).map((logoUrl, idx) => (
+              <div
+                key={idx}
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid var(--border-medium)',
+                  borderRadius: 'var(--radius-sm)',
+                  height: 74,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '12px 16px',
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)'
+                }}
+              >
+                <img
+                  src={logoUrl}
+                  alt="Klien SmartprintID"
+                  style={{ maxHeight: 46, maxWidth: 116, width: 'auto', height: 'auto', objectFit: 'contain' }}
+                  loading="lazy"
+                />
               </div>
             ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 18 }}>
+            <Link to="/tentang-kami" style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none' }}>
+              Lihat 25+ portofolio klien lembaga &amp; mitra industri selengkapnya &rarr;
+            </Link>
           </div>
         </div>
       </section>

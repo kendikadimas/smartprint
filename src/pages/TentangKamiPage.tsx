@@ -22,7 +22,7 @@ import {
   WORKSHOP_EQUIPMENT_CATEGORIES,
   COMPANY_VALUES,
   ORGANIZATION_LEADERS,
-  CLIENT_PARTNERS,
+  CLIENT_LOGOS,
   OFFICIAL_OFFICES,
   Machine
 } from '../data/company';
@@ -413,61 +413,41 @@ export default function TentangKamiPage() {
           <div style={{ marginBottom: 24 }}>
             <h2 style={{ fontSize: '1.85rem', marginBottom: 8 }}>Portofolio Klien &amp; Mitra Terpercaya</h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.94rem' }}>
-              Dipercaya oleh lembaga negara, BUMN terkemuka, perbankan, brand F&amp;B nasional, dan pelaku industri di Kalimantan Timur &amp; IKN.
+              Dipercaya oleh puluhan lembaga negara, BUMN terkemuka, institusi perbankan, brand F&amp;B nasional, dan pelaku industri di Kalimantan Timur &amp; IKN.
             </p>
           </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
             gap: 14
           }}>
-            {CLIENT_PARTNERS.map((client, idx) => (
+            {CLIENT_LOGOS.map((logoUrl, idx) => (
               <div
                 key={idx}
                 className="card"
                 style={{
-                  padding: '16px 14px',
+                  height: 86,
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 12,
+                  justifyContent: 'center',
+                  padding: '12px 18px',
                   backgroundColor: '#FFFFFF',
                   borderRadius: 'var(--radius-sm)'
                 }}
               >
-                {client.logo ? (
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    style={{ width: 44, height: 44, objectFit: 'contain', flexShrink: 0 }}
-                    onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }}
-                  />
-                ) : (
-                  <div style={{
-                    width: 38,
-                    height: 38,
-                    borderRadius: 'var(--radius-sm)',
-                    backgroundColor: 'var(--bg-subtle)',
-                    border: '1px solid var(--border-medium)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 800,
-                    fontSize: '0.84rem',
-                    color: 'var(--primary)',
-                    flexShrink: 0
-                  }}>
-                    {client.name.substring(0, 2).toUpperCase()}
-                  </div>
-                )}
-                <div>
-                  <div style={{ fontWeight: 700, fontSize: '0.86rem', color: 'var(--text-main)', lineHeight: 1.3 }}>
-                    {client.name}
-                  </div>
-                  <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
-                    {client.category}
-                  </div>
-                </div>
+                <img
+                  src={logoUrl}
+                  alt="Mitra Klien SmartprintID"
+                  style={{
+                    maxHeight: 52,
+                    maxWidth: 126,
+                    width: 'auto',
+                    height: 'auto',
+                    objectFit: 'contain'
+                  }}
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>

@@ -28,7 +28,7 @@ export interface LeaderItem {
 
 export interface ClientPartner {
   name: string;
-  category: 'BUMN & Lembaga' | 'Korporat & Industri' | 'F&B & Ritel';
+  category: 'BUMN & Lembaga' | 'Korporat & Industri' | 'F&B & Ritel' | 'Klien Terpercaya';
   logo?: string;
 }
 
@@ -176,32 +176,40 @@ export const ORGANIZATION_LEADERS: LeaderItem[] = [
   { role: 'Kepala Pengembangan', name: 'Bagus Pangestu', level: 'management' }
 ];
 
-// 5. Authentic Client Portfolio
-export const CLIENT_PARTNERS: ClientPartner[] = [
-  { name: 'Otoritas Jasa Keuangan (OJK)', category: 'BUMN & Lembaga', logo: '/images/clients/client_1.png' },
-  { name: 'Angkasa Pura | Supports', category: 'BUMN & Lembaga', logo: '/images/clients/client_13.png' },
-  { name: 'BPJS Ketenagakerjaan', category: 'BUMN & Lembaga', logo: '/images/clients/client_14.png' },
-  { name: 'Bank BRI', category: 'BUMN & Lembaga', logo: '/images/clients/client_7.png' },
-  { name: 'Bank Syariah Indonesia (BSI)', category: 'BUMN & Lembaga', logo: '/images/clients/client_11.png' },
-  { name: 'Nindya Karya (Danareksa)', category: 'BUMN & Lembaga', logo: '/images/clients/client_3.png' },
-  { name: 'Institut Teknologi Kalimantan (ITK)', category: 'BUMN & Lembaga', logo: '/images/clients/client_4.png' },
-  { name: 'Nusantara (IKN)', category: 'BUMN & Lembaga', logo: '/images/clients/client_12.png' },
-  { name: 'Waskita Precast', category: 'BUMN & Lembaga', logo: '/images/clients/client_17.png' },
-  { name: 'Adhi Beton', category: 'BUMN & Lembaga', logo: '/images/clients/client_18.png' },
-  { name: 'Domino\'s Pizza', category: 'F&B & Ritel', logo: '/images/clients/client_23.png' },
-  { name: 'Pepper Lunch', category: 'F&B & Ritel', logo: '/images/clients/client_25.png' },
-  { name: 'Krisbow', category: 'Korporat & Industri', logo: '/images/clients/client_20.png' },
-  { name: 'Kawan Lama Solution', category: 'Korporat & Industri', logo: '/images/clients/client_8.png' },
-  { name: 'PT Intraco Penta, Tbk (INTA)', category: 'Korporat & Industri', logo: '/images/clients/client_15.png' },
-  { name: 'Kobexindo', category: 'Korporat & Industri', logo: '/images/clients/client_10.png' },
-  { name: 'Lesso Pipa Plastik', category: 'Korporat & Industri', logo: '/images/clients/client_21.png' },
-  { name: 'Singa Merah', category: 'Korporat & Industri', logo: '/images/clients/client_22.png' },
-  { name: 'Banti Indonesia', category: 'Korporat & Industri', logo: '/images/clients/client_5.png' },
-  { name: 'SSC Works', category: 'Korporat & Industri', logo: '/images/clients/client_9.png' },
-  { name: 'Kimora Sushi', category: 'F&B & Ritel', logo: '/images/clients/client_19.png' },
-  { name: 'Selera Nikmat Nusantara', category: 'F&B & Ritel', logo: '/images/clients/client_16.png' },
-  { name: 'Karya Utama Kita (Oleh-oleh Kaltim)', category: 'F&B & Ritel', logo: '/images/clients/client_24.png' }
+// 5. Authentic Client Portfolio Logos (Extracted from SmartprintID Company Profile)
+export const CLIENT_LOGOS: string[] = [
+  '/images/clients/client_1.png',
+  '/images/clients/client_3.png',
+  '/images/clients/client_4.png',
+  '/images/clients/client_5.png',
+  '/images/clients/client_7.png',
+  '/images/clients/client_8.png',
+  '/images/clients/client_10.png',
+  '/images/clients/client_11.png',
+  '/images/clients/client_12.png',
+  '/images/clients/client_13.png',
+  '/images/clients/client_14.png',
+  '/images/clients/client_15.png',
+  '/images/clients/client_16.png',
+  '/images/clients/client_17.png',
+  '/images/clients/client_18.png',
+  '/images/clients/client_19.png',
+  '/images/clients/client_20.png',
+  '/images/clients/client_21.png',
+  '/images/clients/client_22.png',
+  '/images/clients/client_23.png',
+  '/images/clients/client_24.png',
+  '/images/clients/client_25.png',
+  '/images/clients/client_2.png',
+  '/images/clients/client_6.png',
+  '/images/clients/client_9.png'
 ];
+
+export const CLIENT_PARTNERS: ClientPartner[] = CLIENT_LOGOS.map((logo, idx) => ({
+  name: `Mitra Klien Smartprint #${idx + 1}`,
+  category: 'Klien Terpercaya',
+  logo
+}));
 
 // 6. Dual Official Offices
 export const OFFICIAL_OFFICES = [
