@@ -101,34 +101,41 @@ export default function HomePage() {
             </div>
 
             {/* Hero Image Showcase */}
-            <div style={{ position: 'relative' }}>
-              <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border-medium)', boxShadow: 'var(--shadow-card)' }}>
+            <div style={{
+              borderRadius: 'var(--radius-lg)',
+              border: '1px solid var(--border-medium)',
+              boxShadow: 'var(--shadow-card)',
+              overflow: 'hidden',
+              backgroundColor: '#FFFFFF'
+            }}>
+              <div style={{
+                backgroundColor: '#FFFFFF',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden'
+              }}>
                 <img
                   src="/images/bhm1.jpg"
                   alt="Workshop Produksi Cetak SmartprintID Balikpapan"
-                  style={{ width: '100%', height: '400px', objectFit: 'cover' }}
+                  style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
                 />
               </div>
               <div style={{
-                position: 'absolute',
-                bottom: 18,
-                left: 18,
-                right: 18,
-                backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                backdropFilter: 'blur(8px)',
-                borderRadius: 'var(--radius-md)',
-                padding: '14px 18px',
-                border: '1px solid var(--border-medium)',
-                boxShadow: 'var(--shadow-dropdown)',
+                padding: '16px 20px',
+                borderTop: '1px solid var(--border-medium)',
+                backgroundColor: '#FFFFFF',
                 display: 'flex',
                 justifyContent: 'space-between',
-                alignItems: 'center'
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: 12
               }}>
                 <div>
-                  <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--text-main)' }}>
+                  <div style={{ fontSize: '0.94rem', fontWeight: 700, color: 'var(--text-main)' }}>
                     Workshop Balikpapan Barat (76131)
                   </div>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                     Jl. Gunung Empat No 68 RT 25 Margo Mulyo
                   </div>
                 </div>
@@ -434,11 +441,11 @@ export default function HomePage() {
           <div className="showcase-matrix-top">
             {/* Spotlight Card: Dus Box Kemasan */}
             <div className="card spotlight-card">
-              <div style={{ height: '100%', minHeight: 250, overflow: 'hidden' }}>
+              <div style={{ height: '100%', minHeight: 250, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 18 }}>
                 <img
                   src="/images/products/kemasan-adoras-box.jpg"
                   alt="Dus Box Kemasan Makanan Adora's"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', maxHeight: 240, objectFit: 'contain' }}
                 />
               </div>
               <div style={{ padding: 26, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -478,11 +485,11 @@ export default function HomePage() {
           <div className="grid-4">
             {PRODUCTS.slice(2, 6).map((item) => (
               <div key={item.id} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ height: 150, overflow: 'hidden' }}>
+                <div style={{ height: 170, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 12, borderBottom: '1px solid var(--border-subtle)' }}>
                   <img
                     src={item.image}
                     alt={item.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   />
                 </div>
                 <div style={{ padding: 18, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
@@ -527,11 +534,11 @@ export default function HomePage() {
 
           <div className="grid-3">
             <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ height: 180, overflow: 'hidden', backgroundColor: 'var(--bg-subtle)' }}>
+              <div style={{ height: 210, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 14, borderBottom: '1px solid var(--border-medium)' }}>
                 <img
                   src="/images/machines/heidelberg-sorm72.jpg"
                   alt="Mesin Offset Heidelberg SORM 72"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                 />
               </div>
               <div style={{ padding: 22, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
@@ -548,11 +555,11 @@ export default function HomePage() {
             </div>
 
             <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ height: 180, overflow: 'hidden', backgroundColor: 'var(--bg-subtle)' }}>
+              <div style={{ height: 210, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 14, borderBottom: '1px solid var(--border-medium)' }}>
                 <img
                   src="/images/machines/mesin-pond-92x66.jpg"
                   alt="Mesin Pond 92x66 Kemasan"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                 />
               </div>
               <div style={{ padding: 22, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
@@ -569,11 +576,11 @@ export default function HomePage() {
             </div>
 
             <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ height: 180, overflow: 'hidden', backgroundColor: 'var(--bg-subtle)' }}>
+              <div style={{ height: 210, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 14, borderBottom: '1px solid var(--border-medium)' }}>
                 <img
                   src="/images/machines/fuji-xerox-b9100.jpg"
                   alt="Digital Press Fuji Xerox B9100"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                 />
               </div>
               <div style={{ padding: 22, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
@@ -610,8 +617,8 @@ export default function HomePage() {
           <div className="grid-3">
             {ARTICLES.slice(0, 3).map((item) => (
               <article key={item.id} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ height: 160, overflow: 'hidden' }}>
-                  <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div style={{ height: 180, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 12, borderBottom: '1px solid var(--border-subtle)' }}>
+                  <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
                 <div style={{ padding: 20, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
                   <div>

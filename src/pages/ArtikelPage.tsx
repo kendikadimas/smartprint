@@ -74,8 +74,8 @@ export default function ArtikelPage() {
           <div className="article-grid">
             {filteredArticles.map((article) => (
               <article key={article.id} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ height: 200, overflow: 'hidden' }}>
-                  <img src={article.image} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div style={{ height: 210, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 14, borderBottom: '1px solid var(--border-subtle)' }}>
+                  <img src={article.image} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
 
                 <div style={{ padding: 24, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
@@ -126,8 +126,8 @@ export default function ArtikelPage() {
               <X size={20} />
             </button>
 
-            <div style={{ height: 240, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 20 }}>
-              <img src={selectedArticle.image} alt={selectedArticle.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ height: 280, borderRadius: 'var(--radius-sm)', marginBottom: 20, backgroundColor: '#FFFFFF', border: '1px solid var(--border-medium)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 14 }}>
+              <img src={selectedArticle.image} alt={selectedArticle.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
 
             <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 12 }}>

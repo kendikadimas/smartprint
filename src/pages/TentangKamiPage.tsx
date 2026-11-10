@@ -259,11 +259,11 @@ export default function TentangKamiPage() {
                 style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
                 onClick={() => setSelectedMachine(m)}
               >
-                <div style={{ height: 210, overflow: 'hidden', position: 'relative', backgroundColor: 'var(--bg-subtle)' }}>
+                <div style={{ height: 240, position: 'relative', backgroundColor: '#FFFFFF', borderBottom: '1px solid var(--border-medium)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 14 }}>
                   <img
                     src={m.image}
                     alt={m.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   />
                   <span style={{
                     position: 'absolute',
@@ -574,11 +574,11 @@ export default function TentangKamiPage() {
               <X size={20} />
             </button>
 
-            <div style={{ height: 260, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 18, backgroundColor: 'var(--bg-subtle)' }}>
+            <div style={{ height: 320, borderRadius: 'var(--radius-sm)', marginBottom: 18, backgroundColor: '#FFFFFF', border: '1px solid var(--border-medium)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 14 }}>
               <img
                 src={selectedMachine.image}
                 alt={selectedMachine.name}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
             </div>
 

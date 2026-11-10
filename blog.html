@@ -316,7 +316,7 @@
       }
       const imgWrap = document.getElementById('modal-article-image-wrap');
       if (imgSrc) {
-        imgWrap.innerHTML = `<img src="${imgSrc}" alt="" style="width: 100%; max-height: 280px; object-fit: cover;" onerror="this.style.display='none'">`;
+        imgWrap.innerHTML = `<img src="${imgSrc}" alt="" style="width: 100%; max-height: 280px; object-fit: contain; background-color: #FFFFFF;" onerror="this.style.display='none'">`;
       } else {
         imgWrap.innerHTML = '';
       }

@@ -114,11 +114,11 @@ export default function KatalogPage() {
           <div className="katalog-grid">
             {filteredProducts.map((p) => (
               <article key={p.id} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ height: 210, overflow: 'hidden' }}>
+                <div style={{ height: 220, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 14, borderBottom: '1px solid var(--border-medium)' }}>
                   <img
                     src={p.image}
                     alt={p.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   />
                 </div>
 
@@ -213,8 +213,8 @@ export default function KatalogPage() {
               <X size={20} />
             </button>
 
-            <div style={{ height: 220, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 20 }}>
-              <img src={selectedProduct.image} alt={selectedProduct.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ height: 280, borderRadius: 'var(--radius-sm)', marginBottom: 20, backgroundColor: '#FFFFFF', border: '1px solid var(--border-medium)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 14 }}>
+              <img src={selectedProduct.image} alt={selectedProduct.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
 
             <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--primary)', marginBottom: 8 }}>
