@@ -4,6 +4,7 @@ import { ArrowRight, Calculator, CheckCircle2, Truck, Factory, Sparkles } from '
 import WhatsAppIcon from '../components/WhatsAppIcon';
 import { PRODUCTS } from '../data/products';
 import { ARTICLES } from '../data/articles';
+import { CLIENT_PARTNERS, FEATURED_MACHINES } from '../data/company';
 
 export default function HomePage() {
   // Quick Print Estimator State
@@ -136,6 +137,46 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 1.5 Client Logos Bar (Social Proof) */}
+      <section style={{ padding: '28px 0', borderBottom: '1px solid var(--border-medium)', backgroundColor: 'var(--bg-subtle)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: 16 }}>
+            <span style={{ fontSize: '0.76rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+              Dipercaya Lebih dari 20+ Lembaga, BUMN &amp; Brand Terkemuka
+            </span>
+          </div>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            gap: 12
+          }}>
+            {CLIENT_PARTNERS.slice(0, 8).map((c, idx) => (
+              <div key={idx} style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 8,
+                backgroundColor: '#FFFFFF',
+                padding: '6px 12px',
+                borderRadius: 'var(--radius-sm)',
+                border: '1px solid var(--border-medium)'
+              }}>
+                {c.logo && (
+                  <img
+                    src={c.logo}
+                    alt={c.name}
+                    style={{ width: 24, height: 24, objectFit: 'contain' }}
+                    onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }}
+                  />
+                )}
+                <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-main)' }}>{c.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -389,8 +430,8 @@ export default function HomePage() {
             <div className="card spotlight-card">
               <div style={{ height: '100%', minHeight: 250, overflow: 'hidden' }}>
                 <img
-                  src="/images/rt1.jpg"
-                  alt="Dus Box Kemasan Makanan"
+                  src="/images/products/kemasan-adoras-box.jpg"
+                  alt="Dus Box Kemasan Makanan Adora's"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
@@ -460,47 +501,86 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Workshop Satu Atap Section (Clean & Scannable) */}
+      {/* 5. Workshop Satu Atap Section (Authentic Production Machines) */}
       <section style={{ padding: '68px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 36 }}>
-            <h2 style={{ fontSize: '1.9rem', marginBottom: 8 }}>
-              Workshop Satu Atap Balikpapan Barat
-            </h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.94rem' }}>
-              Fasilitas pra-cetak, mesin offset, dan finishing di Jl. Gunung Empat No. 68.
-            </p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 32, flexWrap: 'wrap', gap: 16 }}>
+            <div>
+              <h2 style={{ fontSize: '1.9rem', marginBottom: 8 }}>
+                Lini Mesin Produksi &amp; Workshop Mandiri
+              </h2>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.94rem' }}>
+                Fasilitas mesin offset standar industri, pond die-cut kemasan, dan digital press di Jl. Gunung Empat No. 68.
+              </p>
+            </div>
+            <Link to="/tentang-kami" className="btn btn-secondary btn-sm">
+              <span>Buka Profil 20+ Peralatan</span>
+              <ArrowRight size={15} />
+            </Link>
           </div>
 
           <div className="grid-3">
-            <div className="card" style={{ padding: 22 }}>
-              <div style={{ height: 160, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 16 }}>
-                <img src="/images/bhm2.jpg" alt="Mesin Cetak Offset SmartprintID" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ height: 180, overflow: 'hidden', backgroundColor: 'var(--bg-subtle)' }}>
+                <img
+                  src="/images/machines/heidelberg-sorm72.jpg"
+                  alt="Mesin Offset Heidelberg SORM 72"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: 6 }}>Mesin Offset &amp; Digital</h3>
-              <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                Cetak lembaran berkecepatan tinggi dengan kestabilan warna CMYK untuk dus, paper bag, dan brosur.
-              </p>
+              <div style={{ padding: 22, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--primary)', marginBottom: 4 }}>
+                    Cetak Offset Partai Besar
+                  </div>
+                  <h3 style={{ fontSize: '1.18rem', marginBottom: 6 }}>Mesin Heidelberg SORM 72</h3>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                    Mesin offset lembaran presisi tinggi untuk dus kemasan, kalender, paper bag, dan brosur volume ribuan lembar.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="card" style={{ padding: 22 }}>
-              <div style={{ height: 160, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 16 }}>
-                <img src="/images/rt1.jpg" alt="Mesin Pond Die Cut Kemasan" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ height: 180, overflow: 'hidden', backgroundColor: 'var(--bg-subtle)' }}>
+                <img
+                  src="/images/machines/mesin-pond-92x66.jpg"
+                  alt="Mesin Pond 92x66 Kemasan"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: 6 }}>Pond Die-Cut &amp; Creasing</h3>
-              <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                Potongan pisau pond presisi, garis tekuk lipatan rapi, dan pembuatan kuncian dus siap rakit.
-              </p>
+              <div style={{ padding: 22, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--primary)', marginBottom: 4 }}>
+                    Pond &amp; Die-Cut Presisi
+                  </div>
+                  <h3 style={{ fontSize: '1.18rem', marginBottom: 6 }}>Mesin Pond 92 x 66</h3>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                    Pisau pond tajam dan rel tekukan untuk dus kue, kotak nasi, kardus katering, dan kuncian siap rakit tanpa lem.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="card" style={{ padding: 22 }}>
-              <div style={{ height: 160, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: 16 }}>
-                <img src="/images/rt6.jpg" alt="Foil Emas dan Map Rapot" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ height: 180, overflow: 'hidden', backgroundColor: 'var(--bg-subtle)' }}>
+                <img
+                  src="/images/machines/fuji-xerox-b9100.jpg"
+                  alt="Digital Press Fuji Xerox B9100"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: 6 }}>Hotprint Foil Emas &amp; Emboss</h3>
-              <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                Aksen metalik emas/perak dan cetak timbul untuk map rapot, ijazah, dan kemasan premium.
-              </p>
+              <div style={{ padding: 22, display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--primary)', marginBottom: 4 }}>
+                    Digital Press Cepat
+                  </div>
+                  <h3 style={{ fontSize: '1.18rem', marginBottom: 6 }}>Mesin Fuji Xerox B9100</h3>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                    Digital press berkecepatan tinggi untuk cetak buku, nota/blanko, continuous form, dan dokumen institusi.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

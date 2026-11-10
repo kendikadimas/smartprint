@@ -80,9 +80,9 @@ export default function Footer() {
               <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                 <MapPin size={18} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
                 <div>
-                  <strong>Workshop &amp; Gudang (Pengiriman):</strong><br />
-                  Jl. Gunung Empat No 68 RT 25 Margo Mulyo, Balikpapan.<br />
-                  <span style={{ color: 'var(--text-muted)' }}>Alamat Kantor: Jl. Telindung X No 73 RT 88</span>
+                  <strong>Office 1 (Workshop &amp; Gudang Pengiriman):</strong><br />
+                  Jl. Gunung Empat RT. 25 No 68 Margo Mulyo, Balikpapan (76131).<br />
+                  <span style={{ color: 'var(--text-muted)' }}>Office 2 (Kantor Administrasi): Jl. Telindung 10 No 73, Muara Rapak</span>
                 </div>
               </div>
 

@@ -135,9 +135,12 @@ export default function KontakPage() {
                 <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   <MapPin size={20} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: 2 }} />
                   <div>
-                    <strong>Alamat Workshop &amp; Gudang:</strong><br />
-                    Jl. Gunung Empat No 68 RT 25 Margo Mulyo, Balikpapan (76131).<br />
-                    <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>Alamat Kantor: Jl. Telindung X No 73 RT 88 Balikpapan</span>
+                    <strong>Office 1: Workshop &amp; Gudang Pengiriman</strong><br />
+                    Jl. Gunung Empat RT. 25 No. 68, Kel. Margo Mulyo, Balikpapan 76131.<br />
+                    <div style={{ marginTop: 6, fontSize: '0.84rem', color: 'var(--text-body)' }}>
+                      <strong>Office 2: Kantor Administrasi</strong><br />
+                      Jl. Telindung 10 No. 73, Kel. Muara Rapak, Balikpapan Utara.
+                    </div>
                   </div>
                 </div>
 

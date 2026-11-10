@@ -32,7 +32,7 @@ export const PRODUCTS: Product[] = [
     basePrice: 'Rp 1.650 / pcs',
     materials: ['Ivory Food Grade 270-300 gsm', 'Kraft Brown 290 gsm', 'Duplex 310 gsm'],
     minOrder: '500 pcs',
-    image: '/images/rt1.jpg',
+    image: '/images/products/kemasan-adoras-box.jpg',
     flagship: true
   },
   {
@@ -57,7 +57,7 @@ export const PRODUCTS: Product[] = [
     basePrice: 'Rp 350 / pcs',
     materials: ['Vinyl Tahan Air', 'Vinyl Transparan', 'Chromo Glossy'],
     minOrder: '100 pcs',
-    image: '/images/rt2.jpg',
+    image: '/images/products/stiker-warna.jpg',
     flagship: true
   },
 
@@ -71,7 +71,7 @@ export const PRODUCTS: Product[] = [
     basePrice: 'Rp 65.000 / set',
     materials: ['Flexi Korea 440 gsm', 'Flexi Standar 280 gsm', 'Rangka X-Banner / Roll Up Aluminium'],
     minOrder: '1 pcs',
-    image: '/images/bhm1.jpg'
+    image: '/images/products/xbanner-mentai.jpg'
   },
 
   // 4. PRODUK CETAK
@@ -79,12 +79,12 @@ export const PRODUCTS: Product[] = [
     id: 'map_rapot',
     category: 'cetak',
     categoryLabel: 'Produk Cetak',
-    title: 'Map Rapot, Ijazah & Kalender Spiral',
-    desc: 'Map ijazah emboss foil emas sudut kuningan, kalender meja/dinding spiral, buku, brosur, dan nota blanko.',
+    title: 'Buku, Map Rapot, Ijazah & Kalender',
+    desc: 'Buku tahunan/laporan, map ijazah emboss foil emas sudut kuningan, kalender meja/dinding, dan nota blanko.',
     basePrice: 'Rp 14.500 / pcs',
-    materials: ['ASE Busa Tebal Hotprint Emas', 'Art Carton 260 gsm Jilid Kawat', 'NCR 2-3 Rangkap'],
+    materials: ['Art Paper & HVS Jilid Lem Panas', 'ASE Busa Tebal Hotprint Emas', 'Art Carton 260 gsm Jilid Kawat'],
     minOrder: '50 pcs',
-    image: '/images/rt6.jpg'
+    image: '/images/products/buku-transportasi.jpg'
   },
 
   // 5. REKLAME
@@ -110,7 +110,7 @@ export const PRODUCTS: Product[] = [
     basePrice: 'Rp 19.500 / pcs',
     materials: ['Keramik SNI Putih', 'Stainless Tumbler', 'Akrilik Grafir Tebal'],
     minOrder: '24 pcs',
-    image: '/images/r5.jpg'
+    image: '/images/products/mug-souvenir.jpg'
   },
 
   // 7. JASA PERCETAKAN
