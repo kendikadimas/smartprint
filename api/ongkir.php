@@ -114,23 +114,41 @@ $couriers = $_REQUEST['courier'] ?? 'all'; // all, jne, jnt, sicepat, pos, cargo
 $userApiKey = $_REQUEST['api_key'] ?? '';
 $provider = $_REQUEST['provider'] ?? 'auto'; // binderbyte, rajaongkir, auto, fallback
 
-// 2. Action: Calculate Shipping Cost via RajaOngkir Komerce
+// 2. Action: Calculate Shipping Cost via RajaOngkir Komerce (dengan File-Based Cache)
 if (!empty($RAJAONGKIR_API_KEY)) {
-    // Mapping destination to RajaOngkir destination ID if numeric, otherwise default
-    $rajaDestId = is_numeric($destinationId) ? $destinationId : '8644'; // Default Baru Ilir / Balikpapan / Samarinda
+    $rajaDestId = is_numeric($destinationId) ? $destinationId : '8644';
     
-    // Check destination mapping for popular local presets
     $mapDest = [
-        'kaltim_smd' => '8653', // Samarinda
-        'kaltim_ppu' => '8644', // PPU
-        'kaltim_btg' => '8650', // Bontang
-        'dki_pusat'  => '1553'  // Gambir Jakarta Pusat
+        'kaltim_smd' => '8653',
+        'kaltim_ppu' => '8644',
+        'kaltim_btg' => '8650',
+        'dki_pusat'  => '1553'
     ];
     if (isset($mapDest[$destinationId])) {
         $rajaDestId = $mapDest[$destinationId];
     }
 
-    $courierList = ['jne', 'jnt', 'tiki', 'pos'];
+    // Normalisasi berat per kilogram
+    $weightKg = ceil($weightInGrams / 1000);
+    $normalizedWeight = $weightKg * 1000;
+
+    // File-based cache key
+    $cacheDir = __DIR__ . '/cache';
+    if (!is_dir($cacheDir)) {
+        @mkdir($cacheDir, 0755, true);
+    }
+    $cacheFile = $cacheDir . "/cost_{$rajaDestId}_{$normalizedWeight}.json";
+
+    // Gunakan cache jika masih < 48 jam (172800 detik) untuk menghemat kuota 100 hit/hari
+    if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < 172800)) {
+        $cachedJson = @file_get_contents($cacheFile);
+        if (!empty($cachedJson)) {
+            echo $cachedJson;
+            exit;
+        }
+    }
+
+    $courierList = ['jne', 'jnt', 'tiki'];
     $liveResults = [];
 
     foreach ($courierList as $c) {
@@ -140,7 +158,7 @@ if (!empty($RAJAONGKIR_API_KEY)) {
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
             'origin' => $ORIGIN_MARGO_MULYO_ID,
             'destination' => $rajaDestId,
-            'weight' => $weightInGrams,
+            'weight' => $normalizedWeight,
             'courier' => $c
         ]));
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
@@ -175,7 +193,7 @@ if (!empty($RAJAONGKIR_API_KEY)) {
                         'cost' => $s['cost'],
                         'cost_formatted' => 'Rp ' . number_format($s['cost'], 0, ',', '.'),
                         'etd' => !empty($s['etd']) ? $s['etd'] . ' hari' : '1-3 hari',
-                        'weight_billed_kg' => ceil($weightInGrams / 1000),
+                        'weight_billed_kg' => $weightKg,
                         'is_cargo' => ($type === 'Cargo')
                     ];
                 }
@@ -188,8 +206,9 @@ if (!empty($RAJAONGKIR_API_KEY)) {
             return $a['cost'] <=> $b['cost'];
         });
 
-        echo json_encode([
+        $finalOutput = json_encode([
             'status' => 'success',
+            'cached' => false,
             'source' => 'rajaongkir_komerce_live',
             'origin' => [
                 'city' => 'Kota Balikpapan',
@@ -199,9 +218,14 @@ if (!empty($RAJAONGKIR_API_KEY)) {
             ],
             'destination_id' => $rajaDestId,
             'weight_grams' => $weightInGrams,
-            'weight_kg' => ceil($weightInGrams / 1000),
+            'weight_kg' => $weightKg,
             'results' => $liveResults
         ], JSON_PRETTY_PRINT);
+
+        // Tulis file cache
+        @file_put_contents($cacheFile, $finalOutput);
+
+        echo $finalOutput;
         exit;
     }
 }

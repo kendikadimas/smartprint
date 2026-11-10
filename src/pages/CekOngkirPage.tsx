@@ -98,16 +98,36 @@ export default function CekOngkirPage() {
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
-  // Fetch Live Rates when destination or weight changes
+  // Fetch Live Rates when destination or weight changes (with LocalStorage Quota-Saver)
   useEffect(() => {
     let isCancelled = false;
 
     async function fetchLiveCost() {
-      setIsLiveLoading(true);
-
       const targetDestId = selectedLiveDest
         ? selectedLiveDest.id
         : (CITY_DEST_MAP[destination] || 8653);
+
+      const normalizedKg = Math.ceil(weightGrams / 1000);
+      const storageKey = `sp_rates_${targetDestId}_${normalizedKg}kg`;
+
+      // 1. Cek LocalStorage Browser (Hemat Hit 100/hari)
+      try {
+        const cachedRaw = localStorage.getItem(storageKey);
+        if (cachedRaw) {
+          const parsed = JSON.parse(cachedRaw);
+          // Valid selama 24 jam
+          if (Date.now() - parsed.timestamp < 24 * 60 * 60 * 1000 && Array.isArray(parsed.rates)) {
+            setLiveRates(parsed.rates);
+            setIsLiveActive(true);
+            setIsLiveLoading(false);
+            return;
+          }
+        }
+      } catch (e) {
+        // Abaikan error localStorage
+      }
+
+      setIsLiveLoading(true);
 
       try {
         const res = await fetch(`/api/ongkir?destination=${targetDestId}&weight=${weightGrams}`);
@@ -119,6 +139,14 @@ export default function CekOngkirPage() {
         if (json.status === 'success' && Array.isArray(json.results) && json.results.length > 0) {
           setLiveRates(json.results);
           setIsLiveActive(true);
+
+          // Simpan ke LocalStorage browser
+          try {
+            localStorage.setItem(storageKey, JSON.stringify({
+              timestamp: Date.now(),
+              rates: json.results
+            }));
+          } catch (e) {}
         } else {
           setLiveRates(null);
           setIsLiveActive(false);

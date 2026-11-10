@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: SmartprintID - RajaOngkir Live Cost Calculator
- * Description: Integrasi tarif kurir resmi RajaOngkir (Komerce) terhubung langsung dari Workshop SmartprintID Balikpapan Barat (ID: 8649).
- * Version: 1.0.0
+ * Plugin Name: SmartprintID - RajaOngkir Live Cost Calculator (Quota-Saver Edition)
+ * Description: Integrasi tarif kurir resmi RajaOngkir (Komerce) terhubung langsung dari Workshop SmartprintID Balikpapan Barat (ID: 8649) dengan sistem Multi-Tier Caching untuk menghemat kuota API gratis (100 hit/hari).
+ * Version: 1.1.0
  * Author: SmartprintID
  * Author URI: https://smartprint.co.id
  */
@@ -14,6 +14,10 @@ if (!defined('ABSPATH')) {
 define('SMARTPRINT_RAJAONGKIR_KEY', 'HhC6hZbC0d37787ba055adc246IWK1br');
 define('SMARTPRINT_RAJAONGKIR_BASE', 'https://rajaongkir.komerce.id/api/v1');
 define('SMARTPRINT_ORIGIN_ID', '8649'); // Margo Mulyo, Balikpapan Barat (76131)
+
+// Durasi Cache (Hemat Kuota 100 hit/hari):
+define('SMARTPRINT_CACHE_COST_TTL', 2 * DAY_IN_SECONDS); // 48 Jam untuk tarif ongkir
+define('SMARTPRINT_CACHE_DEST_TTL', 7 * DAY_IN_SECONDS); // 7 Hari untuk nama kecamatan
 
 // 1. Register WP REST API Endpoints
 add_action('rest_api_init', function () {
@@ -32,8 +36,28 @@ add_action('rest_api_init', function () {
     ]);
 });
 
+/**
+ * 1. Search Destination dengan Caching Transient 7 Hari
+ */
 function smartprint_api_search_destination($request) {
     $q = sanitize_text_field($request->get_param('q') ?: 'Samarinda');
+    $q_clean = strtolower(trim($q));
+
+    if (strlen($q_clean) < 3) {
+        return rest_ensure_response(['status' => 'success', 'data' => []]);
+    }
+
+    $cache_key = 'sp_dest_' . md5($q_clean);
+    $cached = get_transient($cache_key);
+
+    if ($cached !== false) {
+        return rest_ensure_response([
+            'status' => 'success',
+            'cached' => true,
+            'data'   => $cached
+        ]);
+    }
+
     $url = SMARTPRINT_RAJAONGKIR_BASE . '/destination/domestic-destination?search=' . urlencode($q);
 
     $response = wp_remote_get($url, [
@@ -49,14 +73,50 @@ function smartprint_api_search_destination($request) {
     }
 
     $body = wp_remote_retrieve_body($response);
-    return rest_ensure_response(json_decode($body, true));
+    $json = json_decode($body, true);
+    $data = $json['data'] ?? [];
+
+    if (!empty($data) && is_array($data)) {
+        set_transient($cache_key, $data, SMARTPRINT_CACHE_DEST_TTL);
+    }
+
+    return rest_ensure_response([
+        'status' => 'success',
+        'cached' => false,
+        'data'   => $data
+    ]);
 }
 
+/**
+ * 2. Calculate Shipping Cost dengan Normalisasi Bobot + Caching 48 Jam
+ */
 function smartprint_api_calculate_cost($request) {
     $destination = sanitize_text_field($request->get_param('destination') ?: '8653');
-    $weight = max(100, intval($request->get_param('weight') ?: 1000));
-    $couriers = ['jne', 'jnt', 'tiki', 'pos'];
+    $raw_weight = max(100, intval($request->get_param('weight') ?: 1000));
+    
+    // Normalisasi berat: Ekspedisi dihitung per-kg bulat (500g, 800g, 1000g -> dihitung 1000g)
+    // Ini menghemat kuota karena 500g dan 1000g berbagi 1 cache yang sama!
+    $weight_kg = ceil($raw_weight / 1000);
+    $normalized_weight = $weight_kg * 1000;
 
+    // Cek Transient Cache
+    $cache_key = 'sp_cost_' . $destination . '_' . $normalized_weight;
+    $cached_results = get_transient($cache_key);
+
+    if ($cached_results !== false) {
+        return rest_ensure_response([
+            'status' => 'success',
+            'cached' => true,
+            'source' => 'wordpress_transient_cache (hemat kuota API)',
+            'origin' => 'MARGO MULYO, BALIKPAPAN BARAT (76131)',
+            'weight_grams' => $raw_weight,
+            'weight_billed_kg' => $weight_kg,
+            'results' => $cached_results
+        ]);
+    }
+
+    // Hanya panggil kurir resmi yang aktif digunakan toko (JNE, J&T, TIKI)
+    $couriers = ['jne', 'jnt', 'tiki'];
     $allResults = [];
 
     foreach ($couriers as $courier) {
@@ -70,7 +130,7 @@ function smartprint_api_calculate_cost($request) {
             'body' => [
                 'origin' => SMARTPRINT_ORIGIN_ID,
                 'destination' => $destination,
-                'weight' => $weight,
+                'weight' => $normalized_weight,
                 'courier' => $courier
             ]
         ]);
@@ -102,15 +162,22 @@ function smartprint_api_calculate_cost($request) {
         }
     }
 
-    usort($allResults, function ($a, $b) {
-        return $a['cost'] <=> $b['cost'];
-    });
+    if (!empty($allResults)) {
+        usort($allResults, function ($a, $b) {
+            return $a['cost'] <=> $b['cost'];
+        });
+
+        // Simpan ke Cache WordPress selama 48 Jam
+        set_transient($cache_key, $allResults, SMARTPRINT_CACHE_COST_TTL);
+    }
 
     return rest_ensure_response([
         'status' => 'success',
-        'source' => 'rajaongkir_komerce',
+        'cached' => false,
+        'source' => 'rajaongkir_komerce_live',
         'origin' => 'MARGO MULYO, BALIKPAPAN BARAT (76131)',
-        'weight_grams' => $weight,
+        'weight_grams' => $raw_weight,
+        'weight_billed_kg' => $weight_kg,
         'results' => $allResults
     ]);
 }
