@@ -14,11 +14,35 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'OPTIONS') {
     exit;
 }
 
-// Default Configuration (Dapat dioverride via POST parameter atau environment variable)
-$BINDERBYTE_API_KEY = getenv('BINDERBYTE_API_KEY') ?: '';
-$RAJAONGKIR_API_KEY = getenv('RAJAONGKIR_API_KEY') ?: '';
+// Default Configuration
+$RAJAONGKIR_API_KEY = getenv('RAJAONGKIR_API_KEY') ?: 'HhC6hZbC0d37787ba055adc246IWK1br';
+$RAJAONGKIR_BASE_URL = 'https://rajaongkir.komerce.id/api/v1';
+$ORIGIN_MARGO_MULYO_ID = '8649'; // Margo Mulyo, Balikpapan Barat (76131)
 
 $action = $_GET['action'] ?? $_POST['action'] ?? 'cost';
+
+// 1. Action: Search Destination via RajaOngkir
+if ($action === 'search' || $action === 'destination') {
+    $q = $_GET['q'] ?? $_POST['q'] ?? 'Samarinda';
+    $url = $RAJAONGKIR_BASE_URL . '/destination/domestic-destination?search=' . urlencode($q);
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'key: ' . $RAJAONGKIR_API_KEY,
+        'User-Agent: SmartprintID/1.0'
+    ]);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 6);
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($httpCode === 200 && $response) {
+        echo $response;
+        exit;
+    }
+}
 
 // 1. Action: Get Cities List (Daftar Kota/Kabupaten Indonesia)
 if ($action === 'cities') {
@@ -90,28 +114,95 @@ $couriers = $_REQUEST['courier'] ?? 'all'; // all, jne, jnt, sicepat, pos, cargo
 $userApiKey = $_REQUEST['api_key'] ?? '';
 $provider = $_REQUEST['provider'] ?? 'auto'; // binderbyte, rajaongkir, auto, fallback
 
-// If API key is provided, try external query
-if (!empty($userApiKey) && $provider === 'binderbyte') {
-    // Implementasi Binderbyte lookup bila user menyediakan API Key
-    $url = "https://api.binderbyte.com/v1/cost?api_key={$userApiKey}&courier=jne,jnt,sicepat,pos&origin=balikpapan&destination={$destinationId}&weight={$weightInGrams}";
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 6);
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+// 2. Action: Calculate Shipping Cost via RajaOngkir Komerce
+if (!empty($RAJAONGKIR_API_KEY)) {
+    // Mapping destination to RajaOngkir destination ID if numeric, otherwise default
+    $rajaDestId = is_numeric($destinationId) ? $destinationId : '8644'; // Default Baru Ilir / Balikpapan / Samarinda
+    
+    // Check destination mapping for popular local presets
+    $mapDest = [
+        'kaltim_smd' => '8653', // Samarinda
+        'kaltim_ppu' => '8644', // PPU
+        'kaltim_btg' => '8650', // Bontang
+        'dki_pusat'  => '1553'  // Gambir Jakarta Pusat
+    ];
+    if (isset($mapDest[$destinationId])) {
+        $rajaDestId = $mapDest[$destinationId];
+    }
 
-    if ($httpCode === 200 && $response) {
-        $json = json_decode($response, true);
-        if (isset($json['status']) && $json['status'] == 200) {
-            echo json_encode([
-                'status' => 'success',
-                'source' => 'binderbyte_live',
-                'data' => $json['data']
-            ]);
-            exit;
+    $courierList = ['jne', 'jnt', 'tiki', 'pos'];
+    $liveResults = [];
+
+    foreach ($courierList as $c) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $RAJAONGKIR_BASE_URL . '/calculate/domestic-cost');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+            'origin' => $ORIGIN_MARGO_MULYO_ID,
+            'destination' => $rajaDestId,
+            'weight' => $weightInGrams,
+            'courier' => $c
+        ]));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'key: ' . $RAJAONGKIR_API_KEY,
+            'Content-Type: application/x-www-form-urlencoded',
+            'User-Agent: SmartprintID/1.0'
+        ]);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 4);
+        $resp = curl_exec($ch);
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($code === 200 && $resp) {
+            $parsed = json_decode($resp, true);
+            if (!empty($parsed['data']) && is_array($parsed['data'])) {
+                foreach ($parsed['data'] as $s) {
+                    $sName = strtoupper($s['service'] ?? '');
+                    $type = 'Reguler';
+                    if (strpos($sName, 'YES') !== false || strpos($sName, 'SPS') !== false || strpos($sName, 'ONS') !== false) {
+                        $type = 'Express';
+                    } elseif (strpos($sName, 'JTR') !== false || strpos($sName, 'CARGO') !== false) {
+                        $type = 'Cargo';
+                    }
+
+                    $liveResults[] = [
+                        'code' => $c,
+                        'courier' => $s['name'] ?? strtoupper($c),
+                        'service' => $s['service'],
+                        'description' => $s['description'] ?? 'Pengiriman langsung dari Workshop Balikpapan',
+                        'type' => $type,
+                        'cost' => $s['cost'],
+                        'cost_formatted' => 'Rp ' . number_format($s['cost'], 0, ',', '.'),
+                        'etd' => !empty($s['etd']) ? $s['etd'] . ' hari' : '1-3 hari',
+                        'weight_billed_kg' => ceil($weightInGrams / 1000),
+                        'is_cargo' => ($type === 'Cargo')
+                    ];
+                }
+            }
         }
+    }
+
+    if (!empty($liveResults)) {
+        usort($liveResults, function($a, $b) {
+            return $a['cost'] <=> $b['cost'];
+        });
+
+        echo json_encode([
+            'status' => 'success',
+            'source' => 'rajaongkir_komerce_live',
+            'origin' => [
+                'city' => 'Kota Balikpapan',
+                'province' => 'Kalimantan Timur',
+                'postal_code' => '76131',
+                'workshop' => 'Jl. Gunung Empat RT.25 No. 68 Margo Mulyo (ID: 8649)'
+            ],
+            'destination_id' => $rajaDestId,
+            'weight_grams' => $weightInGrams,
+            'weight_kg' => ceil($weightInGrams / 1000),
+            'results' => $liveResults
+        ], JSON_PRETTY_PRINT);
+        exit;
     }
 }
 

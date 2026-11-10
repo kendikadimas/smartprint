@@ -220,3 +220,4 @@ export const OFFICIAL_OFFICES = [
     hours: '08:00 - 17:00 WITA (Senin - Sabtu)'
   }
 ];
+

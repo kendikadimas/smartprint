@@ -1,12 +1,63 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Truck, MapPin, Package, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
+import {
+  Truck,
+  MapPin,
+  Package,
+  Clock,
+  ShieldCheck,
+  ArrowRight,
+  Search,
+  CheckCircle2,
+  RefreshCw,
+  Zap
+} from 'lucide-react';
 import { CITIES, calculateShippingRates, ShippingRate } from '../data/shipping';
+
+const CITY_DEST_MAP: Record<string, number> = {
+  'kaltim_bpp': 8649, // Margo Mulyo Balikpapan
+  'kaltim_smd': 8653, // Samarinda
+  'kaltim_btg': 8650, // Bontang
+  'kaltim_kukar': 8655, // Kutai Kartanegara
+  'kaltim_kutim': 9101, // Kutai Timur (Sangatta)
+  'kaltim_kubar': 8654, // Kutai Barat
+  'kaltim_berau': 8640, // Berau
+  'kaltim_ppu': 8644, // Penajam Paser Utara / IKN
+  'kaltim_paser': 8651, // Tanah Grogot
+  'kalsel_bjm': 7011, // Banjarmasin
+  'dki_pusat': 1553, // Jakarta Pusat
+  'dki_selatan': 1555, // Jakarta Selatan
+  'dki_barat': 1551, // Jakarta Barat
+  'dki_timur': 1554, // Jakarta Timur
+  'jabar_bdg': 3884, // Bandung
+  'jabar_bks': 3885, // Bekasi
+  'jatim_sby': 4688, // Surabaya
+  'jateng_smg': 4001, // Semarang
+  'diy_ygy': 4201, // Yogyakarta
+  'sulsel_mks': 1001, // Makassar
+  'sumut_mdn': 2011 // Medan
+};
+
+interface LiveDestination {
+  id: number;
+  label: string;
+}
 
 export default function CekOngkirPage() {
   const [destination, setDestination] = useState('kaltim_smd');
   const [weightGrams, setWeightGrams] = useState(1000);
   const [courierFilter, setCourierFilter] = useState<'all' | 'Reguler' | 'Express' | 'Cargo' | 'Travel Kaltim'>('all');
+
+  // Live RajaOngkir States
+  const [liveRates, setLiveRates] = useState<ShippingRate[] | null>(null);
+  const [isLiveLoading, setIsLiveLoading] = useState(false);
+  const [isLiveActive, setIsLiveActive] = useState(false);
+
+  // Search by subdistrict/city
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<LiveDestination[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [selectedLiveDest, setSelectedLiveDest] = useState<LiveDestination | null>(null);
 
   const weightPresets = [
     { label: '500g (Stiker)', grams: 500 },
@@ -17,11 +68,89 @@ export default function CekOngkirPage() {
     { label: '25 Kg (1.000 Box Dus)', grams: 25000 }
   ];
 
-  const rates = useMemo(() => {
-    const raw = calculateShippingRates(destination, weightGrams);
+  // Search destination with debounce
+  useEffect(() => {
+    if (searchQuery.trim().length < 3) {
+      setSearchResults([]);
+      return;
+    }
+
+    const timer = setTimeout(async () => {
+      setIsSearching(true);
+      try {
+        const res = await fetch(`/api/ongkir?action=search&q=${encodeURIComponent(searchQuery)}`);
+        if (res.ok) {
+          const json = await res.json();
+          if (json.data && Array.isArray(json.data)) {
+            setSearchResults(json.data.slice(0, 8).map((d: any) => ({
+              id: d.id,
+              label: d.label
+            })));
+          }
+        }
+      } catch (err) {
+        console.error('Failed to search RajaOngkir destination:', err);
+      } finally {
+        setIsSearching(false);
+      }
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
+
+  // Fetch Live Rates when destination or weight changes
+  useEffect(() => {
+    let isCancelled = false;
+
+    async function fetchLiveCost() {
+      setIsLiveLoading(true);
+
+      const targetDestId = selectedLiveDest
+        ? selectedLiveDest.id
+        : (CITY_DEST_MAP[destination] || 8653);
+
+      try {
+        const res = await fetch(`/api/ongkir?destination=${targetDestId}&weight=${weightGrams}`);
+        if (!res.ok) throw new Error('API request failed');
+
+        const json = await res.json();
+        if (isCancelled) return;
+
+        if (json.status === 'success' && Array.isArray(json.results) && json.results.length > 0) {
+          setLiveRates(json.results);
+          setIsLiveActive(true);
+        } else {
+          setLiveRates(null);
+          setIsLiveActive(false);
+        }
+      } catch (err) {
+        if (!isCancelled) {
+          setLiveRates(null);
+          setIsLiveActive(false);
+        }
+      } finally {
+        if (!isCancelled) {
+          setIsLiveLoading(false);
+        }
+      }
+    }
+
+    fetchLiveCost();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [destination, selectedLiveDest, weightGrams]);
+
+  // Final rates with fallback
+  const displayedRates = useMemo(() => {
+    const raw = liveRates && liveRates.length > 0
+      ? liveRates
+      : calculateShippingRates(destination, weightGrams);
+
     if (courierFilter === 'all') return raw;
     return raw.filter((r) => r.type === courierFilter);
-  }, [destination, weightGrams, courierFilter]);
+  }, [liveRates, destination, weightGrams, courierFilter]);
 
   const weightKg = Math.ceil(weightGrams / 1000);
 
@@ -35,9 +164,25 @@ export default function CekOngkirPage() {
             <span>/</span>
             <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>Cek Ongkir</span>
           </nav>
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 6,
+            backgroundColor: 'var(--primary)',
+            color: '#FFFFFF',
+            padding: '4px 12px',
+            borderRadius: 'var(--radius-full)',
+            fontSize: '0.76rem',
+            fontWeight: 700,
+            letterSpacing: '0.04em',
+            textTransform: 'uppercase',
+            marginBottom: 12
+          }}>
+            Layanan Ekspedisi Resmi
+          </div>
           <h1 className="page-title">Cek Ongkir dari Balikpapan</h1>
           <p className="page-subtitle">
-            Estimasi ongkir paket cetakan dari Workshop Balikpapan Barat (76131) ke seluruh Indonesia.
+            Kalkulator ongkos kirim resmi terhubung langsung ke RajaOngkir dari Workshop SmartprintID Balikpapan Barat (76131).
           </p>
         </div>
       </section>
@@ -45,6 +190,41 @@ export default function CekOngkirPage() {
       {/* Main Content */}
       <div className="container" style={{ marginBottom: 72 }}>
         <div className="card responsive-card-pad">
+
+          {/* Service Live Indicator Badge */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: 12,
+            backgroundColor: isLiveActive ? '#ECFDF5' : 'var(--bg-subtle)',
+            border: `1px solid ${isLiveActive ? '#A7F3D0' : 'var(--border-medium)'}`,
+            padding: '10px 16px',
+            borderRadius: 'var(--radius-sm)',
+            marginBottom: 24,
+            fontSize: '0.82rem'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              {isLiveActive ? (
+                <CheckCircle2 size={16} style={{ color: '#059669' }} />
+              ) : (
+                <Zap size={16} style={{ color: 'var(--primary)' }} />
+              )}
+              <span style={{ fontWeight: 700, color: isLiveActive ? '#065F46' : 'var(--text-main)' }}>
+                {isLiveActive
+                  ? 'Terkoneksi Real-time API RajaOngkir (Titik Muat: Margo Mulyo Balikpapan 76131)'
+                  : 'Engine Tarif Terkalibrasi Workshop Balikpapan (Jalur Darat, Udara & Cargo)'}
+              </span>
+            </div>
+            {isLiveLoading && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: 'var(--text-muted)' }}>
+                <RefreshCw size={14} className="spin" style={{ animation: 'spin 1s linear infinite' }} />
+                <span>Memperbarui tarif...</span>
+              </div>
+            )}
+          </div>
+
           {/* Controls Grid */}
           <div className="form-grid-3">
             {/* Origin */}
@@ -58,14 +238,14 @@ export default function CekOngkirPage() {
                   type="text"
                   id="origin-input"
                   className="form-control"
-                  value="Balikpapan Barat (76131)"
+                  value="Margo Mulyo, Balikpapan Barat (76131)"
                   disabled
                   style={{ backgroundColor: 'var(--bg-subtle)', fontWeight: 600, color: 'var(--text-main)' }}
                 />
               </div>
             </div>
 
-            {/* Destination */}
+            {/* Destination Selector */}
             <div className="form-group" style={{ marginBottom: 0 }}>
               <label className="form-label" htmlFor="dest-select">
                 <span>Kota / Kabupaten Tujuan</span>
@@ -74,9 +254,19 @@ export default function CekOngkirPage() {
               <select
                 id="dest-select"
                 className="form-control"
-                value={destination}
-                onChange={(e) => setDestination(e.target.value)}
+                value={selectedLiveDest ? 'custom' : destination}
+                onChange={(e) => {
+                  if (e.target.value !== 'custom') {
+                    setSelectedLiveDest(null);
+                    setDestination(e.target.value);
+                  }
+                }}
               >
+                {selectedLiveDest && (
+                  <option value="custom">
+                    📍 {selectedLiveDest.label.substring(0, 36)}...
+                  </option>
+                )}
                 {CITIES.map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.city} - {c.province}
@@ -101,6 +291,74 @@ export default function CekOngkirPage() {
                 onChange={(e) => setWeightGrams(Math.max(100, Number(e.target.value)))}
               />
             </div>
+          </div>
+
+          {/* Advanced Search: Kecamatan / Kelurahan RajaOngkir */}
+          <div style={{ marginTop: 18, marginBottom: 20 }}>
+            <div style={{ position: 'relative' }}>
+              <div style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+                <Search size={16} style={{ position: 'absolute', left: 14, color: 'var(--text-muted)' }} />
+                <input
+                  type="text"
+                  className="form-control"
+                  style={{ paddingLeft: 38 }}
+                  placeholder="Atau cari spesifik kecamatan / kelurahan tujuan (contoh: Sepaku IKN, Samarinda Ulu, Tenggarong)..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+
+              {/* Autocomplete Dropdown */}
+              {searchResults.length > 0 && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: 0,
+                  right: 0,
+                  backgroundColor: '#FFFFFF',
+                  borderRadius: 'var(--radius-sm)',
+                  border: '1px solid var(--border-medium)',
+                  boxShadow: 'var(--shadow-dropdown)',
+                  zIndex: 20,
+                  marginTop: 4,
+                  maxHeight: 240,
+                  overflowY: 'auto'
+                }}>
+                  {searchResults.map((item) => (
+                    <div
+                      key={item.id}
+                      style={{
+                        padding: '10px 14px',
+                        cursor: 'pointer',
+                        fontSize: '0.84rem',
+                        borderBottom: '1px solid var(--border-subtle)'
+                      }}
+                      onMouseDown={() => {
+                        setSelectedLiveDest(item);
+                        setSearchQuery('');
+                        setSearchResults([]);
+                      }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--bg-hover)'; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = '#FFFFFF'; }}
+                    >
+                      <div style={{ fontWeight: 600, color: 'var(--text-main)' }}>{item.label}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            {selectedLiveDest && (
+              <div style={{ marginTop: 8, fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                <span>Tujuan aktif: <strong>{selectedLiveDest.label}</strong></span>
+                <button
+                  type="button"
+                  onClick={() => setSelectedLiveDest(null)}
+                  style={{ background: 'none', border: 'none', color: 'var(--primary)', cursor: 'pointer', textDecoration: 'underline', fontSize: '0.78rem' }}
+                >
+                  Ganti ke Pilihan Kota
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Preset Chips */}
@@ -153,7 +411,7 @@ export default function CekOngkirPage() {
 
           {/* Rates Result Grid */}
           <div className="rates-grid">
-            {rates.map((rate, idx) => (
+            {displayedRates.map((rate, idx) => (
               <div
                 key={idx}
                 style={{
@@ -169,7 +427,14 @@ export default function CekOngkirPage() {
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
                     <span style={{ fontWeight: 800, fontSize: '1rem', color: 'var(--text-main)' }}>{rate.courier}</span>
-                    <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)' }}>
+                    <span style={{
+                      fontSize: '0.74rem',
+                      fontWeight: 700,
+                      backgroundColor: rate.type === 'Cargo' ? '#EFF6FF' : rate.type === 'Express' ? '#FEF2F2' : '#F3F4F6',
+                      color: rate.type === 'Cargo' ? '#1D4ED8' : rate.type === 'Express' ? 'var(--primary)' : 'var(--text-muted)',
+                      padding: '2px 8px',
+                      borderRadius: 'var(--radius-sm)'
+                    }}>
                       {rate.type}
                     </span>
                   </div>
@@ -229,7 +494,7 @@ export default function CekOngkirPage() {
                 <div>
                   <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Kurir Resmi yang Didukung</h3>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                    Pengiriman reguler via JNE, J&amp;T Express, dan TIKI, serta GoSend (Instant/Same Day Balikpapan).
+                    Pengiriman reguler &amp; kargo via JNE, J&amp;T Express, TIKI, POS, serta GoSend (Instant/Same Day Balikpapan).
                   </p>
                 </div>
               </div>
