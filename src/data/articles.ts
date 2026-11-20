@@ -1,3 +1,5 @@
+import { assetUrl } from '../utils/asset';
+
 export interface Article {
   id: number;
   title: string;
@@ -73,4 +75,4 @@ export const ARTICLES: Article[] = [
     image: '/images/bhm2.jpg',
     readTime: '2 mnt baca'
   }
-];
+].map((a) => ({ ...a, image: assetUrl(a.image) }));

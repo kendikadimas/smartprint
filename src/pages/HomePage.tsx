@@ -5,6 +5,7 @@ import WhatsAppIcon from '../components/WhatsAppIcon';
 import { PRODUCTS } from '../data/products';
 import { ARTICLES } from '../data/articles';
 import { CLIENT_LOGOS, FEATURED_MACHINES } from '../data/company';
+import { assetUrl } from '../utils/asset';
 
 export default function HomePage() {
   // Quick Print Estimator State
@@ -116,7 +117,7 @@ export default function HomePage() {
                 overflow: 'hidden'
               }}>
                 <img
-                  src="/images/bhm1.jpg"
+                  src={assetUrl('/images/bhm1.jpg')}
                   alt="Workshop Produksi Cetak SmartprintID Balikpapan"
                   style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
                 />
@@ -443,7 +444,7 @@ export default function HomePage() {
             <div className="card spotlight-card">
               <div style={{ height: '100%', minHeight: 250, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 18 }}>
                 <img
-                  src="/images/products/kemasan-adoras-box.jpg"
+                  src={assetUrl('/images/products/kemasan-adoras-box.jpg')}
                   alt="Dus Box Kemasan Makanan Adora's"
                   style={{ width: '100%', maxHeight: 240, objectFit: 'contain' }}
                 />
@@ -536,7 +537,7 @@ export default function HomePage() {
             <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ height: 210, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 14, borderBottom: '1px solid var(--border-medium)' }}>
                 <img
-                  src="/images/machines/heidelberg-sorm72.jpg"
+                  src={assetUrl('/images/machines/heidelberg-sorm72.jpg')}
                   alt="Mesin Offset Heidelberg SORM 72"
                   style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                 />
@@ -557,7 +558,7 @@ export default function HomePage() {
             <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ height: 210, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 14, borderBottom: '1px solid var(--border-medium)' }}>
                 <img
-                  src="/images/machines/mesin-pond-92x66.jpg"
+                  src={assetUrl('/images/machines/mesin-pond-92x66.jpg')}
                   alt="Mesin Pond 92x66 Kemasan"
                   style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                 />
@@ -578,7 +579,7 @@ export default function HomePage() {
             <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ height: 210, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFFFFF', padding: 14, borderBottom: '1px solid var(--border-medium)' }}>
                 <img
-                  src="/images/machines/fuji-xerox-b9100.jpg"
+                  src={assetUrl('/images/machines/fuji-xerox-b9100.jpg')}
                   alt="Digital Press Fuji Xerox B9100"
                   style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                 />

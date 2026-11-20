@@ -1,3 +1,5 @@
+import { assetUrl } from '../utils/asset';
+
 export interface Product {
   id: string;
   category: 'kemasan' | 'stiker' | 'promosi' | 'cetak' | 'reklame' | 'souvenir' | 'jasa';
@@ -21,7 +23,7 @@ export const CATEGORIES: { id: Product['category']; label: string; desc: string 
   { id: 'jasa', label: 'Jasa Percetakan', desc: 'Printing, fotokopi, penjilidan dokumen, laminasi, dan finishing.' }
 ];
 
-export const PRODUCTS: Product[] = [
+const RAW_PRODUCTS: Product[] = [
   // 1. KEMASAN (Spesialisasi Utama Klien)
   {
     id: 'box_kemasan',
@@ -126,3 +128,5 @@ export const PRODUCTS: Product[] = [
     image: '/images/bhm2.jpg'
   }
 ];
+
+export const PRODUCTS: Product[] = RAW_PRODUCTS.map((p) => ({ ...p, image: assetUrl(p.image) }));

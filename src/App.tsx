@@ -14,7 +14,7 @@ import KontakPage from './pages/KontakPage';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <Header />
       <div style={{ flex: 1 }}>

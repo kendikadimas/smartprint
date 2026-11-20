@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import { assetUrl } from '../utils/asset';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -50,7 +51,7 @@ export default function Header() {
       <header className="site-header">
         <div className="container header-inner">
           <Link to="/" className="brand-logo" onClick={() => setMobileOpen(false)} aria-label="SmartprintID Beranda">
-            <img src="/images/logo.jpg" alt="SmartprintID" />
+            <img src={assetUrl('/images/logo.jpg')} alt="SmartprintID" />
           </Link>
 
           {/* Desktop Navigation */}

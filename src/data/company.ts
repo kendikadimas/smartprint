@@ -1,3 +1,5 @@
+import { assetUrl } from '../utils/asset';
+
 export interface Machine {
   id: string;
   name: string;
@@ -38,7 +40,7 @@ export const FEATURED_MACHINES: Machine[] = [
     id: 'heidelberg-sorm72',
     name: 'Mesin Offset Heidelberg SORM 72',
     category: 'Offset Sheetfed Press',
-    image: '/images/machines/heidelberg-sorm72.jpg',
+    image: assetUrl('/images/machines/heidelberg-sorm72.jpg'),
     badge: 'Produksi Partai Besar',
     specs: 'Kapasitas ribuan lembar/jam, akurasi register tinggi, kestabilan warna CMYK',
     desc: 'Mesin offset lembaran standar industri internasional untuk mencetak dus makanan, kalender, paper bag, dan materi komersial dengan warna presisi.'
@@ -47,7 +49,7 @@ export const FEATURED_MACHINES: Machine[] = [
     id: 'mesin-pond-92x66',
     name: 'Mesin Pond 92 x 66 (Die-Cut)',
     category: 'Pond & Creasing Kemasan',
-    image: '/images/machines/mesin-pond-92x66.jpg',
+    image: assetUrl('/images/machines/mesin-pond-92x66.jpg'),
     badge: 'Spesialis Dus & Karton',
     specs: 'Area kerja 92 x 66 cm, pisau pond presisi, garis tekuk lipatan rapi',
     desc: 'Mesin pond bertenaga besar untuk memotong pola kemasan dus kue, kotak nasi, kardus, dan paper bag siap rakit tanpa serabut.'
@@ -56,7 +58,7 @@ export const FEATURED_MACHINES: Machine[] = [
     id: 'fuji-xerox-b9100',
     name: 'Mesin Fuji Xerox B9100',
     category: 'High-Speed Digital Press',
-    image: '/images/machines/fuji-xerox-b9100.jpg',
+    image: assetUrl('/images/machines/fuji-xerox-b9100.jpg'),
     badge: 'Digital Press Cepat',
     specs: 'Kecepatan tinggi, resolusi teks monokrom tajam 2400 dpi, auto-duplex',
     desc: 'Solusi produksi cepat untuk pencetakan buku, nota/blanko, continuous form, dan dokumen korporasi dalam jumlah ribuan lembar per hari.'
@@ -65,7 +67,7 @@ export const FEATURED_MACHINES: Machine[] = [
     id: 'fuji-xerox-docucentre-vii3372',
     name: 'Fuji Xerox DocuCentre-VII3372',
     category: 'Full-Color Digital Graphic',
-    image: '/images/machines/fuji-xerox-docucentre-vii3372.jpg',
+    image: assetUrl('/images/machines/fuji-xerox-docucentre-vii3372.jpg'),
     badge: 'Full Color Grafis Tajam',
     specs: 'Warna CMYK pekat, mendukung Art Carton s/d 310gsm, proofing akurat',
     desc: 'Digital press warna untuk cetak stiker vinyl anti air, kartu nama, poster promosi, brosur express, dan sampel dummy sebelum cetak massal.'
@@ -74,7 +76,7 @@ export const FEATURED_MACHINES: Machine[] = [
     id: 'mesin-jilid-lem',
     name: 'Mesin Jilid Lem Mesinoke BM300',
     category: 'Automatic Book Binding',
-    image: '/images/machines/mesin-jilid-lem.jpg',
+    image: assetUrl('/images/machines/mesin-jilid-lem.jpg'),
     badge: 'Jilid Lem Panas Otomatis',
     specs: 'Full-Automatic Glue Binding, daya rekat kuat hotmelt, milling punggung buku',
     desc: 'Menghasilkan jilid buku tahunan, laporan instansi, novel, dan katalog dengan punggung kotak tegak dan lem yang tidak mudah rontok.'
@@ -83,7 +85,7 @@ export const FEATURED_MACHINES: Machine[] = [
     id: 'mesin-laminasi-roll',
     name: 'Mesin Laminasi PLD Digital Roll',
     category: 'Thermal Roll Laminator',
-    image: '/images/machines/mesin-laminasi-roll.jpg',
+    image: assetUrl('/images/machines/mesin-laminasi-roll.jpg'),
     badge: 'Lapisan Doff & Glossy',
     specs: 'Tekanan silinder stabil, pemanas ganda anti-kerut, daya rekat tinggi',
     desc: 'Memberikan lapisan pelindung anti air dan anti gores pada dus kemasan, cover buku, dan stiker label makanan tahan minyak.'
@@ -203,7 +205,7 @@ export const CLIENT_LOGOS: string[] = [
   '/images/clients/client_2.png',
   '/images/clients/client_6.png',
   '/images/clients/client_9.png'
-];
+].map(assetUrl);
 
 export const CLIENT_PARTNERS: ClientPartner[] = CLIENT_LOGOS.map((logo, idx) => ({
   name: `Mitra Klien Smartprint #${idx + 1}`,

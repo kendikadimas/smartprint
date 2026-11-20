@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { assetUrl } from '../utils/asset';
 import {
   Truck,
   MapPin,
@@ -78,7 +79,10 @@ export default function CekOngkirPage() {
     const timer = setTimeout(async () => {
       setIsSearching(true);
       try {
-        const res = await fetch(`/api/ongkir?action=search&q=${encodeURIComponent(searchQuery)}`);
+        let res = await fetch(assetUrl(`/api/ongkir?action=search&q=${encodeURIComponent(searchQuery)}`));
+        if (!res.ok) {
+          res = await fetch(assetUrl(`/api/ongkir.php?action=search&q=${encodeURIComponent(searchQuery)}`));
+        }
         if (res.ok) {
           const json = await res.json();
           if (json.data && Array.isArray(json.data)) {
@@ -130,7 +134,10 @@ export default function CekOngkirPage() {
       setIsLiveLoading(true);
 
       try {
-        const res = await fetch(`/api/ongkir?destination=${targetDestId}&weight=${weightGrams}`);
+        let res = await fetch(assetUrl(`/api/ongkir?destination=${targetDestId}&weight=${weightGrams}`));
+        if (!res.ok) {
+          res = await fetch(assetUrl(`/api/ongkir.php?destination=${targetDestId}&weight=${weightGrams}`));
+        }
         if (!res.ok) throw new Error('API request failed');
 
         const json = await res.json();

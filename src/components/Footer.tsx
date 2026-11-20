@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import { assetUrl } from '../utils/asset';
 
 export default function Footer() {
   return (
@@ -11,7 +12,7 @@ export default function Footer() {
           {/* Brand Info */}
           <div>
             <Link to="/" className="brand-logo" style={{ marginBottom: 14 }} aria-label="SmartprintID Beranda">
-              <img src="/images/logo.jpg" alt="SmartprintID" />
+              <img src={assetUrl('/images/logo.jpg')} alt="SmartprintID" />
             </Link>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: 18, lineHeight: 1.6 }}>
               PT OLEH KELUARGA BESAR. Jasa percetakan dan spesialis kemasan beroperasi lebih dari 30 tahun di Kota Balikpapan (sejak 1994).

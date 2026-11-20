@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:v2": "tsc && vite build --base=/v2/ --outDir dist-v2 && node scripts/package-v2.cjs",
     "preview": "vite preview"
   },
   "dependencies": {
