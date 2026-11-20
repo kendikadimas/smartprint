@@ -45,21 +45,25 @@ export default function HomePage() {
         <div className="container">
           <div className="grid-hero">
             <div>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 6,
-                backgroundColor: 'var(--primary)',
-                color: '#FFFFFF',
-                padding: '4px 12px',
-                borderRadius: 'var(--radius-full)',
-                fontSize: '0.76rem',
-                fontWeight: 700,
-                letterSpacing: '0.04em',
-                textTransform: 'uppercase',
-                marginBottom: 16
-              }}>
-                SmartprintID by PT OLEH KELUARGA BESAR
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginBottom: 14 }}>
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  backgroundColor: 'var(--primary)',
+                  color: '#FFFFFF',
+                  padding: '4px 12px',
+                  borderRadius: 'var(--radius-full)',
+                  fontSize: '0.76rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase'
+                }}>
+                  SmartprintID by PT OLEH KELUARGA BESAR
+                </div>
+                <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                  • Great Service and Quality
+                </span>
               </div>
               <h1 style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: 18 }}>
                 Spesialis <span className="serif-italic">Kemasan &amp; Percetakan</span> di Balikpapan

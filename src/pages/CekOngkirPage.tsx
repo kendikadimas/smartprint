@@ -529,7 +529,7 @@ export default function CekOngkirPage() {
                 <div>
                   <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Kurir Resmi yang Didukung</h3>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                    Pengiriman reguler &amp; kargo via JNE, J&amp;T Express, TIKI, POS, serta GoSend (Instant/Same Day Balikpapan).
+                    Pengiriman reguler &amp; kargo via JNE, J&amp;T Express, TIKI, serta GoSend (Instant / Same Day Balikpapan).
                   </p>
                 </div>
               </div>
@@ -543,7 +543,21 @@ export default function CekOngkirPage() {
                 <div>
                   <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Estimasi Packing &amp; Same-Day</h3>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                    Estimasi proses packing 1 hari kerja. Khusus stiker dan spanduk, pesanan masuk jam 8 pagi bisa selesai di hari yang sama.
+                    Estimasi proses packing 1 hari kerja. Khusus stiker dan spanduk, pesanan masuk jam 8 pagi bisa selesai siang atau sore di hari yang sama.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="card" style={{ padding: 18 }}>
+              <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+                <div style={{ width: 34, height: 34, borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.88rem', flexShrink: 0 }}>
+                  04
+                </div>
+                <div>
+                  <h3 style={{ fontSize: '1rem', marginBottom: 2 }}>Garansi Retur &amp; Persetujuan ACC</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                    Produksi dimulai setelah persetujuan tertulis (ACC). Garansi cetak ulang diberikan jika terjadi salah produksi (klaim 1-2 hari setelah barang diterima).
                   </p>
                 </div>
               </div>

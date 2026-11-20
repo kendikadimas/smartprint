@@ -26,7 +26,9 @@ export default function Header() {
           <div className="top-bar-info">
             <span>Jl. Gunung Empat RT.25 No. 68 Balikpapan (76131)</span>
             <span>•</span>
-            <span>Senin - Jumat: 09:00 - 17:00 WITA</span>
+            <span>Buka Setiap Hari: 08:00 - 22:00 WITA</span>
+            <span>•</span>
+            <span style={{ color: 'var(--primary)', fontWeight: 700 }}>Great Service and Quality</span>
           </div>
           <div className="top-bar-contact">
             <a href="tel:0542415737" className="mono-num">Tel: (0542) 415737</a>
